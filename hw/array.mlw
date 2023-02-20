@@ -1,0 +1,71 @@
+module Array
+
+use import int.Int
+
+type array 't
+
+function length_f (a: array 't): int
+axiom length_zero: forall a: array 't. (length_f a) >= 0 
+
+function get_f (a: array 't) (i: int): 't
+
+function set_f (a: array 't) (x: 't) (i: int): array 't
+axiom set_length: forall a: array 't, x: 't, i: int. (0 <= i < length_f a) -> length_f a = length_f (set_f a x i)
+axiom set_effect: forall a: array 't, x: 't, i: int. (0 <= i < length_f a) -> (get_f (set_f a x i) i = x)
+axiom set_noeffect: forall a: array 't, x: 't, i, j: int. (0 <= i < length_f a) /\ (0 <= j < length_f a) /\ (i <> j) -> (get_f (set_f a x i) j = get_f a j )
+
+val length (a: array 't): int
+    ensures { result = length_f a }
+
+val get (a: array 't) (i: int): 't
+    requires { 0 <= i < length_f a }
+    ensures { result = get_f a i }
+
+val set (a: array 't) (x: 't) (i: int): array 't
+    requires { 0 <= i < length_f a }
+    ensures { result = set_f a x i }
+
+end
+
+module Replace
+
+use import int.Int
+use import Array
+
+use import ref.Ref
+
+(* type ref 'v = { mutable value: 'v }
+function (!) (r: ref 'v): 'v = r.value
+let (!) (r: ref 'v): 'v
+    ensures { result = r.value  }
+= r.value
+function ref (v: 'v): ref 'v = {value = v}
+let ref (v: 'v): ref 'v 
+    ensures { result.value = v }
+= {value = v}
+let (:=) (r: ref 'v) (v: 'v)
+    ensures { r.value = v } 
+= r.value <- v *)
+
+predicate x_to_y_done (a: array int) (res: array int) (max_n: int) (x y: int) = forall n: int. 0 <= max_n <= length_f a /\ 0 <= n < max_n /\ get_f a n = x -> get_f res n = y
+predicate x_to_y_others (a: array int) (res: array int) (x y: int) = forall n: int. 0 <= n < length_f a /\ get_f a n <> x -> get_f res n = get_f a n
+
+let change_array (a: ref (array int)) (x y: int)
+    ensures { x_to_y_done (old !a) !a (length_f !a) x y }
+    ensures { x_to_y_others (old !a) !a x y }
+    ensures { length_f (old !a) = length_f !a }
+= 'Pre:
+  let i = ref 0 in
+  while !i < (length !a) do
+    invariant { x_to_y_done (at !a 'Pre) !a !i x y }
+    invariant { x_to_y_others (at !a 'Pre) !a x y }
+    invariant { length_f !a = length_f (at !a 'Pre) }
+    invariant { 0 <= !i <= length_f !a }
+    invariant { forall j: int. (!i <= j < length_f !a) -> (get_f !a j = get_f (at !a 'Pre) j) }
+    variant { length_f !a - !i }
+    if (get_f !a !i = x) then
+      a := (set !a y !i);
+    i := (!i + 1);
+  done;
+
+end

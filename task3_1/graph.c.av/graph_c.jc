@@ -1,0 +1,266 @@
+
+axiomatic Padding {
+
+  logic type padding
+  
+}
+
+tag voidP = {
+}
+
+type voidP = [voidP]
+
+tag charP = voidP with {
+  int8 charM: 8;
+}
+
+tag __anonstruct_Vertex_2 = {
+  padding padding_1: 32; 
+  int32 existent: 32;
+}
+
+type __anonstruct_Vertex_2 = [__anonstruct_Vertex_2]
+
+tag __anonstruct_Edge_3 = {
+  int32 from: 32; 
+  int32 to: 32; 
+  int32 existent_0: 32;
+}
+
+type __anonstruct_Edge_3 = [__anonstruct_Edge_3]
+
+tag __anonstruct_Graph_4 = {
+  __anonstruct_Vertex_2[..] vertices: 64; 
+  int32 vsize: 32; 
+  padding padding_2: 32; 
+  __anonstruct_Edge_3[..] edges: 64; 
+  int32 ecnt: 32; 
+  int32 esize: 32;
+}
+
+type __anonstruct_Graph_4 = [__anonstruct_Graph_4]
+
+predicate is_vertex{L}(__anonstruct_Graph_4[..] g, integer v) =
+\at(((0 <= v) && (v < (g.vsize :> integer))),L)
+
+predicate edge_valid{L}(__anonstruct_Graph_4[..] g_0, integer k_1) =
+\at(((! ((g_0.edges + k_1).existent_0 == 0)) ==>
+      (((is_vertex{L}(g_0, ((g_0.edges + k_1).from :> integer)) &&
+          is_vertex{L}(g_0, ((g_0.edges + k_1).to :> integer))) &&
+         (! ((g_0.vertices + ((g_0.edges + k_1).from :> integer)).existent ==
+              0))) &&
+        (! ((g_0.vertices + ((g_0.edges + k_1).to :> integer)).existent == 0)))),L)
+
+predicate edges_valid{L}(__anonstruct_Graph_4[..] g_1, integer n_1) =
+\at((\forall integer k_2;
+      (((0 <= k_2) && (k_2 < n_1)) ==> edge_valid{L}(g_1, k_2))),L)
+
+predicate graph_valid{L}(__anonstruct_Graph_4[..] g_2) =
+\at(((((((((g_2.vsize > (0 :> int32)) && (g_2.esize > (0 :> int32))) &&
+           (g_2.esize >= g_2.ecnt)) &&
+          (g_2.ecnt >= (0 :> int32))) &&
+         \at((if (\at(0,L) <= \at(((g_2.vsize :> integer) - 1),L)) then 
+             (((\offset_min(\at(g_2.vertices,L)) <= \at(0,L)) &&
+                (\offset_max(\at(g_2.vertices,L)) >=
+                  \at(((g_2.vsize :> integer) - 1),L))) &&
+               (\forall integer __framac_tmp2;
+                 (((\at(0,L) <= __framac_tmp2) &&
+                    (__framac_tmp2 <= \at(((g_2.vsize :> integer) - 1),L))) ==>
+                   true))) else true),L)) &&
+        \at((if (\at(0,L) <= \at(((g_2.esize :> integer) - 1),L)) then 
+            (((\offset_min(\at(g_2.edges,L)) <= \at(0,L)) &&
+               (\offset_max(\at(g_2.edges,L)) >=
+                 \at(((g_2.esize :> integer) - 1),L))) &&
+              (\forall integer __framac_tmp1;
+                (((\at(0,L) <= __framac_tmp1) &&
+                   (__framac_tmp1 <= \at(((g_2.esize :> integer) - 1),L))) ==>
+                  true))) else true),L)) &&
+       edges_valid{L}(g_2, (g_2.ecnt :> integer))) &&
+      (\forall integer k_3;
+        ((((g_2.ecnt :> integer) <= k_3) && (k_3 < (g_2.esize :> integer))) ==>
+          ((g_2.edges + k_3).existent_0 == 0)))),L)
+
+predicate full{L}(__anonstruct_Graph_4[..] g_3) =
+\at(range_existent{L}(g_3, 0, (g_3.esize :> integer)),L)
+
+predicate range_existent{L}(__anonstruct_Graph_4[..] g_4, integer m,
+                            integer n_2) =
+\at((\forall integer k_4;
+      (((m <= k_4) && (k_4 < n_2)) ==>
+        (! ((g_4.edges + k_4).existent_0 == 0)))),L)
+
+axiomatic EdgesCount {
+
+  logic integer count{L}(__anonstruct_Graph_4[..] g_5, integer f, integer t,
+                         integer m_0, integer n_3)
+   
+  axiom count_zero{L} :
+  (_C_1 : (\forall __anonstruct_Graph_4[..] g_6;
+            (\forall integer f_0;
+              (\forall integer t_0;
+                (\forall integer m_1;
+                  (\forall integer n_4;
+                    ((m_1 >= n_4) ==>
+                      (count{L}(g_6, f_0, t_0, m_1, n_4) == 0))))))))
+   
+  predicate count_one_p{L}(__anonstruct_Graph_4[..] g_7, integer f_1,
+                           integer t_1, integer m_2) =
+  (count{L}(g_7, f_1, t_1, m_2, (m_2 + 1)) ==
+    (if (((((g_7.edges + m_2).existent_0 :> integer) != 0) &&
+           (((g_7.edges + m_2).from :> integer) == f_1)) &&
+          (((g_7.edges + m_2).to :> integer) == t_1)) then 1 else 0))
+   
+  axiom count_one{L} :
+  (_C_2 : (\forall __anonstruct_Graph_4[..] g_8;
+            (\forall integer f_2;
+              (\forall integer t_2;
+                (\forall integer m_3;
+                  count_one_p{L}(g_8, f_2, t_2, m_3))))))
+   
+  predicate count_split_p{L}(__anonstruct_Graph_4[..] g_9, integer f_3,
+                             integer t_3, integer m_4, integer n_5,
+                             integer k_5) =
+  (count{L}(g_9, f_3, t_3, m_4, k_5) ==
+    (count{L}(g_9, f_3, t_3, m_4, n_5) + count{L}(g_9, f_3, t_3, n_5, k_5)))
+   
+  axiom count_split{L} :
+  (_C_3 : (\forall __anonstruct_Graph_4[..] g_10;
+            (\forall integer f_4;
+              (\forall integer t_4;
+                (\forall integer m_5;
+                  (\forall integer n_6;
+                    (\forall integer k_6;
+                      (((m_5 <= n_6) && (n_6 <= k_6)) ==>
+                        count_split_p{L}(g_10, f_4, t_4, m_5, n_6, k_6)))))))))
+  
+}
+
+logic integer all_count{L}(__anonstruct_Graph_4[..] g_11, integer f_5,
+                           integer t_5) =
+\at(count{L}(g_11, f_5, t_5, 0, (g_11.esize :> integer)),L)
+
+int32 count(__anonstruct_Graph_4[..] g_0, int32 f_0, int32 t_0)
+  requires ((_C_27 : ((_C_28 : \at((((\offset_min(\at(g_0,Here)) <=
+                                       \at(0,Here)) &&
+                                      (\offset_max(\at(g_0,Here)) >=
+                                        \at(0,Here))) &&
+                                     true),Here)) &&
+                       (_C_29 : graph_valid{Here}(g_0)))) &&
+             ((_C_30 : is_vertex{Here}(g_0, (f_0 :> integer))) &&
+               ((_C_31 : is_vertex{Here}(g_0, (t_0 :> integer))) &&
+                 ((_C_32 : (! ((g_0.vertices + (f_0 :> integer)).existent ==
+                                0))) &&
+                   (_C_33 : (! ((g_0.vertices + (t_0 :> integer)).existent ==
+                                 0)))))));
+behavior default:
+  ensures (_C_26 : ((\result :> integer) ==
+                     all_count{Here}(\at(g_0,Old), (\at(f_0,Old) :> integer),
+                                     (\at(t_0,Old) :> integer))));
+{  
+   (var int32 c);
+   
+   (var int32 i);
+   
+   {  (_C_4 : (c = (0 :> int32)));
+      
+      {  (_C_5 : (i = (0 :> int32)));
+         (LoopEntry : 
+         loop 
+         while (true)
+         {  
+            {  (LoopCurrent : (if (_C_7 : (i < (_C_6 : g_0.ecnt))) then () else 
+                              (goto while_0_break)));
+               
+               {  (if (_C_22 : (((_C_21 : (_C_20 : ((_C_19 : g_0.edges) + i)).existent_0) :> int32) !=
+                                 (0 :> int32))) then (if (_C_18 : ((_C_17 : 
+                                                                   (_C_16 : 
+                                                                   ((_C_15 : g_0.edges) +
+                                                                    i)).from) ==
+                                                                    f_0)) then 
+                                                     (if (_C_14 : ((_C_13 : 
+                                                                   (_C_12 : 
+                                                                   ((_C_11 : g_0.edges) +
+                                                                    i)).to) ==
+                                                                    t_0)) then 
+                                                     (_C_10 : (c = (_C_9 : (
+                                                                   (_C_8 : 
+                                                                   (c +
+                                                                    (1 :> int32))) :> int32)))) else ()) else ()) else ())
+               };
+               (_C_25 : (i = (_C_24 : ((_C_23 : (i + (1 :> int32))) :> int32))))
+            }
+         });
+         (while_0_break : ())
+      };
+      
+      (return c)
+   }
+}
+
+unit add_edge(__anonstruct_Graph_4[..] g, int32 f, int32 t)
+  requires ((_C_84 : ((_C_85 : \at((((\offset_min(\at(g,Here)) <=
+                                       \at(0,Here)) &&
+                                      (\offset_max(\at(g,Here)) >=
+                                        \at(0,Here))) &&
+                                     true),Here)) &&
+                       (_C_86 : graph_valid{Here}(g)))) &&
+             ((_C_87 : is_vertex{Here}(g, (f :> integer))) &&
+               ((_C_88 : is_vertex{Here}(g, (t :> integer))) &&
+                 ((_C_89 : (! ((g.vertices + (f :> integer)).existent == 0))) &&
+                   ((_C_90 : (! ((g.vertices + (t :> integer)).existent == 0))) &&
+                     (_C_91 : (! full{Here}(g))))))));
+behavior default:
+  ensures (_C_79 : ((_C_80 : graph_valid{Here}(\at(g,Old))) &&
+                     ((_C_82 : (all_count{Here}(\at(g,Old),
+                                                (\at(f,Old) :> integer),
+                                                (\at(t,Old) :> integer)) ==
+                                 (all_count{Old}(\at(g,Old),
+                                                 (\at(f,Old) :> integer),
+                                                 (\at(t,Old) :> integer)) +
+                                   1))) &&
+                       (_C_83 : (\forall integer f2;
+                                  (\forall integer t2;
+                                    (((! (f2 == (\at(f,Old) :> integer))) ||
+                                       (! (t2 == (\at(t,Old) :> integer)))) ==>
+                                      (all_count{Here}(\at(g,Old), f2, t2) ==
+                                        all_count{Old}(\at(g,Old), f2, t2)))))))));
+{  
+   (var int32 i_0);
+   
+   {  (if (_C_56 : ((_C_55 : g.ecnt) < (_C_54 : g.esize))) then 
+      {  (_C_38 : ((_C_37 : (_C_36 : ((_C_35 : g.edges) + (_C_34 : g.ecnt))).from) = f));
+         (_C_43 : ((_C_42 : (_C_41 : ((_C_40 : g.edges) + (_C_39 : g.ecnt))).to) = t));
+         (_C_48 : ((_C_47 : (_C_46 : ((_C_45 : g.edges) + (_C_44 : g.ecnt))).existent_0) = (1 :> int32)));
+         (_C_53 : ((_C_52 : g.ecnt) = (_C_51 : ((_C_50 : ((_C_49 : g.ecnt) +
+                                                           (1 :> int32))) :> int32))));
+         
+         (goto return_label)
+      } else ());
+      
+      {  (_C_57 : (i_0 = (0 :> int32)));
+         (LoopEntry : 
+         loop 
+         while (true)
+         {  
+            {  (LoopCurrent : (if (_C_59 : (i_0 < (_C_58 : g.ecnt))) then () else 
+                              (goto while_0_break_0)));
+               
+               {  (if (_C_75 : (! (((_C_74 : (_C_73 : ((_C_72 : g.edges) +
+                                                        i_0)).existent_0) :> int32) !=
+                                    (0 :> int32)))) then 
+                  {  (_C_63 : ((_C_62 : (_C_61 : ((_C_60 : g.edges) + i_0)).from) = f));
+                     (_C_67 : ((_C_66 : (_C_65 : ((_C_64 : g.edges) + i_0)).to) = t));
+                     (_C_71 : ((_C_70 : (_C_69 : ((_C_68 : g.edges) + i_0)).existent_0) = (1 :> int32)));
+                     
+                     (goto return_label)
+                  } else ())
+               };
+               (_C_78 : (i_0 = (_C_77 : ((_C_76 : (i_0 + (1 :> int32))) :> int32))))
+            }
+         });
+         (while_0_break_0 : ())
+      };
+      (return_label : 
+      (return ()))
+   }
+}

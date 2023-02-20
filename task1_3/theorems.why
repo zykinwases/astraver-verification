@@ -1,0 +1,55 @@
+theory Task1_2
+  use import int.Int
+  use import int.EuclideanDivision
+
+  predicate p (x: int) (y1: int) (y2: int) (y3: int) =
+    ((y3 = x /\ y2 <= x) \/ (y3 = x * x /\ x <= y2 <= x * x)) /\
+      (y1 = y2 * x)
+
+  predicate in_W (x: int) (y1:int) (y2:int) =
+    ((div y1 x) <= x * x) /\ ((mod y1 x) = 0) /\
+     ((y2 = x) \/ (y2 = x * x))
+
+  predicate w_order (y11: int) (y12: int) (y21: int) (y22: int) =
+    (y11 > y21) \/ ((y11 = y21) /\ (y12 > y22))
+
+  goal W_fund: 
+    forall x:int.
+        exists y1_max:int, y2_max:int. 
+           forall y1:int, y2:int.
+             (in_W x y1_max y2_max) /\ (in_W x y1 y2) -> 
+              ((w_order y1_max y2_max y1 y2) \/ ((y1 = y1_max) /\ (y2 = y2_max)))
+
+
+
+
+  goal SA:
+    forall x:int, y1:int, y2:int, y3:int.
+      (x > 1) -> (p x x 1 x)
+
+  goal ATA:
+    forall x:int, y1:int, y2:int, y3:int.
+      (x > 1) /\ (p x y1 y2 y3) /\ (y2 < y3) -> 
+       (p x (y1 + x) (y2 + 1) y3)
+
+  goal AFTA:
+    forall x:int, y1:int, y2:int, y3:int.
+      (x > 1) /\ (p x y1 y2 y3) /\ (y2 >= y3) /\ (x = y3) ->
+       (p x y1 y2 y1)
+
+  goal W:
+    forall x:int, y1:int, y2:int, y3:int.
+      (x > 1) /\ (p x y1 y2 y3) ->
+       (((div y1 x) <= x * x) /\ ((mod y1 x) = 0) /\ ((y3 = x) \/ (y3 = x * x)))
+
+  goal ATAu:
+    forall x:int, y1:int, y2:int, y3:int.
+      (x > 1) /\ (p x y1 y2 y3) /\ (y2 < y3) ->
+       (w_order (y1 + x) y3 y1 y3)
+
+  goal AFTAu:
+    forall x:int, y1:int, y2:int, y3:int.
+      (x > 1) /\ (p x y1 y2 y3) /\ (y2 >= y3) /\ (y3 = x) ->
+       (w_order y1 y1 y1 y3)
+end
+

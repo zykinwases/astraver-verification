@@ -1,0 +1,14 @@
+module Task21
+
+  use import int.Int
+  use import int.EuclideanDivision
+
+  function power(x n:int): int
+  = if n = 0 then 1 else power x (n-1)
+ 
+  let rec provement (n: int)
+    requires { n >= 0 }
+    ensures { mod ((power 2 (3*n)) - (power 3 n)) 5 = 0 }
+  = if n = 0 then (mod (1-1) 5 = 0) else provement (n-1)
+
+end

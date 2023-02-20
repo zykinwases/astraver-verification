@@ -1,0 +1,87 @@
+// module Replace
+// 
+// use import int.Int
+// use import ref.Ref
+// use import core.Pointer
+// use import core.Alloc_table
+// use import core.Memory
+// use import core.Acc_safe
+// use import core.Upd_safe
+// use import core.Shift_safe
+// 
+// 
+// let replace (a : pointer int) (size x y : int)
+// 						(mem : ref (memory int int))
+// 						(alloc : ref (alloc_table int)) : pointer int
+// 	requires { size >= 0 }
+// 	(* a + offset_max a >= a + size *)
+// 	requires { offset_min !alloc a <= 0 /\ size - 1 <= offset_max !alloc a }
+// 
+// 	writes { mem }
+// 	(* writes { alloc } *)
+// 
+// 	(* offset_min result = offset_min a,
+// 	   offset_max result = offset_max a *)
+// 	ensures { offset_min !alloc result <= 0 /\
+// 		size - 1 <= offset_max !alloc result }
+// 	(* values in the array *)
+// 	ensures { forall i: int. 0 <= i < size /\ select (old !mem) (shift a i) = x ->
+// 		select !mem (shift result i) = y }
+// 	ensures { forall i: int. 0 <= i < size /\ select (old !mem) (shift a i) <> x ->
+// 		select !mem (shift result i) = select (old !mem) (shift a i) }
+// 	(* correctness for other areas in memory *)
+// 	ensures { forall p: pointer int. same_block a p /\
+// 		offset_min !alloc p <= 0 <= offset_max !alloc p /\
+// 		(sub_pointer a p > 0 \/ sub_pointer p (shift a size) >= 0) ->
+// 	 	select (old !mem) p = select !mem p }
+// 	ensures { forall p: pointer int. same_block result p /\
+// 		offset_min (old !alloc) p <= 0 <= offset_max (old !alloc) p /\
+// 		(sub_pointer result p > 0 \/ sub_pointer p (shift result size) >= 0) ->
+// 	 	select (old !mem) p = select !mem p }
+// 	ensures { forall p: pointer int.
+// 		not (same_block result p) /\ not (same_block a p) /\
+// 	 	offset_min !alloc p <= 0 <= offset_max !alloc p ->
+// 		select (old !mem) p = select !mem p }
+// 	ensures { forall p: pointer int.
+// 		not (same_block result p) /\ not (same_block a p) ->
+// 		offset_min !alloc p = offset_min (old !alloc) p /\
+// 		offset_max !alloc p = offset_max (old !alloc) p }
+// =
+// 	'Pre:
+// 	let i = ref 0 in
+// 	let tmp_a = ref a in
+// 	while !i < size do
+// 		variant { size - !i }
+// 
+// 		invariant { 0 <= !i <= size }
+// 		invariant { !tmp_a = shift a !i }
+// 		invariant { forall j: int. 0 <= j < !i /\
+// 			select (at !mem 'Pre) (shift a j) = x ->
+// 			select !mem (shift a j) = y }
+// 		invariant { forall j: int. 0 <= j < !i /\
+// 			select (at !mem 'Pre) (shift a j) <> x ->
+// 			select !mem (shift a j) = select (at !mem 'Pre) (shift a j) }
+// 		invariant { forall j: int. !i <= j < size ->
+// 			select (at !mem 'Pre) (shift a j) = select !mem (shift a j) }
+// 
+// 		invariant { forall p: pointer int. same_block a p /\
+// 			offset_min !alloc p <= 0 <= offset_max !alloc p /\
+// 			(sub_pointer a p > 0 \/ sub_pointer p (shift a size) >= 0) ->
+// 		 	select (at !mem 'Pre) p = select !mem p }
+// 		invariant { forall p: pointer int. same_block a p /\
+// 			offset_min (at !alloc 'Pre) p <= 0 <= offset_max (at !alloc 'Pre) p /\
+// 			(sub_pointer a p > 0 \/ sub_pointer p (shift a size) >= 0) ->
+// 		 	select (at !mem 'Pre) p = select !mem p }
+// 		invariant { forall p: pointer int. not (same_block a p) /\
+// 		 	offset_min !alloc p <= 0 <= offset_max !alloc p ->
+// 			select (at !mem 'Pre) p = select !mem p }
+// 		invariant { forall p: pointer int. not (same_block a p) ->
+// 			offset_min !alloc p = offset_min (at !alloc 'Pre) p /\
+// 			offset_max !alloc p = offset_max (at !alloc 'Pre) p }
+// 
+// 		if (acc !alloc !mem !tmp_a = x) then upd !alloc mem !tmp_a y;
+// 		tmp_a := shift_typesafe !tmp_a 1;
+// 		i := !i + 1;
+// 	done;
+// 	a
+// end

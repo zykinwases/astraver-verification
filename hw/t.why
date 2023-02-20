@@ -1,0 +1,7 @@
+theory Main
+
+    use import int.Int
+
+    goal first: forall x. x > 0 ->  not(forall t. t > 0 -> x * t = x)
+    goal second: forall x. x * 2 = x + 2 /\ x > 0 ->  not(forall t. t > 0 -> x * t = x)
+end

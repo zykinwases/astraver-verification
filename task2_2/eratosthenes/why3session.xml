@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
+"http://why3.lri.fr/why3session.dtd">
+<why3session shape_version="4">
+<prover id="0" name="Alt-Ergo" version="2.4.1" timelimit="5" steplimit="0" memlimit="1000"/>
+<file name="../eratosthenes.mlw" expanded="true">
+<theory name="Set" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Set_Defs" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Eratosthenes" sum="2f9aff8032d7d4074c475314f265bc8a" expanded="true">
+ <goal name="WP_parameter eratosthenes" expl="VC for eratosthenes" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+  <goal name="WP_parameter eratosthenes.1" expl="postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="27"/></proof>
+  </goal>
+  <goal name="WP_parameter eratosthenes.2" expl="precondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="6"/></proof>
+  </goal>
+  <goal name="WP_parameter eratosthenes.3" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.02" steps="192"/></proof>
+  </goal>
+  <goal name="WP_parameter eratosthenes.4" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.01" steps="26"/></proof>
+  </goal>
+  <goal name="WP_parameter eratosthenes.5" expl="precondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter eratosthenes.6" expl="precondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="16"/></proof>
+  </goal>
+  <goal name="WP_parameter eratosthenes.7" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="20"/></proof>
+  </goal>
+  <goal name="WP_parameter eratosthenes.8" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="20"/></proof>
+  </goal>
+  <goal name="WP_parameter eratosthenes.9" expl="loop variant decrease">
+  <proof prover="0"><result status="valid" time="0.01" steps="23"/></proof>
+  </goal>
+  <goal name="WP_parameter eratosthenes.10" expl="postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="40"/></proof>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+</file>
+</why3session>

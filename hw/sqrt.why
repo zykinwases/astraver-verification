@@ -1,0 +1,37 @@
+theory T
+	
+	use import int.Int	
+	
+        function u ( x y1 y2 : int ): int = y1
+        predicate is_sqrt (r x : int) = (r * r <= x < (r+1) * (r+1))
+	
+        predicate p ( x y1 y2 : int) = exists r. (is_sqrt r x) /\ ((y1 <= y2) -> (y1 = r)) /\ (y2 >= r) /\ (x = 0 -> y2 >= y1) /\ (y1 >= 0)
+
+	predicate phi_d (a1 a2 : int) = (a1 >= 0) /\ (a2 > 0)
+	predicate psi_d (a1 a2 r : int) = (0 <= a1 - r * a2 < a2)
+        predicate phi_c1 (x : int) = x >= 0
+        predicate psi_c1 (x : int) = exists r. is_sqrt r x
+        predicate phi_c2 (x y : int) = x >= 0 /\ psi_d (x+1) 2 y
+        predicate psi_c2 (x y : int) = forall r. (is_sqrt r x) -> y >= r
+
+        goal IND_c1: forall x. x >= 0 /\ x <> 0 -> phi_c1 x
+        goal CORRU_c1: forall x. x >= 0 -> x >= 0
+        goal TERMI_c1: forall x. x >= 0 /\ x <> 0 -> (x-1) < x
+        goal STH_c1: forall x. x >= 0 /\ x = 0 -> psi_c1 x
+        goal SFH_c1: forall x. x >= 0 /\ x <> 0 /\ psi_c1 (x-1) -> psi_c1 x
+
+        goal ALL_c2: forall x y. phi_c2 x y /\ psi_d (x+1) 2 y -> psi_c2 x y
+
+        goal SA: forall x y1 y2: int. x >= 0 /\ psi_c1 x /\ psi_c2 x y2 /\ psi_d (x+1) 2 y2 -> p x x y2
+        goal AFA: forall x y1 y2 y1_1 y1_2: int. x >= 0 /\ y2 < y1 /\ p x y1 y2 /\ psi_d x y2 y1_1 /\ psi_d (y1_1 + y2) 2 y1_2 -> p x y2 y1_2	
+        goal AH: forall x y1 y2: int. x >= 0 /\ y2 >= y1 /\ p x y1 y2 -> y1 * y1 <= x < (y1+1) * (y1+1)
+
+        goal W: forall x y1 y2: int. x >= 0 /\ p x y1 y2 -> (u x y1 y2) >= 0
+        goal SC1: forall x: int. x >= 0 -> phi_c1 x
+        goal C1D: forall x: int. x >= 0 /\ psi_c1 x -> phi_d (x + 1) 2
+        goal DC2: forall x y: int. x >= 0 /\ psi_d (x + 1) 2 y -> phi_c2 x y
+        goal DIV1: forall x y1 y2: int. x >= 0 /\ p x y1 y2 /\ y2 < y1 -> phi_d x y2
+        goal DIV2: forall x y1 y2 y1_1: int. x >= 0 /\ p x y1 y2 /\ y2 < y1 /\ psi_d x y2 y1_1 -> phi_d (y1_1 + y2) 2
+        goal TERM: forall x y1 y2 y1_1 y1_2: int. (x >= 0) /\ (y2 < y1) /\ (p x y1 y2) /\ (psi_d x y2 y1_1) /\ (psi_d (y1_1 + y2) 2 y1_2) -> (u x y2 y1_2) < (u x y1 y2)
+	
+end

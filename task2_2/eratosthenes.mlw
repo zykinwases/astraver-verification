@@ -1,0 +1,106 @@
+module Set
+
+use import int.Int
+
+type set 't
+
+predicate contains (s: set 't) (x: 't)   
+
+function length_f (s: set 't): int
+(* axiom length_zero: forall s: set 't. (length_f s) >= 0 *)
+
+function add_f (s: set 't) (x: 't): set 't
+axiom add_def: forall s: set 't, x: 't. contains (add_f s x) x
+axiom add_length_in: forall s: set 't, x: 't. (contains s x) -> (length_f s = length_f (add_f s x))
+axiom add_length_not: forall s: set 't, x: 't. (not (contains s x)) -> (length_f s + 1 = length_f (add_f s x))
+
+function min_set_f(s: set int): int
+axiom min_set_def0: forall s: set int. (length_f s > 0) -> contains s (min_set_f s)
+axiom min_set_def: forall s: set int, x: int. (length_f s > 0) /\ contains s x -> (min_set_f s) <= x
+
+val length (s: set 't): int
+    ensures { result = (length_f s) }
+
+val add (s: set 't) (x: 't): set 't
+    ensures { result = (add_f s x) }
+
+val min_set (s: set int): int
+    requires { (length_f s) > 0 }
+    ensures { result = (min_set_f s) }
+
+end
+
+
+module Set_Defs
+
+use import int.Int
+use import number.Divisibility
+use import Set
+
+predicate is_empty_p (s: set int)
+axiom is_empty_size: forall s: set int. (is_empty_p s) <-> (length_f s = 0) 
+
+function empty_set_f: set int
+axiom empty_set_def: forall s: set int. (is_empty_p s) <-> (s = empty_set_f)
+
+(* Set with elements from x to y *)
+function range_set_f (x y: int): set int
+axiom range_set_def: forall x, y, z: int. (0 <= x <= y) /\ (x <= z <= y) -> contains (range_set_f x y) z
+
+(* Subset of s without dividers of n *)
+function set_without_dividers_f (s: set int) (n: int): set int
+axiom set_without_dividers_def: forall s: set int, n, x: int. contains s x /\ contains (set_without_dividers_f s n) x -> not (divides n x)
+axiom set_without_dividers_size: forall s: set int, n: int. length_f s >= length_f (set_without_dividers_f s n)
+axiom set_without_dividers_size1: forall s: set int, n: int. (contains s n) -> (length_f s > length_f (set_without_dividers_f s n))
+axiom set_without_dividers_min: forall s: set int, n: int. min_set_f s <= min_set_f (set_without_dividers_f s n)
+
+val is_empty (s: set int): bool
+    ensures { result = (is_empty_p s) }
+
+val empty_set (n: int): set int
+    ensures { result = (empty_set_f) }
+
+val range_set (x y: int): set int
+    requires { 0 <= x <= y }
+    ensures { result = (range_set_f x y) }
+
+val set_without_dividers (s: set int) (n: int): set int
+    requires { n >= 2 }
+    ensures { result = (set_without_dividers_f s n) }
+
+end
+
+
+module Eratosthenes
+
+use import int.Int
+use import number.Divisibility
+use import Set
+use import Set_Defs
+
+type int_m = {mutable x: int;}
+type int_set_m = {mutable s: set int;}
+
+predicate is_prime (x: int) = x >= 2 /\ forall n: int. (1 < n < x) -> not (divides n x)
+predicate only_primes (s: set int) = forall x: int. contains s x -> is_prime x
+predicate primes_less (s: set int) (n: int) = forall x: int. (2 <= x < n) /\ is_prime x -> contains s x
+predicate postcondition (s: set int) (n: int) = (only_primes s) /\ (primes_less s n)
+
+let eratosthenes (n: int): set int
+    requires { n >= 0 }
+    ensures { postcondition result (n+1) }
+=   if n < 2 then empty_set 1
+    else 
+    let res_set = {s = empty_set 1} in
+    let erat_set = {s = range_set 2 n} in
+    let i = {x = 0} in
+    while (i.x <= n) do
+    invariant { min_set_f erat_set.s >= 2}
+    invariant { postcondition res_set.s (min_set_f erat_set.s) }
+    variant { length_f erat_set.s }
+        let p = {x = min_set erat_set.s} in
+        res_set.s <- add res_set.s p.x;
+        erat_set.s <- set_without_dividers erat_set.s p.x
+    done;
+    res_set.s
+end

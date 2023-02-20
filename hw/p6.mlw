@@ -1,0 +1,164 @@
+module Array
+
+use import int.Int
+
+type array 't
+
+function length_f (a: array 't): int
+axiom length_zero: forall a: array 't. (length_f a) >= 0 
+
+function select (a: array 't) (i: int): 't
+
+function set_f (a: array 't) (x: 't) (i: int): array 't
+axiom set_length: forall a: array 't, x: 't, i: int. (0 <= i < length_f a) -> length_f a = length_f (set_f a x i)
+axiom set_effect: forall a: array 't, x: 't, i: int. (0 <= i < length_f a) -> (select (set_f a x i) i = x)
+axiom set_noeffect: forall a: array 't, x: 't, i, j: int. (0 <= i < length_f a) /\ (0 <= j < length_f a) /\ (i <> j) -> (select (set_f a x i) j = select a j )
+
+val length (a: array 't): int
+    ensures { result = length_f a }
+
+val acc (a: array 't) (i: int): 't
+    requires { 0 <= i < length_f a }
+    ensures { result = select a i }
+
+val upd (a: array 't) (x: 't) (i: int): array 't
+    requires { 0 <= i < length_f a }
+    ensures { result = set_f a x i }
+
+end
+
+
+module Memory
+
+(* use import Array *)
+(* use import Set *)
+
+
+(* type memory 't = upd (array 't) *)
+
+(* use import core.Memory *)
+(*path .opam/4.10.0/lib/astraver/why3 *)
+
+
+use import int.Int
+use import ref.Ref
+
+type memory 't 
+type pointer 't
+(* type block 't *)
+type alloc_table 't
+
+function shift (a : pointer 't) (i : int) : pointer 't
+function select (a : pointer 't) (mem : memory 't) : 't
+function store (a : pointer 't) (x : 't) (mem : memory 't) : memory 't
+(* function block_of (a : pointer 't) : block 't
+function block_size (a : block 't) : int
+function base_addr (a : block 't) : pointer 't *)
+function offset_min (a : pointer 't) (alloc : alloc_table 't) : int
+function offset_max (a : pointer 't) (alloc : alloc_table 't) : int
+
+function sub_pointer (a b: pointer 't) : int
+
+predicate allocated (a : pointer 't ) (alloc : alloc_table 't) = offset_min a alloc <= offset_max a alloc
+predicate same_block (a b : pointer 't)
+
+
+
+predicate valid_f (a : pointer 't) (size : int) (alloc : alloc_table 't) = allocated a alloc /\
+    sub_pointer a (base_addr (block_of a)) >= 0 /\ sub_pointer a (shift (base_addr (block_of a)) (block_size (block_of a))) < 0
+predicate eq_blocks (a b : block 't) (mem_a mem_b : memory 't) (alloc_a alloc_b : alloc_table 't)  =  
+    (allocated a alloc_a) /\ (allocated b alloc_b) /\ (block_size a = block_size b) -> forall i . 0 <= i < (block_size a) ->
+        select (shift (base_addr a) i) mem_a = select (shift (base_addr b) i) mem_b 
+
+
+
+val shift_ (a : pointer 't) (i : int) : pointer 't
+    ensures  { result = shift a i }
+val acc (a : pointer 't) (mem : memory 't) : 't
+    requires { valid_f a 1 mem }
+    ensures  { result = select a mem }
+val upd (a : pointer 't) (x : 't) (mem : ref (memory 't)) (alloc : alloc_table 't) : unit
+    requires { valid_f a 1 alloc  }
+    writes   { mem }
+    ensures  { x = select a !mem }
+    (* ensures  { forall block : block 't. allocated block alloc <-> allocated block alloc } *)
+    ensures  { forall block : block 't. allocated block (old !mem) /\ (block_of a <> block) 
+        -> eq_blocks block block (old !mem) (!mem) alloc alloc }
+    ensures  { forall p : pointer 't. block_of a = block_of p /\ sub_pointer p a < 0 /\ sub_pointer p (base_addr (block_of a)) >= 0
+        -> select p (old !mem) = select p !mem}
+    ensures  { forall p : pointer 't. block_of a = block_of p /\ sub_pointer p (shift a 1) >= 0 
+        /\ sub_pointer p (shift (base_addr (block_of a)) (block_size (block_of a))) < 0
+            -> select p (old !mem) = select p !mem }
+val allocate (size : int) (alloc : ref (alloc_table 't)) : pointer 't
+    writes   { alloc }
+    requires {size >= 0}
+    ensures  { not (allocated (block_of result) (old !alloc))}
+    ensures  { allocated (block_of result) !alloc}
+    ensures  { result = base_addr (block_of result) }
+    ensures  { forall block : block 't. block_of result <> block -> ( allocated block (old !alloc) <->  allocated block !alloc )}
+    (* ensures  { forall block : block 't. allocated block (old !alloc) /\ (block_of result <> block) 
+        -> eq_blocks block block (old !mem) (!mem) } *)
+val deallocate (a pointer 't) (alloc : ref (alloc_table 't)) : uint
+    writes { alloc }
+    requires { allocated (block_of a) !alloc }
+    requires { a = base_addr (block_of a)  }
+    ensures  { not allocated (block_of a) !alloc}
+    ensures  { forall block : block 't. block_of a <> block -> ( allocated block (old !alloc) <->  allocated block !alloc )}
+    (* ensures  { forall block : block 't. allocated block (old !alloc) /\ (block_of a <> block) 
+        -> eq_blocks block block (old !mem) (!mem) } *)
+val sub_pointer_ (a b: pointer 't) : int
+    requires { block_of a = block_of b }
+    ensures  { result = sub_pointer a b }
+
+end
+
+
+module Replace
+
+use import int.Int
+use import ref.Ref
+use import Memory
+
+let replace (a : pointer int) (size x y : int) (mem : ref (memory int)) : int
+    requires { valid_f a size !mem }
+    requires { size >= 0 }
+    ensures  { result = 0 }
+    ensures  { valid_f a size !mem}
+    ensures  { forall i . 0 <= i < size -> select (shift a i) (old !mem) = x -> 
+        select (shift a i) !mem = y }
+    ensures  { forall i . 0 <= i < size -> select (shift a i) (old !mem) <> x -> 
+        select (shift a i) !mem = select (shift a i) (old !mem) }
+    writes { mem }
+    ensures  { forall block : block int. allocated block (old !mem) <-> allocated block !mem }
+    ensures  { forall block : block int. allocated block (old !mem) /\ (block_of a <> block) 
+        -> eq_blocks block block (old !mem) (!mem) }
+    ensures  { forall p : pointer int. block_of a = block_of p /\ sub_pointer p a < 0 /\ sub_pointer p (base_addr (block_of a)) >= 0
+        -> select p (old !mem) = select p !mem}
+    ensures  { forall p : pointer int. block_of a = block_of p /\ sub_pointer p (shift a size) > 0 
+        /\ sub_pointer p (shift (base_addr (block_of a)) (block_size (block_of a))) < 0
+            -> select p (old !mem) = select p !mem }
+=   'Pre:
+    let i = ref 0 in
+    let tmp_a = ref a in
+    while !i < size do
+      invariant { 0 <= !i <= size }
+      invariant { valid_f a size !mem }
+      invariant { forall j . 0 <= j < !i -> select (shift a j) (at !mem 'Pre) = x -> select (shift a j) !mem = y }
+      invariant { forall j . 0 <= j < !i -> select (shift a j) (at !mem 'Pre) <> x 
+        -> select (shift a j) !mem = select (shift a j) (at !mem 'Pre) }
+      invariant { forall j . !i <= j < size -> select (shift a j) (at !mem 'Pre) = select (shift a j) !mem }
+      invariant { forall block : block int. allocated block (at !mem 'Pre) <-> allocated block !mem }
+      invariant { forall block : block int. allocated block (at !mem 'Pre) /\ (block_of a <> block) 
+        -> eq_blocks block block (at !mem 'Pre) (!mem) }
+      invariant  { forall p : pointer int. block_of a = block_of p /\ sub_pointer p a < 0 /\ sub_pointer p (base_addr (block_of a)) >= 0
+        -> select p (at !mem 'Pre) = select p !mem}
+      invariant  { forall p : pointer int. block_of a = block_of p /\ sub_pointer p (shift a size) > 0 
+        /\ sub_pointer p (shift (base_addr (block_of a)) (block_size (block_of a))) < 0
+            -> select p (at !mem 'Pre) = select p !mem }
+      variant {size - !i}
+        if (acc !tmp_a !mem = x) then upd !tmp_a y mem;
+        tmp_a := shift_ !tmp_a 1;
+        i := !i + 1;
+    done;
+    0
+end

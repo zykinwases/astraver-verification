@@ -1,0 +1,91 @@
+module Graphs
+
+use import ref.Ref
+use import map.Map
+use import int.Int
+
+
+type block_id 't
+type pointer 't = {blkid: block_id 't; offset: int}
+type memory 't = map (pointer 't) 't (* Отображение pointer -> value *)
+type alloc_table 't = map (block_id 't) int (* Отображение block_id -> int *)
+
+function select (m:map (pointer 't) 'v) (arr: pointer 't): 'v = get m arr
+function shift(arr: pointer 't) (offset: int): pointer 't
+function store (mem: memory 't) ( arr: pointer 't ) ( value : 't ) : memory 't = set mem arr value
+
+
+function get_size (block_sizes: alloc_table 't) (blkid: block_id 't): int = get block_sizes blkid
+
+predicate same_block (p1 p2: pointer 't) = p1.blkid = p2.blkid
+
+predicate valid (p: pointer 't) (mem: (memory 't)) (block_sizes: alloc_table 't) = 
+    (0 <= p.offset < (get_size block_sizes p.blkid))
+
+axiom shift_func: forall p: pointer 't, shift_offset: int. 
+	(shift p shift_offset).offset = p.offset + shift_offset /\
+	same_block (shift p shift_offset) p
+
+
+val acc_safe (mem: memory 't) (block_sizes: alloc_table 't) ( p: pointer 't ): 't
+requires { valid p mem block_sizes }
+ensures { select mem p = result }
+
+val shift_ (a : pointer 't) (i : int): pointer 't
+    ensures { result = shift a i }
+
+val select_ (m: map (pointer 't) 'v) (arr: pointer 't): 'v
+    ensures { result = select m arr }
+
+
+type vertex
+type edge
+type graph
+
+constant ecnt: map (pointer (graph)) int
+constant edges: map (pointer (graph)) (pointer (edge))
+constant esize: map (pointer (graph)) int
+
+constant e_existent: map (pointer (edge)) int
+constant e_from: map (pointer (edge)) int
+constant e_to: map (pointer (edge)) int
+
+
+
+let count (mem: ref (memory 't)) (block_sizes: alloc_table 't) (g: pointer (graph)) (f t: int): int
+=
+    let c = ref 0 in
+        for i = 0 to select_ ecnt g - 1 do
+            if select_ e_existent (shift_ (select_ edges g) i) = 1 then
+                if select_ e_from (shift_ (select_ edges g) i) = f then
+                    if select_ e_to (shift_ (select_ edges g) i) = t then
+                        c := !c + 1;
+        done;
+        !c
+
+(* predicate valid_edge (p: pointer (edge)) (mem: (memory 't)) (block_sizes: alloc_table 't) = 
+    (0 <= p.offset < (get_size block_sizes p.blkid)) *)
+
+val upd_safe (mem: ref (memory 't)) (block_sizes: alloc_table 't) ( e: pointer (edge) ) (f t: int ) : unit
+(* requires { valid_edge e !mem block_sizes } *)
+ensures { select e_from e = f }
+ensures { select e_to e = t }
+ensures { select e_existent e = 1 }
+
+val add_one_enct (mem: ref (memory 't)) (block_sizes: alloc_table 't) ( g: pointer (graph) ): unit
+(* requires { valid g !mem block_sizes } *)
+ensures { select ecnt g = select ecnt (old g) + 1 }
+
+
+let add_edge (mem: ref (memory 't)) (block_sizes: alloc_table 't) (g: pointer (graph)) (f t: int): unit
+=
+    if select_ ecnt g < select_ esize g then 
+        upd_safe mem block_sizes (shift_ (select_ edges g) (select_ ecnt g)) f t;
+        add_one_enct mem block_sizes g;
+
+    for i = 0 to select_ ecnt g - 1 do
+        if select_ ecnt g < select_ esize g then 
+            upd_safe mem block_sizes (shift_ (select_ edges g) (select_ ecnt g)) f t;
+        
+    done;
+end

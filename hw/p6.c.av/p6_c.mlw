@@ -1,0 +1,7901 @@
+
+theory Axiomatic_Padding 
+                           use why3.Bool.Bool 
+                           
+end
+
+theory Int32_of_Int16
+
+  use enum.Int32 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int16.t) : Int32.t = (Int32.of_int (Int16.to_int n))
+  
+end
+
+theory Bit_int32_of_Bit_int16
+
+  use why3.Bool.Bool 
+  
+  use export Int32_of_Int16
+  
+  use export enum.Bit_int32_of_bit_int16
+  
+end
+
+theory Int64_of_Int16
+
+  use enum.Int64 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int16.t) : Int64.t = (Int64.of_int (Int16.to_int n))
+  
+end
+
+theory Bit_int64_of_Bit_int16
+
+  use why3.Bool.Bool 
+  
+  use export Int64_of_Int16
+  
+  use export enum.Bit_int64_of_bit_int16
+  
+end
+
+theory Int64_of_Int32
+
+  use enum.Int64 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int32.t) : Int64.t = (Int64.of_int (Int32.to_int n))
+  
+end
+
+theory Bit_int64_of_Bit_int32
+
+  use why3.Bool.Bool 
+  
+  use export Int64_of_Int32
+  
+  use export enum.Bit_int64_of_bit_int32
+  
+end
+
+theory Int8_of_Int16
+
+  use enum.Int8 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int16.t) : Int8.t = (Int8.of_int (Int16.to_int n))
+  
+end
+
+theory Bit_int8_of_Bit_int16
+
+  use why3.Bool.Bool 
+  
+  use export Int8_of_Int16
+  
+  use export enum.Bit_int8_of_bit_int16
+  
+end
+
+theory Int8_of_Int32
+
+  use enum.Int8 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int32.t) : Int8.t = (Int8.of_int (Int32.to_int n))
+  
+end
+
+theory Bit_int8_of_Bit_int32
+
+  use why3.Bool.Bool 
+  
+  use export Int8_of_Int32
+  
+  use export enum.Bit_int8_of_bit_int32
+  
+end
+
+theory Int8_of_Int64
+
+  use enum.Int8 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int64.t) : Int8.t = (Int8.of_int (Int64.to_int n))
+  
+end
+
+theory Bit_int8_of_Bit_int64
+
+  use why3.Bool.Bool 
+  
+  use export Int8_of_Int64
+  
+  use export enum.Bit_int8_of_bit_int64
+  
+end
+
+theory Uint16_of_Int16
+
+  use enum.Uint16 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int16.t) : Uint16.t = (Uint16.of_int (Int16.to_int n))
+  
+end
+
+theory Bit_uint16_of_Bit_int16
+
+  use why3.Bool.Bool 
+  
+  use export Uint16_of_Int16
+  
+  use export enum.Bit_uint16_of_bit_int16
+  
+end
+
+theory Uint16_of_Int32
+
+  use enum.Uint16 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int32.t) : Uint16.t = (Uint16.of_int (Int32.to_int n))
+  
+end
+
+theory Bit_uint16_of_Bit_int32
+
+  use why3.Bool.Bool 
+  
+  use export Uint16_of_Int32
+  
+  use export enum.Bit_uint16_of_bit_int32
+  
+end
+
+theory Uint16_of_Int64
+
+  use enum.Uint16 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int64.t) : Uint16.t = (Uint16.of_int (Int64.to_int n))
+  
+end
+
+theory Bit_uint16_of_Bit_int64
+
+  use why3.Bool.Bool 
+  
+  use export Uint16_of_Int64
+  
+  use export enum.Bit_uint16_of_bit_int64
+  
+end
+
+theory Uint16_of_Int8
+
+  use enum.Uint16 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int8.t) : Uint16.t = (Uint16.of_int (Int8.to_int n))
+  
+end
+
+theory Bit_uint16_of_Bit_int8
+
+  use why3.Bool.Bool 
+  
+  use export Uint16_of_Int8
+  
+  use export enum.Bit_uint16_of_bit_int8
+  
+end
+
+theory Uint32_of_Int16
+
+  use enum.Uint32 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int16.t) : Uint32.t = (Uint32.of_int (Int16.to_int n))
+  
+end
+
+theory Bit_uint32_of_Bit_int16
+
+  use why3.Bool.Bool 
+  
+  use export Uint32_of_Int16
+  
+  use export enum.Bit_uint32_of_bit_int16
+  
+end
+
+theory Uint32_of_Int32
+
+  use enum.Uint32 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int32.t) : Uint32.t = (Uint32.of_int (Int32.to_int n))
+  
+end
+
+theory Bit_uint32_of_Bit_int32
+
+  use why3.Bool.Bool 
+  
+  use export Uint32_of_Int32
+  
+  use export enum.Bit_uint32_of_bit_int32
+  
+end
+
+theory Uint32_of_Int64
+
+  use enum.Uint32 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int64.t) : Uint32.t = (Uint32.of_int (Int64.to_int n))
+  
+end
+
+theory Bit_uint32_of_Bit_int64
+
+  use why3.Bool.Bool 
+  
+  use export Uint32_of_Int64
+  
+  use export enum.Bit_uint32_of_bit_int64
+  
+end
+
+theory Uint32_of_Int8
+
+  use enum.Uint32 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int8.t) : Uint32.t = (Uint32.of_int (Int8.to_int n))
+  
+end
+
+theory Bit_uint32_of_Bit_int8
+
+  use why3.Bool.Bool 
+  
+  use export Uint32_of_Int8
+  
+  use export enum.Bit_uint32_of_bit_int8
+  
+end
+
+theory Uint32_of_Uint16
+
+  use enum.Uint32 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint16.t) : Uint32.t = (Uint32.of_int (Uint16.to_int n))
+  
+end
+
+theory Bit_uint32_of_Bit_uint16
+
+  use why3.Bool.Bool 
+  
+  use export Uint32_of_Uint16
+  
+  use export enum.Bit_uint32_of_bit_uint16
+  
+end
+
+theory Uint64_of_Int16
+
+  use enum.Uint64 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int16.t) : Uint64.t = (Uint64.of_int (Int16.to_int n))
+  
+end
+
+theory Bit_uint64_of_Bit_int16
+
+  use why3.Bool.Bool 
+  
+  use export Uint64_of_Int16
+  
+  use export enum.Bit_uint64_of_bit_int16
+  
+end
+
+theory Uint64_of_Int32
+
+  use enum.Uint64 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int32.t) : Uint64.t = (Uint64.of_int (Int32.to_int n))
+  
+end
+
+theory Bit_uint64_of_Bit_int32
+
+  use why3.Bool.Bool 
+  
+  use export Uint64_of_Int32
+  
+  use export enum.Bit_uint64_of_bit_int32
+  
+end
+
+theory Uint64_of_Int64
+
+  use enum.Uint64 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int64.t) : Uint64.t = (Uint64.of_int (Int64.to_int n))
+  
+end
+
+theory Bit_uint64_of_Bit_int64
+
+  use why3.Bool.Bool 
+  
+  use export Uint64_of_Int64
+  
+  use export enum.Bit_uint64_of_bit_int64
+  
+end
+
+theory Uint64_of_Int8
+
+  use enum.Uint64 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int8.t) : Uint64.t = (Uint64.of_int (Int8.to_int n))
+  
+end
+
+theory Bit_uint64_of_Bit_int8
+
+  use why3.Bool.Bool 
+  
+  use export Uint64_of_Int8
+  
+  use export enum.Bit_uint64_of_bit_int8
+  
+end
+
+theory Uint64_of_Uint16
+
+  use enum.Uint64 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint16.t) : Uint64.t = (Uint64.of_int (Uint16.to_int n))
+  
+end
+
+theory Bit_uint64_of_Bit_uint16
+
+  use why3.Bool.Bool 
+  
+  use export Uint64_of_Uint16
+  
+  use export enum.Bit_uint64_of_bit_uint16
+  
+end
+
+theory Uint64_of_Uint32
+
+  use enum.Uint64 
+  
+  use enum.Uint32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint32.t) : Uint64.t = (Uint64.of_int (Uint32.to_int n))
+  
+end
+
+theory Bit_uint64_of_Bit_uint32
+
+  use why3.Bool.Bool 
+  
+  use export Uint64_of_Uint32
+  
+  use export enum.Bit_uint64_of_bit_uint32
+  
+end
+
+theory Uint8_of_Int16
+
+  use enum.Uint8 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int16.t) : Uint8.t = (Uint8.of_int (Int16.to_int n))
+  
+end
+
+theory Bit_uint8_of_Bit_int16
+
+  use why3.Bool.Bool 
+  
+  use export Uint8_of_Int16
+  
+  use export enum.Bit_uint8_of_bit_int16
+  
+end
+
+theory Uint8_of_Int32
+
+  use enum.Uint8 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int32.t) : Uint8.t = (Uint8.of_int (Int32.to_int n))
+  
+end
+
+theory Bit_uint8_of_Bit_int32
+
+  use why3.Bool.Bool 
+  
+  use export Uint8_of_Int32
+  
+  use export enum.Bit_uint8_of_bit_int32
+  
+end
+
+theory Uint8_of_Int64
+
+  use enum.Uint8 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int64.t) : Uint8.t = (Uint8.of_int (Int64.to_int n))
+  
+end
+
+theory Bit_uint8_of_Bit_int64
+
+  use why3.Bool.Bool 
+  
+  use export Uint8_of_Int64
+  
+  use export enum.Bit_uint8_of_bit_int64
+  
+end
+
+theory Uint8_of_Int8
+
+  use enum.Uint8 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int8.t) : Uint8.t = (Uint8.of_int (Int8.to_int n))
+  
+end
+
+theory Bit_uint8_of_Bit_int8
+
+  use why3.Bool.Bool 
+  
+  use export Uint8_of_Int8
+  
+  use export enum.Bit_uint8_of_bit_int8
+  
+end
+
+theory Uint8_of_Uint16
+
+  use enum.Uint8 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint16.t) : Uint8.t = (Uint8.of_int (Uint16.to_int n))
+  
+end
+
+theory Bit_uint8_of_Bit_uint16
+
+  use why3.Bool.Bool 
+  
+  use export Uint8_of_Uint16
+  
+  use export enum.Bit_uint8_of_bit_uint16
+  
+end
+
+theory Uint8_of_Uint32
+
+  use enum.Uint8 
+  
+  use enum.Uint32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint32.t) : Uint8.t = (Uint8.of_int (Uint32.to_int n))
+  
+end
+
+theory Bit_uint8_of_Bit_uint32
+
+  use why3.Bool.Bool 
+  
+  use export Uint8_of_Uint32
+  
+  use export enum.Bit_uint8_of_bit_uint32
+  
+end
+
+theory Uint8_of_Uint64
+
+  use enum.Uint8 
+  
+  use enum.Uint64 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint64.t) : Uint8.t = (Uint8.of_int (Uint64.to_int n))
+  
+end
+
+theory Bit_uint8_of_Bit_uint64
+
+  use why3.Bool.Bool 
+  
+  use export Uint8_of_Uint64
+  
+  use export enum.Bit_uint8_of_bit_uint64
+  
+end
+
+theory Int16_of_Int32
+
+  use enum.Int32 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int32.t) : Int16.t = (Int16.of_int (Int32.to_int n))
+  
+end
+
+theory Bit_int16_of_Bit_int32
+
+  use why3.Bool.Bool 
+  
+  use export Int16_of_Int32
+  
+  use export enum.Bit_int16_of_bit_int32
+  
+end
+
+theory Int16_of_Int64
+
+  use enum.Int64 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int64.t) : Int16.t = (Int16.of_int (Int64.to_int n))
+  
+end
+
+theory Bit_int16_of_Bit_int64
+
+  use why3.Bool.Bool 
+  
+  use export Int16_of_Int64
+  
+  use export enum.Bit_int16_of_bit_int64
+  
+end
+
+theory Int32_of_Int64
+
+  use enum.Int64 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int64.t) : Int32.t = (Int32.of_int (Int64.to_int n))
+  
+end
+
+theory Bit_int32_of_Bit_int64
+
+  use why3.Bool.Bool 
+  
+  use export Int32_of_Int64
+  
+  use export enum.Bit_int32_of_bit_int64
+  
+end
+
+theory Int16_of_Int8
+
+  use enum.Int8 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int8.t) : Int16.t = (Int16.of_int (Int8.to_int n))
+  
+end
+
+theory Bit_int16_of_Bit_int8
+
+  use why3.Bool.Bool 
+  
+  use export Int16_of_Int8
+  
+  use export enum.Bit_int16_of_bit_int8
+  
+end
+
+theory Int32_of_Int8
+
+  use enum.Int8 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int8.t) : Int32.t = (Int32.of_int (Int8.to_int n))
+  
+end
+
+theory Bit_int32_of_Bit_int8
+
+  use why3.Bool.Bool 
+  
+  use export Int32_of_Int8
+  
+  use export enum.Bit_int32_of_bit_int8
+  
+end
+
+theory Int64_of_Int8
+
+  use enum.Int8 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Int8.t) : Int64.t = (Int64.of_int (Int8.to_int n))
+  
+end
+
+theory Bit_int64_of_Bit_int8
+
+  use why3.Bool.Bool 
+  
+  use export Int64_of_Int8
+  
+  use export enum.Bit_int64_of_bit_int8
+  
+end
+
+theory Int16_of_Uint16
+
+  use enum.Uint16 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint16.t) : Int16.t = (Int16.of_int (Uint16.to_int n))
+  
+end
+
+theory Bit_int16_of_Bit_uint16
+
+  use why3.Bool.Bool 
+  
+  use export Int16_of_Uint16
+  
+  use export enum.Bit_int16_of_bit_uint16
+  
+end
+
+theory Int32_of_Uint16
+
+  use enum.Uint16 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint16.t) : Int32.t = (Int32.of_int (Uint16.to_int n))
+  
+end
+
+theory Bit_int32_of_Bit_uint16
+
+  use why3.Bool.Bool 
+  
+  use export Int32_of_Uint16
+  
+  use export enum.Bit_int32_of_bit_uint16
+  
+end
+
+theory Int64_of_Uint16
+
+  use enum.Uint16 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint16.t) : Int64.t = (Int64.of_int (Uint16.to_int n))
+  
+end
+
+theory Bit_int64_of_Bit_uint16
+
+  use why3.Bool.Bool 
+  
+  use export Int64_of_Uint16
+  
+  use export enum.Bit_int64_of_bit_uint16
+  
+end
+
+theory Int8_of_Uint16
+
+  use enum.Uint16 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint16.t) : Int8.t = (Int8.of_int (Uint16.to_int n))
+  
+end
+
+theory Bit_int8_of_Bit_uint16
+
+  use why3.Bool.Bool 
+  
+  use export Int8_of_Uint16
+  
+  use export enum.Bit_int8_of_bit_uint16
+  
+end
+
+theory Int16_of_Uint32
+
+  use enum.Uint32 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint32.t) : Int16.t = (Int16.of_int (Uint32.to_int n))
+  
+end
+
+theory Bit_int16_of_Bit_uint32
+
+  use why3.Bool.Bool 
+  
+  use export Int16_of_Uint32
+  
+  use export enum.Bit_int16_of_bit_uint32
+  
+end
+
+theory Int32_of_Uint32
+
+  use enum.Uint32 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint32.t) : Int32.t = (Int32.of_int (Uint32.to_int n))
+  
+end
+
+theory Bit_int32_of_Bit_uint32
+
+  use why3.Bool.Bool 
+  
+  use export Int32_of_Uint32
+  
+  use export enum.Bit_int32_of_bit_uint32
+  
+end
+
+theory Int64_of_Uint32
+
+  use enum.Uint32 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint32.t) : Int64.t = (Int64.of_int (Uint32.to_int n))
+  
+end
+
+theory Bit_int64_of_Bit_uint32
+
+  use why3.Bool.Bool 
+  
+  use export Int64_of_Uint32
+  
+  use export enum.Bit_int64_of_bit_uint32
+  
+end
+
+theory Int8_of_Uint32
+
+  use enum.Uint32 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint32.t) : Int8.t = (Int8.of_int (Uint32.to_int n))
+  
+end
+
+theory Bit_int8_of_Bit_uint32
+
+  use why3.Bool.Bool 
+  
+  use export Int8_of_Uint32
+  
+  use export enum.Bit_int8_of_bit_uint32
+  
+end
+
+theory Uint16_of_Uint32
+
+  use enum.Uint32 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint32.t) : Uint16.t = (Uint16.of_int (Uint32.to_int n))
+  
+end
+
+theory Bit_uint16_of_Bit_uint32
+
+  use why3.Bool.Bool 
+  
+  use export Uint16_of_Uint32
+  
+  use export enum.Bit_uint16_of_bit_uint32
+  
+end
+
+theory Int16_of_Uint64
+
+  use enum.Uint64 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint64.t) : Int16.t = (Int16.of_int (Uint64.to_int n))
+  
+end
+
+theory Bit_int16_of_Bit_uint64
+
+  use why3.Bool.Bool 
+  
+  use export Int16_of_Uint64
+  
+  use export enum.Bit_int16_of_bit_uint64
+  
+end
+
+theory Int32_of_Uint64
+
+  use enum.Uint64 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint64.t) : Int32.t = (Int32.of_int (Uint64.to_int n))
+  
+end
+
+theory Bit_int32_of_Bit_uint64
+
+  use why3.Bool.Bool 
+  
+  use export Int32_of_Uint64
+  
+  use export enum.Bit_int32_of_bit_uint64
+  
+end
+
+theory Int64_of_Uint64
+
+  use enum.Uint64 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint64.t) : Int64.t = (Int64.of_int (Uint64.to_int n))
+  
+end
+
+theory Bit_int64_of_Bit_uint64
+
+  use why3.Bool.Bool 
+  
+  use export Int64_of_Uint64
+  
+  use export enum.Bit_int64_of_bit_uint64
+  
+end
+
+theory Int8_of_Uint64
+
+  use enum.Uint64 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint64.t) : Int8.t = (Int8.of_int (Uint64.to_int n))
+  
+end
+
+theory Bit_int8_of_Bit_uint64
+
+  use why3.Bool.Bool 
+  
+  use export Int8_of_Uint64
+  
+  use export enum.Bit_int8_of_bit_uint64
+  
+end
+
+theory Uint16_of_Uint64
+
+  use enum.Uint64 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint64.t) : Uint16.t = (Uint16.of_int (Uint64.to_int n))
+  
+end
+
+theory Bit_uint16_of_Bit_uint64
+
+  use why3.Bool.Bool 
+  
+  use export Uint16_of_Uint64
+  
+  use export enum.Bit_uint16_of_bit_uint64
+  
+end
+
+theory Uint32_of_Uint64
+
+  use enum.Uint64 
+  
+  use enum.Uint32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint64.t) : Uint32.t = (Uint32.of_int (Uint64.to_int n))
+  
+end
+
+theory Bit_uint32_of_Bit_uint64
+
+  use why3.Bool.Bool 
+  
+  use export Uint32_of_Uint64
+  
+  use export enum.Bit_uint32_of_bit_uint64
+  
+end
+
+theory Int16_of_Uint8
+
+  use enum.Uint8 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint8.t) : Int16.t = (Int16.of_int (Uint8.to_int n))
+  
+end
+
+theory Bit_int16_of_Bit_uint8
+
+  use why3.Bool.Bool 
+  
+  use export Int16_of_Uint8
+  
+  use export enum.Bit_int16_of_bit_uint8
+  
+end
+
+theory Int32_of_Uint8
+
+  use enum.Uint8 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint8.t) : Int32.t = (Int32.of_int (Uint8.to_int n))
+  
+end
+
+theory Bit_int32_of_Bit_uint8
+
+  use why3.Bool.Bool 
+  
+  use export Int32_of_Uint8
+  
+  use export enum.Bit_int32_of_bit_uint8
+  
+end
+
+theory Int64_of_Uint8
+
+  use enum.Uint8 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint8.t) : Int64.t = (Int64.of_int (Uint8.to_int n))
+  
+end
+
+theory Bit_int64_of_Bit_uint8
+
+  use why3.Bool.Bool 
+  
+  use export Int64_of_Uint8
+  
+  use export enum.Bit_int64_of_bit_uint8
+  
+end
+
+theory Int8_of_Uint8
+
+  use enum.Uint8 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint8.t) : Int8.t = (Int8.of_int (Uint8.to_int n))
+  
+end
+
+theory Bit_int8_of_Bit_uint8
+
+  use why3.Bool.Bool 
+  
+  use export Int8_of_Uint8
+  
+  use export enum.Bit_int8_of_bit_uint8
+  
+end
+
+theory Uint16_of_Uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint8.t) : Uint16.t = (Uint16.of_int (Uint8.to_int n))
+  
+end
+
+theory Bit_uint16_of_Bit_uint8
+
+  use why3.Bool.Bool 
+  
+  use export Uint16_of_Uint8
+  
+  use export enum.Bit_uint16_of_bit_uint8
+  
+end
+
+theory Uint32_of_Uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint32 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint8.t) : Uint32.t = (Uint32.of_int (Uint8.to_int n))
+  
+end
+
+theory Bit_uint32_of_Bit_uint8
+
+  use why3.Bool.Bool 
+  
+  use export Uint32_of_Uint8
+  
+  use export enum.Bit_uint32_of_bit_uint8
+  
+end
+
+theory Uint64_of_Uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint64 
+  
+  use why3.Bool.Bool 
+  
+  function cast (n : Uint8.t) : Uint64.t = (Uint64.of_int (Uint8.to_int n))
+  
+end
+
+theory Bit_uint64_of_Bit_uint8
+
+  use why3.Bool.Bool 
+  
+  use export Uint64_of_Uint8
+  
+  use export enum.Bit_uint64_of_bit_uint8
+  
+end
+
+module Unsafe_uint8
+
+  use why3.Bool.Bool 
+  
+  use import enum.Uint8 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Unsafe_enum with namespace . = .
+  
+end
+
+module Safe_uint8
+
+  use why3.Bool.Bool 
+  
+  use import enum.Uint8 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Safe_enum with namespace . = .
+  
+end
+
+module Unsafe_bit_uint8
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_uint8 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Unsafe_bit_enum with namespace . = .
+  
+end
+
+module Safe_bit_uint8
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_uint8 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Safe_bit_enum with namespace . = .
+  
+end
+
+module Unsafe_uint64
+
+  use why3.Bool.Bool 
+  
+  use import enum.Uint64 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Unsafe_enum with namespace . = .
+  
+end
+
+module Safe_uint64
+
+  use why3.Bool.Bool 
+  
+  use import enum.Uint64 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Safe_enum with namespace . = .
+  
+end
+
+module Unsafe_bit_uint64
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_uint64 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Unsafe_bit_enum with namespace . = .
+  
+end
+
+module Safe_bit_uint64
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_uint64 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Safe_bit_enum with namespace . = .
+  
+end
+
+module Unsafe_uint32
+
+  use why3.Bool.Bool 
+  
+  use import enum.Uint32 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Unsafe_enum with namespace . = .
+  
+end
+
+module Safe_uint32
+
+  use why3.Bool.Bool 
+  
+  use import enum.Uint32 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Safe_enum with namespace . = .
+  
+end
+
+module Unsafe_bit_uint32
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_uint32 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Unsafe_bit_enum with namespace . = .
+  
+end
+
+module Safe_bit_uint32
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_uint32 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Safe_bit_enum with namespace . = .
+  
+end
+
+module Unsafe_uint16
+
+  use why3.Bool.Bool 
+  
+  use import enum.Uint16 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Unsafe_enum with namespace . = .
+  
+end
+
+module Safe_uint16
+
+  use why3.Bool.Bool 
+  
+  use import enum.Uint16 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Safe_enum with namespace . = .
+  
+end
+
+module Unsafe_bit_uint16
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_uint16 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Unsafe_bit_enum with namespace . = .
+  
+end
+
+module Safe_bit_uint16
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_uint16 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Safe_bit_enum with namespace . = .
+  
+end
+
+module Unsafe_int8
+
+  use why3.Bool.Bool 
+  
+  use import enum.Int8 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Unsafe_enum with namespace . = .
+  
+end
+
+module Safe_int8
+
+  use why3.Bool.Bool 
+  
+  use import enum.Int8 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Safe_enum with namespace . = .
+  
+end
+
+module Unsafe_bit_int8
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_int8 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Unsafe_bit_enum with namespace . = .
+  
+end
+
+module Safe_bit_int8
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_int8 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Safe_bit_enum with namespace . = .
+  
+end
+
+module Unsafe_int64
+
+  use why3.Bool.Bool 
+  
+  use import enum.Int64 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Unsafe_enum with namespace . = .
+  
+end
+
+module Safe_int64
+
+  use why3.Bool.Bool 
+  
+  use import enum.Int64 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Safe_enum with namespace . = .
+  
+end
+
+module Unsafe_bit_int64
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_int64 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Unsafe_bit_enum with namespace . = .
+  
+end
+
+module Safe_bit_int64
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_int64 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Safe_bit_enum with namespace . = .
+  
+end
+
+module Unsafe_int32
+
+  use why3.Bool.Bool 
+  
+  use import enum.Int32 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Unsafe_enum with namespace . = .
+  
+end
+
+module Safe_int32
+
+  use why3.Bool.Bool 
+  
+  use import enum.Int32 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Safe_enum with namespace . = .
+  
+end
+
+module Unsafe_bit_int32
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_int32 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Unsafe_bit_enum with namespace . = .
+  
+end
+
+module Safe_bit_int32
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_int32 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Safe_bit_enum with namespace . = .
+  
+end
+
+module Unsafe_int16
+
+  use why3.Bool.Bool 
+  
+  use import enum.Int16 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Unsafe_enum with namespace . = .
+  
+end
+
+module Safe_int16
+
+  use why3.Bool.Bool 
+  
+  use import enum.Int16 
+  
+  clone export enum.Generic_enum with namespace . = .
+  
+  clone export enum.Safe_enum with namespace . = .
+  
+end
+
+module Unsafe_bit_int16
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_int16 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Unsafe_bit_enum with namespace . = .
+  
+end
+
+module Safe_bit_int16
+
+  use why3.Bool.Bool 
+  
+  use import enum.Bit_int16 
+  
+  clone export enum.Generic_bit_enum with namespace . = .
+  
+  clone export enum.Safe_bit_enum with namespace . = .
+  
+end
+
+module Globals_simple
+
+  use why3.Bool.Bool 
+  
+end
+
+theory Root_voidP
+
+  use why3.Bool.Bool 
+  
+  use import core.Voidp 
+  
+end
+
+module Root_voidP_safe
+
+  use why3.Bool.Bool 
+  
+end
+
+module Root_voidP_unsafe
+
+  use why3.Bool.Bool 
+  
+end
+
+module Root_intP_safe
+
+  use why3.Bool.Bool 
+  
+end
+
+module Root_intP_unsafe
+
+  use why3.Bool.Bool 
+  
+end
+
+theory Root_intP
+
+  use why3.Bool.Bool 
+  
+  type intP 
+  
+end
+
+theory Struct_intP
+
+  use import core.Tag_table_type 
+  
+  use import core.Tag_table 
+  
+  use import core.Tag_id 
+  
+  use import core.Tag 
+  
+  use import Root_intP 
+  
+  use import ref.Ref 
+  
+  use import core.Pointer 
+  
+  use import int.Int 
+  
+  use import core.Allocable 
+  
+  use import core.Alloc_table 
+  
+  use import core.Alloc 
+  
+  use why3.Bool.Bool 
+  
+  function intP_tag  : (tag_id intP)
+  
+  axiom IntP_parenttag_bottom  :
+  (parenttag intP_tag bottom_tag)
+  
+  axiom IntP_is_final  :
+  (forall intP_tag_table : (tag_table intP).
+   (forall p : (pointer intP).
+    ((instanceof intP_tag_table p intP_tag) ->
+     ((=) (typeof intP_tag_table p) intP_tag))))
+  
+  predicate frame_tag_struct_intP (p : (pointer intP)) (old_intP_tag_table :
+  (tag_table intP)) (intP_tag_table : (tag_table intP))
+  =
+     ((tag_extends old_intP_tag_table intP_tag_table) /\
+     (alloc_tag_block old_intP_tag_table intP_tag_table p))
+  
+  predicate frame_free_struct_intP (p : (pointer intP)) (old_intP_alloc_table
+  : (alloc_table intP)) (intP_alloc_table : (alloc_table intP))
+  =
+     ((free_extends old_intP_alloc_table intP_alloc_table) /\
+     (free_block old_intP_alloc_table intP_alloc_table p))
+  
+  predicate frame_alloc_struct_intP (p : (pointer intP)) (n : int)
+  (old_intP_alloc_table : (alloc_table intP)) (intP_alloc_table :
+  (alloc_table intP))
+  =
+     ((alloc_extends old_intP_alloc_table intP_alloc_table) /\
+     (alloc_block old_intP_alloc_table intP_alloc_table p n))
+  
+  predicate fresh_tag_struct_intP (p : (pointer intP)) (n : int)
+  (intP_tag_table : (tag_table intP)) = (tag_fresh intP_tag_table p)
+  
+  predicate fresh_alloc_struct_intP (p : (pointer intP)) (n : int)
+  (intP_alloc_table : (alloc_table intP))
+  = (alloc_fresh intP_alloc_table p)
+  
+  predicate container_of_singleton_struct_intP (p : (pointer intP))
+  (intP_tag_table : (tag_table intP)) = true
+  
+  predicate container_of_struct_intP (p : (pointer intP)) (l : int) (r : int)
+  (intP_tag_table : (tag_table intP)) = true
+  
+  predicate typeof_singleton_struct_intP (p : (pointer intP)) (intP_tag_table
+  : (tag_table intP)) = ((=) (typeof intP_tag_table p) intP_tag)
+  
+  predicate typeof_struct_intP (p : (pointer intP)) (l : int) (r : int)
+  (intP_tag_table : (tag_table intP))
+  =
+     (((=) (typeof intP_tag_table p) intP_tag) /\
+     (forall i : int.
+      ((((<=) l i) /\ ((<) i r)) ->
+       ((=) (typeof intP_tag_table (shift p i)) intP_tag))))
+  
+  predicate instanceof_singleton_struct_intP (p : (pointer intP))
+  (intP_tag_table : (tag_table intP))
+  = (instanceof intP_tag_table p intP_tag)
+  
+  predicate instanceof_struct_intP (p : (pointer intP)) (l : int) (r : int)
+  (intP_tag_table : (tag_table intP))
+  =
+     ((instanceof intP_tag_table p intP_tag) /\
+     (forall i : int.
+      ((((<=) l i) /\ ((<) i r)) ->
+       (instanceof intP_tag_table (shift p i) intP_tag))))
+  
+  predicate right_valid_struct_intP (p : (pointer intP)) (b : int)
+  (intP_alloc_table : (alloc_table intP))
+  = ((>=) (offset_max intP_alloc_table p) b)
+  
+  predicate left_valid_struct_intP (p : (pointer intP)) (a : int)
+  (intP_alloc_table : (alloc_table intP))
+  = ((<=) (offset_min intP_alloc_table p) a)
+  
+  predicate strict_left_valid_struct_intP (p : (pointer intP)) (a : int)
+  (intP_alloc_table : (alloc_table intP))
+  = ((=) (offset_min intP_alloc_table p) a)
+  
+  predicate valid_struct_intP (p : (pointer intP)) (a : int) (b : int)
+  (intP_alloc_table : (alloc_table intP))
+  =
+     (((<=) (offset_min intP_alloc_table p) a) /\
+     ((>=) (offset_max intP_alloc_table p) b))
+  
+  predicate strict_valid_struct_intP (p : (pointer intP)) (a : int) (b : int)
+  (intP_alloc_table : (alloc_table intP))
+  =
+     (((=) (offset_min intP_alloc_table p) a) /\
+     ((=) (offset_max intP_alloc_table p) b))
+  
+  axiom IntP_int  : ((=) (int_of_tag intP_tag) (4))
+  
+end
+
+module Exceptions
+
+  use why3.Bool.Bool 
+  
+  exception Goto_while_0_break_exc unit
+  
+  exception Loop_continue_exc unit
+  
+  exception Loop_exit_exc unit
+  
+  exception Return_label_exc unit
+  
+end
+
+module Function_replace_safety
+#"/home/zykinwases/projects/verification/hw/p6.c" 10 4 44#
+"expl:replace, safety"
+
+  use import core.Upd_safe 
+  
+  use import core.Tag_table_type 
+  
+  use import Struct_intP 
+  
+  use import core.Shift_safe 
+  
+  use Safe_int32 
+  
+  use import Root_intP 
+  
+  use import core.Return 
+  
+  use import ref.Ref 
+  
+  use import core.Pointer 
+  
+  use import core.Memory 
+  
+  use enum.Int32 
+  
+  use import int.Int 
+  
+  use import Exceptions 
+  
+  use import core.Allocable 
+  
+  use import core.Alloc_table 
+  
+  use import core.Acc_safe 
+  
+  use why3.Bool.Bool 
+  
+  let replace #"/home/zykinwases/projects/verification/hw/p6.c" 10 4 44#
+  "expl:Function replace, safety" =
+  fun
+   (a : (pointer intP)) (size_1 : Int32.t) (x : Int32.t) (y : Int32.t)
+   (intP_a_2_alloc_table : ref (alloc_table intP)) (intP_intM_a_2 : ref
+   (memory intP Int32.t)) (intP_a_2_tag_table : (tag_table intP)) 
+   requires {
+   (((allocated !intP_a_2_alloc_table a) ->
+     (((=) (typeof intP_a_2_tag_table a) intP_tag) /\
+     (forall i : int.
+      ((((<=) (offset_min !intP_a_2_alloc_table a) i) /\
+       ((<) i (offset_max !intP_a_2_alloc_table a))) ->
+       ((=) (typeof intP_a_2_tag_table (shift a i)) intP_tag)))))
+   /\
+   (#"p6_c.jc" 24 12 685#
+   ((#"/home/zykinwases/projects/verification/hw/p6.c" 1 13 22#
+    (Int32.(>=) size_1 (#"p6_c.jc" 24 32 44# "expl:Integer cast"
+    (Int32.of_int (0)))))
+   /\
+   (#"/home/zykinwases/projects/verification/hw/p6.c" 2 13 36#
+   (if ((<=) (0) (Int.(-) (Int32.to_int size_1) (1))) then
+    (((<=) (offset_min !intP_a_2_alloc_table a) (0)) /\
+    (((>=) (offset_max !intP_a_2_alloc_table a)
+     (Int.(-) (Int32.to_int size_1) (1)))
+    /\
+    (forall __framac_tmp1 : int.
+     ((((<=) (0) __framac_tmp1) /\
+      ((<=) __framac_tmp1 (Int.(-) (Int32.to_int size_1) (1)))) ->
+      ((=) true true))))) else ((=) true true)))))) }
+   ensures { ("expl:Postcondition" true) }  ->
+   (let mutable_a = ref a in
+   'Init:
+   (let return = ref (Safe_int32.any_  () ) in
+   try
+    begin
+    (let i_1 = ref (Safe_int32.any_  () ) in
+    (let __retres = ref (Safe_int32.any_  () ) in
+    begin
+    try
+     begin
+     (i_1 :=
+      (let _jessie_21 =
+      (#"p6_c.jc" 57 22 34# "expl:Integer cast" (Safe_int32.of_int (0))) in
+      begin
+      (assert {
+      (#"/home/zykinwases/projects/verification/hw/p6.c" 19 13 14#
+      "expl:Pointer index bounds" true) }); _jessie_21 end));
+      'LoopEntry:
+      begin
+      'LoopEntry:
+      'Loop_2:
+      loop
+      invariant { (#"p6_c.jc" 59 9 1918# true) }
+        variant {
+          (#"/home/zykinwases/projects/verification/hw/p6.c" 17 21 29#
+          (Int.(-) (Int32.to_int size_1) (Int32.to_int !i_1))) }
+       begin
+       any unit
+       requires { true } reads { intP_intM_a_2, mutable_a, size_1, x, y }
+       ensures {
+         ((#"/home/zykinwases/projects/verification/hw/p6.c" 15 23 92#
+          (forall j_1 : int.
+           ((((<=) (Int32.to_int !i_1) j_1) /\
+            ((<) j_1 (Int32.to_int size_1))) ->
+            (Int32.(=)
+            (select (at !intP_intM_a_2 'Init)
+            (shift (at !mutable_a 'Init) j_1))
+            (select !intP_intM_a_2 (shift (at !mutable_a 'Init) j_1))))))
+         /\
+         ((#"/home/zykinwases/projects/verification/hw/p6.c" 14 23 112#
+          (forall j_0 : int.
+           ((((<=) (0) j_0) /\
+            (((<) j_0 (Int32.to_int !i_1)) /\
+            (not
+            (Int32.(=)
+            (select (at !intP_intM_a_2 'Init)
+            (shift (at !mutable_a 'Init) j_0)) x)))) ->
+            (Int32.(=)
+            (select !intP_intM_a_2 (shift (at !mutable_a 'Init) j_0))
+            (select (at !intP_intM_a_2 'Init)
+            (shift (at !mutable_a 'Init) j_0))))))
+         /\
+         ((#"/home/zykinwases/projects/verification/hw/p6.c" 13 23 99#
+          (forall j : int.
+           ((((<=) (0) j) /\
+            (((<) j (Int32.to_int !i_1)) /\
+            (Int32.(=)
+            (select (at !intP_intM_a_2 'Init)
+            (shift (at !mutable_a 'Init) j)) x))) ->
+            (Int32.(=)
+            (select !intP_intM_a_2 (shift (at !mutable_a 'Init) j)) y))))
+         /\
+         ((#"/home/zykinwases/projects/verification/hw/p6.c" 12 23 43#
+          ((=) !mutable_a (shift (at !mutable_a 'Init) (Int32.to_int !i_1))))
+         /\
+         (#"/home/zykinwases/projects/verification/hw/p6.c" 11 23 37#
+         (#"/home/zykinwases/projects/verification/hw/p6.c" 11 23 37#
+         ((#"/home/zykinwases/projects/verification/hw/p6.c" 11 23 29#
+          (Int32.(<=) (#"p6_c.jc" 61 39 51# "expl:Integer cast" (Int32.of_int
+          (0))) !i_1))
+         /\
+         (#"/home/zykinwases/projects/verification/hw/p6.c" 11 28 37#
+         (Int32.(<=) !i_1 size_1))))))))) } ;
+        try
+         begin
+         'LoopCurrent:
+         begin
+         'LoopCurrent:
+         (if
+         (#"/home/zykinwases/projects/verification/hw/p6.c" 19 20 28#
+         (Safe_int32.(<)  !i_1 size_1 )) then ()
+         else (raise (Goto_while_0_break_exc ())));
+          begin
+          (if
+          (#"/home/zykinwases/projects/verification/hw/p6.c" 20 12 19#
+          (Safe_int32.(=) 
+           (#"/home/zykinwases/projects/verification/hw/p6.c" 20 12 14#
+           "expl:Pointer dereference"
+           (acc  !intP_a_2_alloc_table !intP_intM_a_2 !mutable_a )) x ))
+          then
+           (let _jessie_15 =
+           (let _jessie_14 = y in
+           begin
+           (assert {
+           (#"/home/zykinwases/projects/verification/hw/p6.c" 20 21 27#
+           "expl:Pointer index bounds" true) }); _jessie_14 end) in
+           (let _jessie_16 = !mutable_a in
+           (let _jessie_17 = (0) in
+           (let _jessie_18 = _jessie_16 in
+           (#"/home/zykinwases/projects/verification/hw/p6.c" 20 21 27#
+           "expl:Pointer dereference"
+           (upd  !intP_a_2_alloc_table intP_intM_a_2 _jessie_16 _jessie_15 ))))))
+          else ());
+           (mutable_a :=
+            (let _jessie_19 =
+            (shift_typesafe  !mutable_a
+             (Safe_int32.to_int 
+              (#"p6_c.jc" 93 46 58# "expl:Integer cast"
+              (Safe_int32.of_int (1))) ) ) in
+            begin
+            (assert {
+            (#"/home/zykinwases/projects/verification/hw/p6.c" 21 8 11#
+            "expl:Pointer index bounds" true) }); _jessie_19 end)) end;
+          (i_1 :=
+           (let _jessie_20 =
+           (Safe_int32.(+)  !i_1
+            (#"p6_c.jc" 95 53 65# "expl:Integer cast"
+            (Safe_int32.of_int (1))) ) in
+           begin
+           (assert {
+           (#"/home/zykinwases/projects/verification/hw/p6.c" 19 30 33#
+           "expl:Pointer index bounds" true) }); _jessie_20 end)) end;
+          (raise (Loop_continue_exc ())) end with Loop_continue_exc _jessie_3
+         -> () end end end; (raise (Goto_while_0_break_exc ())) end end with
+     Goto_while_0_break_exc _jessie_1 -> 'While_0_break: 'While_0_break: ()
+     end;
+     begin
+     (__retres :=
+      (let _jessie_22 =
+      (#"p6_c.jc" 100 27 39# "expl:Integer cast" (Safe_int32.of_int (0))) in
+      begin
+      (assert {
+      (#"/home/zykinwases/projects/verification/hw/p6.c" 23 4 13#
+      "expl:Pointer index bounds" true) }); _jessie_22 end));
+      begin
+      (return :=
+       (let _jessie_23 = !__retres in
+       begin
+       (assert { (#"p6_c.jc" 102 7 22# "expl:Pointer index bounds" true) });
+        _jessie_23 end)); (raise Return) end end end)); absurd  end with
+    Return -> !return end))
+  
+end
+
+module Function_replace_behaviors
+#"/home/zykinwases/projects/verification/hw/p6.c" 10 4 44#
+"expl:replace, behaviors"
+
+  use import core.Upd_unsafe 
+  
+  use Unsafe_int32 
+  
+  use import core.Tag_table_type 
+  
+  use import Struct_intP 
+  
+  use import core.Shift_unsafe 
+  
+  use import core.Same_except 
+  
+  use import Root_intP 
+  
+  use import core.Return 
+  
+  use import ref.Ref 
+  
+  use import core.Pset_range 
+  
+  use import core.Pset_all 
+  
+  use import core.Pset 
+  
+  use import core.Pointer 
+  
+  use import core.Memory 
+  
+  use enum.Int32 
+  
+  use import int.Int 
+  
+  use import Exceptions 
+  
+  use import core.Assigns 
+  
+  use import core.Allocable 
+  
+  use import core.Alloc_table 
+  
+  use import core.Acc_unsafe 
+  
+  use why3.Bool.Bool 
+  
+  let replace_ensures_default
+  #"/home/zykinwases/projects/verification/hw/p6.c" 10 4 44#
+  "expl:Function replace, default behavior" =
+  fun
+   (a : (pointer intP)) (size_1 : Int32.t) (x : Int32.t) (y : Int32.t)
+   (intP_a_2_alloc_table : ref (alloc_table intP)) (intP_intM_a_2 : ref
+   (memory intP Int32.t)) (intP_a_2_tag_table : (tag_table intP)) 
+   requires {
+   (((allocated !intP_a_2_alloc_table a) ->
+     (((=) (typeof intP_a_2_tag_table a) intP_tag) /\
+     (forall i : int.
+      ((((<=) (offset_min !intP_a_2_alloc_table a) i) /\
+       ((<) i (offset_max !intP_a_2_alloc_table a))) ->
+       ((=) (typeof intP_a_2_tag_table (shift a i)) intP_tag)))))
+   /\
+   (#"p6_c.jc" 24 12 685#
+   ((#"/home/zykinwases/projects/verification/hw/p6.c" 1 13 22#
+    (Int32.(>=) size_1 (#"p6_c.jc" 24 32 44# "expl:Integer cast"
+    (Int32.of_int (0)))))
+   /\
+   (#"/home/zykinwases/projects/verification/hw/p6.c" 2 13 36#
+   (if ((<=) (0) (Int.(-) (Int32.to_int size_1) (1))) then
+    (((<=) (offset_min !intP_a_2_alloc_table a) (0)) /\
+    (((>=) (offset_max !intP_a_2_alloc_table a)
+     (Int.(-) (Int32.to_int size_1) (1)))
+    /\
+    (forall __framac_tmp1 : int.
+     ((((<=) (0) __framac_tmp1) /\
+      ((<=) __framac_tmp1 (Int.(-) (Int32.to_int size_1) (1)))) ->
+      ((=) true true))))) else ((=) true true)))))) }
+   ensures {
+     ("expl:Postcondition"
+     ((#"p6_c.jc" 37 12 22# "expl:Allocates clause"
+      (#"p6_c.jc" 37 12 22# "expl:Allocates clause"
+      (alloc_same_except (old !intP_a_2_alloc_table) !intP_a_2_alloc_table
+      (pset_all (pset_singleton a)))))
+     /\
+     ((#"p6_c.jc" 36 10 51# "expl:Assigns clause"
+      (not_assigns (old !intP_a_2_alloc_table) !intP_a_2_alloc_table (old
+      !intP_intM_a_2) !intP_intM_a_2
+      (pset_range (pset_singleton a) (0) (Int.(-) (Int32.to_int size_1) (1)))))
+     /\
+     (#"/home/zykinwases/projects/verification/hw/p6.c" 3 12 24#
+     "expl:Ensures clause"
+     (#"/home/zykinwases/projects/verification/hw/p6.c" 3 12 24#
+     "expl:Ensures clause"
+     ((#"/home/zykinwases/projects/verification/hw/p6.c" 3 12 24#
+      "expl:Ensures clause"
+      (Int32.(=) result (#"p6_c.jc" 38 41 53# "expl:Integer cast"
+      (Int32.of_int (0)))))
+     /\
+     (#"/home/zykinwases/projects/verification/hw/p6.c" 3 12 24#
+     "expl:Ensures clause"
+     ((#"/home/zykinwases/projects/verification/hw/p6.c" 4 12 77#
+      "expl:Ensures clause"
+      (forall i : int.
+       ((((<=) (0) i) /\
+        (((<) i (Int32.to_int size_1)) /\
+        (Int32.(=) (select (old !intP_intM_a_2) (shift a i)) x))) ->
+        (Int32.(=) (select !intP_intM_a_2 (shift a i)) y))))
+     /\
+     (#"/home/zykinwases/projects/verification/hw/p6.c" 5 12 86#
+     "expl:Ensures clause"
+     (forall i_0 : int.
+      ((((<=) (0) i_0) /\
+       (((<) i_0 (Int32.to_int size_1)) /\
+       (not (Int32.(=) (select (old !intP_intM_a_2) (shift a i_0)) x)))) ->
+       (Int32.(=) (select !intP_intM_a_2 (shift a i_0))
+       (select (old !intP_intM_a_2) (shift a i_0)))))))))))))) } diverges  ->
+   (let mutable_a = ref a in
+   'Init:
+   (let return = ref (Unsafe_int32.any_  () ) in
+   try
+    begin
+    (let i_1 = ref (Unsafe_int32.any_  () ) in
+    (let __retres = ref (Unsafe_int32.any_  () ) in
+    begin
+    try
+     begin
+     (i_1 :=
+      (#"p6_c.jc" 57 22 34# "expl:Integer cast" (Unsafe_int32.of_int (0))));
+      'LoopEntry:
+      begin
+      'LoopEntry:
+      'Loop_1:
+      loop
+      invariant
+        { (((#"/home/zykinwases/projects/verification/hw/p6.c" 11 23 37#
+            (#"/home/zykinwases/projects/verification/hw/p6.c" 11 23 37#
+            ((#"/home/zykinwases/projects/verification/hw/p6.c" 11 23 29#
+             (Int32.(<=) (#"p6_c.jc" 61 39 51# "expl:Integer cast"
+             (Int32.of_int (0))) !i_1))
+            /\
+            (#"/home/zykinwases/projects/verification/hw/p6.c" 11 28 37#
+            (Int32.(<=) !i_1 size_1)))))
+           &&
+           ((#"/home/zykinwases/projects/verification/hw/p6.c" 12 23 43#
+            ((=) !mutable_a
+            (shift (at !mutable_a 'Init) (Int32.to_int !i_1))))
+           &&
+           ((#"/home/zykinwases/projects/verification/hw/p6.c" 13 23 99#
+            (forall j : int.
+             ((((<=) (0) j) /\
+              (((<) j (Int32.to_int !i_1)) /\
+              (Int32.(=)
+              (select (at !intP_intM_a_2 'Init)
+              (shift (at !mutable_a 'Init) j)) x))) ->
+              (Int32.(=)
+              (select !intP_intM_a_2 (shift (at !mutable_a 'Init) j)) y))))
+           &&
+           ((#"/home/zykinwases/projects/verification/hw/p6.c" 14 23 112#
+            (forall j_0 : int.
+             ((((<=) (0) j_0) /\
+              (((<) j_0 (Int32.to_int !i_1)) /\
+              (not
+              (Int32.(=)
+              (select (at !intP_intM_a_2 'Init)
+              (shift (at !mutable_a 'Init) j_0)) x)))) ->
+              (Int32.(=)
+              (select !intP_intM_a_2 (shift (at !mutable_a 'Init) j_0))
+              (select (at !intP_intM_a_2 'Init)
+              (shift (at !mutable_a 'Init) j_0))))))
+           &&
+           (#"/home/zykinwases/projects/verification/hw/p6.c" 15 23 92#
+           (forall j_1 : int.
+            ((((<=) (Int32.to_int !i_1) j_1) /\
+             ((<) j_1 (Int32.to_int size_1))) ->
+             (Int32.(=)
+             (select (at !intP_intM_a_2 'Init)
+             (shift (at !mutable_a 'Init) j_1))
+             (select !intP_intM_a_2 (shift (at !mutable_a 'Init) j_1))))))))))
+          /\
+          ((#"p6_c.jc" 59 9 1918# "expl:Assigns clause"
+           (not_assigns (at !intP_a_2_alloc_table 'Loop_1)
+           !intP_a_2_alloc_table (at !intP_intM_a_2 'Loop_1) !intP_intM_a_2
+           (pset_range (pset_singleton (at !mutable_a 'Init)) (0)
+           (Int.(-) (Int32.to_int !i_1) (1)))))
+          /\
+          (#"p6_c.jc" 36 10 51# "expl:Assigns clause"
+          (not_assigns (at !intP_a_2_alloc_table 'Init) !intP_a_2_alloc_table
+          (at !intP_intM_a_2 'Init) !intP_intM_a_2
+          (pset_range (pset_singleton (at !mutable_a 'Init)) (0)
+          (Int.(-) (Int32.to_int size_1) (1))))))) } 
+       begin
+       any unit requires { true } ensures { true } ;
+        try
+         begin
+         'LoopCurrent:
+         begin
+         'LoopCurrent:
+         (if
+         (#"/home/zykinwases/projects/verification/hw/p6.c" 19 20 28#
+         (Unsafe_int32.(<)  !i_1 size_1 )) then ()
+         else (raise (Goto_while_0_break_exc ())));
+          begin
+          (if
+          (#"/home/zykinwases/projects/verification/hw/p6.c" 20 12 19#
+          (Unsafe_int32.(=)  (acc  !intP_intM_a_2 !mutable_a ) x ))
+          then
+           (let _jessie_5 = y in
+           (let _jessie_6 = !mutable_a in
+           (let _jessie_7 = (0) in
+           (let _jessie_8 = _jessie_6 in
+           (upd  intP_intM_a_2 _jessie_8 _jessie_5 ))))) else ());
+           (mutable_a :=
+            (shift_  !mutable_a
+             (Unsafe_int32.to_int 
+              (#"p6_c.jc" 93 46 58# "expl:Integer cast"
+              (Unsafe_int32.of_int (1))) ) )) end;
+          (i_1 :=
+           (Unsafe_int32.(+)  !i_1
+            (#"p6_c.jc" 95 53 65# "expl:Integer cast"
+            (Unsafe_int32.of_int (1))) )) end; (raise (Loop_continue_exc ()))
+         end with Loop_continue_exc _jessie_3 -> () end end end;
+       (raise (Goto_while_0_break_exc ())) end end with
+     Goto_while_0_break_exc _jessie_1 -> 'While_0_break: 'While_0_break: ()
+     end;
+     begin
+     (__retres :=
+      (#"p6_c.jc" 100 27 39# "expl:Integer cast" (Unsafe_int32.of_int (0))));
+      begin (return := !__retres); (raise Return) end end end)); absurd  end
+    with Return -> !return end))
+  
+end
+
+theory Logic_type_padding
+
+  use why3.Bool.Bool 
+  
+  type padding 
+  
+end
+
+theory Struct_voidP
+
+  use import core.Voidp 
+  
+  use import core.Tag_table_type 
+  
+  use import core.Tag_table 
+  
+  use import ref.Ref 
+  
+  use import core.Pointer 
+  
+  use import int.Int 
+  
+  use import core.Allocable 
+  
+  use import core.Alloc_table 
+  
+  use import core.Alloc 
+  
+  use why3.Bool.Bool 
+  
+  use import core.Voidp_tag_id 
+  
+  predicate frame_tag_struct_voidP (p : (pointer voidP)) (old_voidP_tag_table
+  : (tag_table voidP)) (voidP_tag_table : (tag_table voidP))
+  =
+     ((tag_extends old_voidP_tag_table voidP_tag_table) /\
+     (alloc_tag_block old_voidP_tag_table voidP_tag_table p))
+  
+  predicate frame_free_struct_voidP (p : (pointer voidP))
+  (old_voidP_alloc_table : (alloc_table voidP)) (voidP_alloc_table :
+  (alloc_table voidP))
+  =
+     ((free_extends old_voidP_alloc_table voidP_alloc_table) /\
+     (free_block old_voidP_alloc_table voidP_alloc_table p))
+  
+  predicate frame_alloc_struct_voidP (p : (pointer voidP)) (n : int)
+  (old_voidP_alloc_table : (alloc_table voidP)) (voidP_alloc_table :
+  (alloc_table voidP))
+  =
+     ((alloc_extends old_voidP_alloc_table voidP_alloc_table) /\
+     (alloc_block old_voidP_alloc_table voidP_alloc_table p n))
+  
+  predicate fresh_tag_struct_voidP (p : (pointer voidP)) (n : int)
+  (voidP_tag_table : (tag_table voidP))
+  = (tag_fresh voidP_tag_table p)
+  
+  predicate fresh_alloc_struct_voidP (p : (pointer voidP)) (n : int)
+  (voidP_alloc_table : (alloc_table voidP))
+  = (alloc_fresh voidP_alloc_table p)
+  
+  predicate container_of_singleton_struct_voidP (p : (pointer voidP))
+  (voidP_tag_table : (tag_table voidP)) = true
+  
+  predicate container_of_struct_voidP (p : (pointer voidP)) (l : int) (r :
+  int) (voidP_tag_table : (tag_table voidP)) = true
+  
+  predicate typeof_singleton_struct_voidP (p : (pointer voidP))
+  (voidP_tag_table : (tag_table voidP))
+  = ((=) (typeof voidP_tag_table p) voidP_tag)
+  
+  predicate typeof_struct_voidP (p : (pointer voidP)) (l : int) (r : int)
+  (voidP_tag_table : (tag_table voidP))
+  =
+     (((=) (typeof voidP_tag_table p) voidP_tag) /\
+     (forall i : int.
+      ((((<=) l i) /\ ((<) i r)) ->
+       ((=) (typeof voidP_tag_table (shift p i)) voidP_tag))))
+  
+  predicate instanceof_singleton_struct_voidP (p : (pointer voidP))
+  (voidP_tag_table : (tag_table voidP))
+  = (instanceof voidP_tag_table p voidP_tag)
+  
+  predicate instanceof_struct_voidP (p : (pointer voidP)) (l : int) (r : int)
+  (voidP_tag_table : (tag_table voidP))
+  =
+     ((instanceof voidP_tag_table p voidP_tag) /\
+     (forall i : int.
+      ((((<=) l i) /\ ((<) i r)) ->
+       (instanceof voidP_tag_table (shift p i) voidP_tag))))
+  
+  predicate right_valid_struct_voidP (p : (pointer voidP)) (b : int)
+  (voidP_alloc_table : (alloc_table voidP))
+  = ((>=) (offset_max voidP_alloc_table p) b)
+  
+  predicate left_valid_struct_voidP (p : (pointer voidP)) (a : int)
+  (voidP_alloc_table : (alloc_table voidP))
+  = ((<=) (offset_min voidP_alloc_table p) a)
+  
+  predicate strict_left_valid_struct_voidP (p : (pointer voidP)) (a : int)
+  (voidP_alloc_table : (alloc_table voidP))
+  = ((=) (offset_min voidP_alloc_table p) a)
+  
+  predicate valid_struct_voidP (p : (pointer voidP)) (a : int) (b : int)
+  (voidP_alloc_table : (alloc_table voidP))
+  =
+     (((<=) (offset_min voidP_alloc_table p) a) /\
+     ((>=) (offset_max voidP_alloc_table p) b))
+  
+  predicate strict_valid_struct_voidP (p : (pointer voidP)) (a : int) (b :
+  int) (voidP_alloc_table : (alloc_table voidP))
+  =
+     (((=) (offset_min voidP_alloc_table p) a) /\
+     ((=) (offset_max voidP_alloc_table p) b))
+  
+end
+
+theory Struct_charP
+
+  use import core.Voidp 
+  
+  use import core.Tag_table_type 
+  
+  use import core.Tag_table 
+  
+  use import Struct_voidP 
+  
+  use import core.Pointer 
+  
+  use import int.Int 
+  
+  use import core.Alloc_table 
+  
+  use import core.Alloc 
+  
+  use why3.Bool.Bool 
+  
+  use import core.Charp_tag_id 
+  
+  predicate frame_tag_struct_charP (p : (pointer voidP)) (old_voidP_tag_table
+  : (tag_table voidP)) (voidP_tag_table : (tag_table voidP))
+  =
+     ((tag_extends old_voidP_tag_table voidP_tag_table) /\
+     (alloc_tag_block old_voidP_tag_table voidP_tag_table p))
+  
+  predicate frame_free_struct_charP (p : (pointer voidP))
+  (old_voidP_alloc_table : (alloc_table voidP)) (voidP_alloc_table :
+  (alloc_table voidP))
+  =
+     ((free_extends old_voidP_alloc_table voidP_alloc_table) /\
+     (free_block old_voidP_alloc_table voidP_alloc_table p))
+  
+  predicate frame_alloc_struct_charP (p : (pointer voidP)) (n : int)
+  (old_voidP_alloc_table : (alloc_table voidP)) (voidP_alloc_table :
+  (alloc_table voidP))
+  =
+     ((alloc_extends old_voidP_alloc_table voidP_alloc_table) /\
+     (alloc_block old_voidP_alloc_table voidP_alloc_table p n))
+  
+  predicate fresh_tag_struct_charP (p : (pointer voidP)) (n : int)
+  (voidP_tag_table : (tag_table voidP))
+  = (fresh_tag_struct_voidP p n voidP_tag_table)
+  
+  predicate fresh_alloc_struct_charP (p : (pointer voidP)) (n : int)
+  (voidP_alloc_table : (alloc_table voidP))
+  = (fresh_alloc_struct_voidP p n voidP_alloc_table)
+  
+  predicate container_of_singleton_struct_charP (p : (pointer voidP))
+  (voidP_tag_table : (tag_table voidP)) = true
+  
+  predicate container_of_struct_charP (p : (pointer voidP)) (l : int) (r :
+  int) (voidP_tag_table : (tag_table voidP)) = true
+  
+  predicate typeof_singleton_struct_charP (p : (pointer voidP))
+  (voidP_tag_table : (tag_table voidP))
+  = ((=) (typeof voidP_tag_table p) charP_tag)
+  
+  predicate typeof_struct_charP (p : (pointer voidP)) (l : int) (r : int)
+  (voidP_tag_table : (tag_table voidP))
+  =
+     (((=) (typeof voidP_tag_table p) charP_tag) /\
+     (forall i : int.
+      ((((<=) l i) /\ ((<) i r)) ->
+       ((=) (typeof voidP_tag_table (shift p i)) charP_tag))))
+  
+  predicate instanceof_singleton_struct_charP (p : (pointer voidP))
+  (voidP_tag_table : (tag_table voidP))
+  = (instanceof voidP_tag_table p charP_tag)
+  
+  predicate instanceof_struct_charP (p : (pointer voidP)) (l : int) (r : int)
+  (voidP_tag_table : (tag_table voidP))
+  =
+     ((instanceof voidP_tag_table p charP_tag) /\
+     (forall i : int.
+      ((((<=) l i) /\ ((<) i r)) ->
+       (instanceof voidP_tag_table (shift p i) charP_tag))))
+  
+  predicate right_valid_struct_charP (p : (pointer voidP)) (b : int)
+  (voidP_alloc_table : (alloc_table voidP))
+  = (right_valid_struct_voidP p b voidP_alloc_table)
+  
+  predicate left_valid_struct_charP (p : (pointer voidP)) (a : int)
+  (voidP_alloc_table : (alloc_table voidP))
+  = (left_valid_struct_voidP p a voidP_alloc_table)
+  
+  predicate strict_left_valid_struct_charP (p : (pointer voidP)) (a : int)
+  (voidP_alloc_table : (alloc_table voidP))
+  = (strict_left_valid_struct_voidP p a voidP_alloc_table)
+  
+  predicate valid_struct_charP (p : (pointer voidP)) (a : int) (b : int)
+  (voidP_alloc_table : (alloc_table voidP))
+  = (valid_struct_voidP p a b voidP_alloc_table)
+  
+  predicate strict_valid_struct_charP (p : (pointer voidP)) (a : int) (b :
+  int) (voidP_alloc_table : (alloc_table voidP))
+  = (strict_valid_struct_voidP p a b voidP_alloc_table)
+  
+end
+
+module Struct_charP_unsafe
+
+  use import core.Voidp 
+  
+  use import core.Tag_table_type 
+  
+  use import Struct_charP 
+  
+  use import ref.Ref 
+  
+  use import core.Pointer 
+  
+  use import int.Int 
+  
+  use import core.Allocable 
+  
+  use import core.Alloc_table 
+  
+  use why3.Bool.Bool 
+  
+  val free_struct_charP
+  (p : (pointer voidP)) 
+   (voidP_alloc_table : ref (alloc_table voidP)) : unit
+    requires {
+      (("expl:Deallocation" ((=) p null)) \/ (freeable !voidP_alloc_table p))
+      }
+    writes { voidP_alloc_table }
+    ensures {
+      ((((=) p null) /\ ((=) !voidP_alloc_table (old !voidP_alloc_table))) \/
+      ((frame_free_struct_charP p (old !voidP_alloc_table)
+       !voidP_alloc_table)
+      /\
+      (fresh_alloc_struct_charP p (offset_max (old !voidP_alloc_table) p)
+      !voidP_alloc_table))) }
+  
+  val allocate_struct_charP_requires
+  (n : int) 
+   (voidP_alloc_table : ref (alloc_table voidP)) 
+    (voidP_tag_table : ref (tag_table voidP)) : (pointer voidP)
+     requires { ((>=) n (0)) } writes { voidP_alloc_table, voidP_tag_table }
+     ensures {
+       ((strict_valid_struct_charP result (0) (Int.(-) n (1))
+        !voidP_alloc_table)
+       /\
+       ((frame_alloc_struct_charP result n (old !voidP_alloc_table)
+        !voidP_alloc_table)
+       /\
+       ((frame_tag_struct_charP result (old !voidP_tag_table)
+        !voidP_tag_table)
+       /\
+       ((fresh_alloc_struct_charP result (Int.(-) n (1)) (old
+        !voidP_alloc_table))
+       /\
+       ((fresh_tag_struct_charP result (Int.(-) n (1)) (old
+        !voidP_tag_table))
+       /\
+       ((typeof_struct_charP result (0) n !voidP_tag_table) /\
+       (container_of_struct_charP result (0) n !voidP_tag_table))))))) }
+  
+end
+
+module Struct_charP_safe
+
+  use import core.Voidp 
+  
+  use import core.Tag_table_type 
+  
+  use import Struct_charP 
+  
+  use import ref.Ref 
+  
+  use import core.Pointer 
+  
+  use int.Int 
+  
+  use import core.Alloc_table 
+  
+  use why3.Bool.Bool 
+  
+  val safe_free_struct_charP
+  (p : (pointer voidP)) 
+   (voidP_alloc_table : ref (alloc_table voidP)) : unit
+    requires { true } writes { voidP_alloc_table }
+    ensures {
+      ((((=) p null) /\ ((=) !voidP_alloc_table (old !voidP_alloc_table))) \/
+      ((frame_free_struct_charP p (old !voidP_alloc_table)
+       !voidP_alloc_table)
+      /\
+      (fresh_alloc_struct_charP p (offset_max (old !voidP_alloc_table) p)
+      !voidP_alloc_table))) }
+  
+  val allocate_struct_charP
+  (n : int) 
+   (voidP_alloc_table : ref (alloc_table voidP)) 
+    (voidP_tag_table : ref (tag_table voidP)) : (pointer voidP)
+     requires { true } writes { voidP_alloc_table, voidP_tag_table }
+     ensures {
+       ((strict_valid_struct_charP result (0) (Int.(-) n (1))
+        !voidP_alloc_table)
+       /\
+       ((frame_alloc_struct_charP result n (old !voidP_alloc_table)
+        !voidP_alloc_table)
+       /\
+       ((frame_tag_struct_charP result (old !voidP_tag_table)
+        !voidP_tag_table)
+       /\
+       ((fresh_alloc_struct_charP result (Int.(-) n (1)) (old
+        !voidP_alloc_table))
+       /\
+       ((fresh_tag_struct_charP result (Int.(-) n (1)) (old
+        !voidP_tag_table))
+       /\
+       ((typeof_struct_charP result (0) n !voidP_tag_table) /\
+       (container_of_struct_charP result (0) n !voidP_tag_table))))))) }
+  
+  val allocate_singleton_struct_charP
+  (voidP_alloc_table : ref (alloc_table voidP)) 
+   (voidP_tag_table : ref (tag_table voidP)) : (pointer voidP)
+    requires { true } writes { voidP_alloc_table, voidP_tag_table }
+    ensures {
+      ((strict_valid_struct_charP result (0) (0) !voidP_alloc_table) /\
+      ((frame_alloc_struct_charP result (1) (old !voidP_alloc_table)
+       !voidP_alloc_table)
+      /\
+      ((frame_tag_struct_charP result (old !voidP_tag_table)
+       !voidP_tag_table)
+      /\
+      ((fresh_alloc_struct_charP result (0) (old !voidP_alloc_table)) /\
+      ((fresh_tag_struct_charP result (0) (old !voidP_tag_table)) /\
+      ((typeof_singleton_struct_charP result !voidP_tag_table) /\
+      (container_of_singleton_struct_charP result !voidP_tag_table))))))) }
+  
+end
+
+module Struct_intP_unsafe
+
+  use import core.Tag_table_type 
+  
+  use import Struct_intP 
+  
+  use import Root_intP 
+  
+  use import ref.Ref 
+  
+  use import core.Pointer 
+  
+  use import int.Int 
+  
+  use import core.Allocable 
+  
+  use import core.Alloc_table 
+  
+  use why3.Bool.Bool 
+  
+  val free_struct_intP
+  (p : (pointer intP)) 
+   (intP_alloc_table : ref (alloc_table intP)) : unit
+    requires {
+      (("expl:Deallocation" ((=) p null)) \/ (freeable !intP_alloc_table p))
+      }
+    writes { intP_alloc_table }
+    ensures {
+      ((((=) p null) /\ ((=) !intP_alloc_table (old !intP_alloc_table))) \/
+      ((frame_free_struct_intP p (old !intP_alloc_table) !intP_alloc_table)
+      /\
+      (fresh_alloc_struct_intP p (offset_max (old !intP_alloc_table) p)
+      !intP_alloc_table))) }
+  
+  val allocate_struct_intP_requires
+  (n : int) 
+   (intP_alloc_table : ref (alloc_table intP)) 
+    (intP_tag_table : ref (tag_table intP)) : (pointer intP)
+     requires { ((>=) n (0)) } writes { intP_alloc_table, intP_tag_table }
+     ensures {
+       ((strict_valid_struct_intP result (0) (Int.(-) n (1))
+        !intP_alloc_table)
+       /\
+       ((frame_alloc_struct_intP result n (old !intP_alloc_table)
+        !intP_alloc_table)
+       /\
+       ((frame_tag_struct_intP result (old !intP_tag_table) !intP_tag_table)
+       /\
+       ((fresh_alloc_struct_intP result (Int.(-) n (1)) (old
+        !intP_alloc_table))
+       /\
+       ((fresh_tag_struct_intP result (Int.(-) n (1)) (old !intP_tag_table))
+       /\
+       ((typeof_struct_intP result (0) n !intP_tag_table) /\
+       (container_of_struct_intP result (0) n !intP_tag_table))))))) }
+  
+end
+
+module Struct_intP_safe
+
+  use import core.Tag_table_type 
+  
+  use import Struct_intP 
+  
+  use import Root_intP 
+  
+  use import ref.Ref 
+  
+  use import core.Pointer 
+  
+  use int.Int 
+  
+  use import core.Alloc_table 
+  
+  use why3.Bool.Bool 
+  
+  val safe_free_struct_intP
+  (p : (pointer intP)) 
+   (intP_alloc_table : ref (alloc_table intP)) : unit
+    requires { true } writes { intP_alloc_table }
+    ensures {
+      ((((=) p null) /\ ((=) !intP_alloc_table (old !intP_alloc_table))) \/
+      ((frame_free_struct_intP p (old !intP_alloc_table) !intP_alloc_table)
+      /\
+      (fresh_alloc_struct_intP p (offset_max (old !intP_alloc_table) p)
+      !intP_alloc_table))) }
+  
+  val allocate_struct_intP
+  (n : int) 
+   (intP_alloc_table : ref (alloc_table intP)) 
+    (intP_tag_table : ref (tag_table intP)) : (pointer intP)
+     requires { true } writes { intP_alloc_table, intP_tag_table }
+     ensures {
+       ((strict_valid_struct_intP result (0) (Int.(-) n (1))
+        !intP_alloc_table)
+       /\
+       ((frame_alloc_struct_intP result n (old !intP_alloc_table)
+        !intP_alloc_table)
+       /\
+       ((frame_tag_struct_intP result (old !intP_tag_table) !intP_tag_table)
+       /\
+       ((fresh_alloc_struct_intP result (Int.(-) n (1)) (old
+        !intP_alloc_table))
+       /\
+       ((fresh_tag_struct_intP result (Int.(-) n (1)) (old !intP_tag_table))
+       /\
+       ((typeof_struct_intP result (0) n !intP_tag_table) /\
+       (container_of_struct_intP result (0) n !intP_tag_table))))))) }
+  
+  val allocate_singleton_struct_intP
+  (intP_alloc_table : ref (alloc_table intP)) 
+   (intP_tag_table : ref (tag_table intP)) : (pointer intP)
+    requires { true } writes { intP_alloc_table, intP_tag_table }
+    ensures {
+      ((strict_valid_struct_intP result (0) (0) !intP_alloc_table) /\
+      ((frame_alloc_struct_intP result (1) (old !intP_alloc_table)
+       !intP_alloc_table)
+      /\
+      ((frame_tag_struct_intP result (old !intP_tag_table) !intP_tag_table)
+      /\
+      ((fresh_alloc_struct_intP result (0) (old !intP_alloc_table)) /\
+      ((fresh_tag_struct_intP result (0) (old !intP_tag_table)) /\
+      ((typeof_singleton_struct_intP result !intP_tag_table) /\
+      (container_of_singleton_struct_intP result !intP_tag_table))))))) }
+  
+end
+
+module Struct_voidP_unsafe
+
+  use import core.Voidp 
+  
+  use import core.Tag_table_type 
+  
+  use import Struct_voidP 
+  
+  use import ref.Ref 
+  
+  use import core.Pointer 
+  
+  use import int.Int 
+  
+  use import core.Allocable 
+  
+  use import core.Alloc_table 
+  
+  use why3.Bool.Bool 
+  
+  val free_struct_voidP
+  (p : (pointer voidP)) 
+   (voidP_alloc_table : ref (alloc_table voidP)) : unit
+    requires {
+      (("expl:Deallocation" ((=) p null)) \/ (freeable !voidP_alloc_table p))
+      }
+    writes { voidP_alloc_table }
+    ensures {
+      ((((=) p null) /\ ((=) !voidP_alloc_table (old !voidP_alloc_table))) \/
+      ((frame_free_struct_voidP p (old !voidP_alloc_table)
+       !voidP_alloc_table)
+      /\
+      (fresh_alloc_struct_voidP p (offset_max (old !voidP_alloc_table) p)
+      !voidP_alloc_table))) }
+  
+  val allocate_struct_voidP_requires
+  (n : int) 
+   (voidP_alloc_table : ref (alloc_table voidP)) 
+    (voidP_tag_table : ref (tag_table voidP)) : (pointer voidP)
+     requires { ((>=) n (0)) } writes { voidP_alloc_table, voidP_tag_table }
+     ensures {
+       ((strict_valid_struct_voidP result (0) (Int.(-) n (1))
+        !voidP_alloc_table)
+       /\
+       ((frame_alloc_struct_voidP result n (old !voidP_alloc_table)
+        !voidP_alloc_table)
+       /\
+       ((frame_tag_struct_voidP result (old !voidP_tag_table)
+        !voidP_tag_table)
+       /\
+       ((fresh_alloc_struct_voidP result (Int.(-) n (1)) (old
+        !voidP_alloc_table))
+       /\
+       ((fresh_tag_struct_voidP result (Int.(-) n (1)) (old
+        !voidP_tag_table))
+       /\
+       ((typeof_struct_voidP result (0) n !voidP_tag_table) /\
+       (container_of_struct_voidP result (0) n !voidP_tag_table))))))) }
+  
+end
+
+module Struct_voidP_safe
+
+  use import core.Voidp 
+  
+  use import core.Tag_table_type 
+  
+  use import Struct_voidP 
+  
+  use import ref.Ref 
+  
+  use import core.Pointer 
+  
+  use int.Int 
+  
+  use import core.Alloc_table 
+  
+  use why3.Bool.Bool 
+  
+  val safe_free_struct_voidP
+  (p : (pointer voidP)) 
+   (voidP_alloc_table : ref (alloc_table voidP)) : unit
+    requires { true } writes { voidP_alloc_table }
+    ensures {
+      ((((=) p null) /\ ((=) !voidP_alloc_table (old !voidP_alloc_table))) \/
+      ((frame_free_struct_voidP p (old !voidP_alloc_table)
+       !voidP_alloc_table)
+      /\
+      (fresh_alloc_struct_voidP p (offset_max (old !voidP_alloc_table) p)
+      !voidP_alloc_table))) }
+  
+  val allocate_struct_voidP
+  (n : int) 
+   (voidP_alloc_table : ref (alloc_table voidP)) 
+    (voidP_tag_table : ref (tag_table voidP)) : (pointer voidP)
+     requires { true } writes { voidP_alloc_table, voidP_tag_table }
+     ensures {
+       ((strict_valid_struct_voidP result (0) (Int.(-) n (1))
+        !voidP_alloc_table)
+       /\
+       ((frame_alloc_struct_voidP result n (old !voidP_alloc_table)
+        !voidP_alloc_table)
+       /\
+       ((frame_tag_struct_voidP result (old !voidP_tag_table)
+        !voidP_tag_table)
+       /\
+       ((fresh_alloc_struct_voidP result (Int.(-) n (1)) (old
+        !voidP_alloc_table))
+       /\
+       ((fresh_tag_struct_voidP result (Int.(-) n (1)) (old
+        !voidP_tag_table))
+       /\
+       ((typeof_struct_voidP result (0) n !voidP_tag_table) /\
+       (container_of_struct_voidP result (0) n !voidP_tag_table))))))) }
+  
+  val allocate_singleton_struct_voidP
+  (voidP_alloc_table : ref (alloc_table voidP)) 
+   (voidP_tag_table : ref (tag_table voidP)) : (pointer voidP)
+    requires { true } writes { voidP_alloc_table, voidP_tag_table }
+    ensures {
+      ((strict_valid_struct_voidP result (0) (0) !voidP_alloc_table) /\
+      ((frame_alloc_struct_voidP result (1) (old !voidP_alloc_table)
+       !voidP_alloc_table)
+      /\
+      ((frame_tag_struct_voidP result (old !voidP_tag_table)
+       !voidP_tag_table)
+      /\
+      ((fresh_alloc_struct_voidP result (0) (old !voidP_alloc_table)) /\
+      ((fresh_tag_struct_voidP result (0) (old !voidP_tag_table)) /\
+      ((typeof_singleton_struct_voidP result !voidP_tag_table) /\
+      (container_of_singleton_struct_voidP result !voidP_tag_table))))))) }
+  
+end
+
+module Safe_bit_uint64_of_Safe_bit_uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint64 
+  
+  use Bit_uint64_of_Bit_uint8 
+  
+  use enum.Bit_uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint8.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Bit_uint64.normalize (Uint8.to_int n))) /\
+     ((=) result (Bit_uint64_of_Bit_uint8.cast_modulo n))) }
+  
+  val cast
+  (n : Uint8.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Uint8.to_int n)) /\
+     ((=) result (Bit_uint64_of_Bit_uint8.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint64_of_Unsafe_bit_uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint64 
+  
+  use Bit_uint64_of_Bit_uint8 
+  
+  use enum.Bit_uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint8.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Bit_uint64.normalize (Uint8.to_int n))) /\
+     ((=) result (Bit_uint64_of_Bit_uint8.cast_modulo n))) }
+  
+  val cast
+  (n : Uint8.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Uint8.to_int n)) /\
+     ((=) result (Bit_uint64_of_Bit_uint8.cast_modulo n))) }
+  
+end
+
+module Safe_uint64_of_Safe_uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint8.t) : Uint64.t
+   requires { true }
+   ensures { ((=) (Uint64.to_int result) (Uint8.to_int n)) }
+  
+end
+
+module Unsafe_uint64_of_Unsafe_uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint8.t) : Uint64.t
+   requires { true }
+   ensures { ((=) (Uint64.to_int result) (Uint8.to_int n)) }
+  
+end
+
+module Safe_bit_uint32_of_Safe_bit_uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint32 
+  
+  use Bit_uint32_of_Bit_uint8 
+  
+  use enum.Bit_uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint8.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Bit_uint32.normalize (Uint8.to_int n))) /\
+     ((=) result (Bit_uint32_of_Bit_uint8.cast_modulo n))) }
+  
+  val cast
+  (n : Uint8.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Uint8.to_int n)) /\
+     ((=) result (Bit_uint32_of_Bit_uint8.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint32_of_Unsafe_bit_uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint32 
+  
+  use Bit_uint32_of_Bit_uint8 
+  
+  use enum.Bit_uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint8.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Bit_uint32.normalize (Uint8.to_int n))) /\
+     ((=) result (Bit_uint32_of_Bit_uint8.cast_modulo n))) }
+  
+  val cast
+  (n : Uint8.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Uint8.to_int n)) /\
+     ((=) result (Bit_uint32_of_Bit_uint8.cast_modulo n))) }
+  
+end
+
+module Safe_uint32_of_Safe_uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint8.t) : Uint32.t
+   requires { true }
+   ensures { ((=) (Uint32.to_int result) (Uint8.to_int n)) }
+  
+end
+
+module Unsafe_uint32_of_Unsafe_uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint8.t) : Uint32.t
+   requires { true }
+   ensures { ((=) (Uint32.to_int result) (Uint8.to_int n)) }
+  
+end
+
+module Safe_bit_uint16_of_Safe_bit_uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint16 
+  
+  use Bit_uint16_of_Bit_uint8 
+  
+  use enum.Bit_uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint8.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Bit_uint16.normalize (Uint8.to_int n))) /\
+     ((=) result (Bit_uint16_of_Bit_uint8.cast_modulo n))) }
+  
+  val cast
+  (n : Uint8.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Uint8.to_int n)) /\
+     ((=) result (Bit_uint16_of_Bit_uint8.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint16_of_Unsafe_bit_uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint16 
+  
+  use Bit_uint16_of_Bit_uint8 
+  
+  use enum.Bit_uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint8.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Bit_uint16.normalize (Uint8.to_int n))) /\
+     ((=) result (Bit_uint16_of_Bit_uint8.cast_modulo n))) }
+  
+  val cast
+  (n : Uint8.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Uint8.to_int n)) /\
+     ((=) result (Bit_uint16_of_Bit_uint8.cast_modulo n))) }
+  
+end
+
+module Safe_uint16_of_Safe_uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint8.t) : Uint16.t
+   requires { true }
+   ensures { ((=) (Uint16.to_int result) (Uint8.to_int n)) }
+  
+end
+
+module Unsafe_uint16_of_Unsafe_uint8
+
+  use enum.Uint8 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint8.t) : Uint16.t
+   requires { true }
+   ensures { ((=) (Uint16.to_int result) (Uint8.to_int n)) }
+  
+end
+
+module Safe_bit_int8_of_Safe_bit_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int8 
+  
+  use Bit_int8_of_Bit_uint8 
+  
+  use enum.Bit_int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint8.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Bit_int8.normalize (Uint8.to_int n))) /\
+     ((=) result (Bit_int8_of_Bit_uint8.cast_modulo n))) }
+  
+  val cast
+  (n : Uint8.t) : Int8.t
+   requires {
+     ((Bit_int8.in_bounds (Uint8.to_int n)) \/
+     (Bit_int8_of_Bit_uint8.is_safe n)) }
+   ensures {
+     (((=) (Int8.to_int result) (Uint8.to_int n)) /\
+     ((=) result (Bit_int8_of_Bit_uint8.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int8_of_Unsafe_bit_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int8 
+  
+  use Bit_int8_of_Bit_uint8 
+  
+  use enum.Bit_int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint8.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Bit_int8.normalize (Uint8.to_int n))) /\
+     ((=) result (Bit_int8_of_Bit_uint8.cast_modulo n))) }
+  
+  val cast
+  (n : Uint8.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Uint8.to_int n)) /\
+     ((=) result (Bit_int8_of_Bit_uint8.cast_modulo n))) }
+  
+end
+
+module Safe_int8_of_Safe_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint8.t) : Int8.t
+   requires { (Int8.in_bounds (Uint8.to_int n)) }
+   ensures { ((=) (Int8.to_int result) (Uint8.to_int n)) }
+  
+end
+
+module Unsafe_int8_of_Unsafe_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint8.t) : Int8.t
+   requires { true } ensures { ((=) (Int8.to_int result) (Uint8.to_int n)) }
+  
+end
+
+module Safe_bit_int64_of_Safe_bit_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int64 
+  
+  use Bit_int64_of_Bit_uint8 
+  
+  use enum.Bit_int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint8.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Bit_int64.normalize (Uint8.to_int n))) /\
+     ((=) result (Bit_int64_of_Bit_uint8.cast_modulo n))) }
+  
+  val cast
+  (n : Uint8.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Uint8.to_int n)) /\
+     ((=) result (Bit_int64_of_Bit_uint8.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int64_of_Unsafe_bit_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int64 
+  
+  use Bit_int64_of_Bit_uint8 
+  
+  use enum.Bit_int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint8.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Bit_int64.normalize (Uint8.to_int n))) /\
+     ((=) result (Bit_int64_of_Bit_uint8.cast_modulo n))) }
+  
+  val cast
+  (n : Uint8.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Uint8.to_int n)) /\
+     ((=) result (Bit_int64_of_Bit_uint8.cast_modulo n))) }
+  
+end
+
+module Safe_int64_of_Safe_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint8.t) : Int64.t
+   requires { true } ensures { ((=) (Int64.to_int result) (Uint8.to_int n)) }
+  
+end
+
+module Unsafe_int64_of_Unsafe_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint8.t) : Int64.t
+   requires { true } ensures { ((=) (Int64.to_int result) (Uint8.to_int n)) }
+  
+end
+
+module Safe_bit_int32_of_Safe_bit_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int32 
+  
+  use Bit_int32_of_Bit_uint8 
+  
+  use enum.Bit_int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint8.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Bit_int32.normalize (Uint8.to_int n))) /\
+     ((=) result (Bit_int32_of_Bit_uint8.cast_modulo n))) }
+  
+  val cast
+  (n : Uint8.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Uint8.to_int n)) /\
+     ((=) result (Bit_int32_of_Bit_uint8.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int32_of_Unsafe_bit_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int32 
+  
+  use Bit_int32_of_Bit_uint8 
+  
+  use enum.Bit_int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint8.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Bit_int32.normalize (Uint8.to_int n))) /\
+     ((=) result (Bit_int32_of_Bit_uint8.cast_modulo n))) }
+  
+  val cast
+  (n : Uint8.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Uint8.to_int n)) /\
+     ((=) result (Bit_int32_of_Bit_uint8.cast_modulo n))) }
+  
+end
+
+module Safe_int32_of_Safe_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint8.t) : Int32.t
+   requires { true } ensures { ((=) (Int32.to_int result) (Uint8.to_int n)) }
+  
+end
+
+module Unsafe_int32_of_Unsafe_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint8.t) : Int32.t
+   requires { true } ensures { ((=) (Int32.to_int result) (Uint8.to_int n)) }
+  
+end
+
+module Safe_bit_int16_of_Safe_bit_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int16 
+  
+  use Bit_int16_of_Bit_uint8 
+  
+  use enum.Bit_int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint8.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Bit_int16.normalize (Uint8.to_int n))) /\
+     ((=) result (Bit_int16_of_Bit_uint8.cast_modulo n))) }
+  
+  val cast
+  (n : Uint8.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Uint8.to_int n)) /\
+     ((=) result (Bit_int16_of_Bit_uint8.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int16_of_Unsafe_bit_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int16 
+  
+  use Bit_int16_of_Bit_uint8 
+  
+  use enum.Bit_int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint8.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Bit_int16.normalize (Uint8.to_int n))) /\
+     ((=) result (Bit_int16_of_Bit_uint8.cast_modulo n))) }
+  
+  val cast
+  (n : Uint8.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Uint8.to_int n)) /\
+     ((=) result (Bit_int16_of_Bit_uint8.cast_modulo n))) }
+  
+end
+
+module Safe_int16_of_Safe_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint8.t) : Int16.t
+   requires { true } ensures { ((=) (Int16.to_int result) (Uint8.to_int n)) }
+  
+end
+
+module Unsafe_int16_of_Unsafe_uint8
+
+  use enum.Uint8 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint8.t) : Int16.t
+   requires { true } ensures { ((=) (Int16.to_int result) (Uint8.to_int n)) }
+  
+end
+
+module Safe_bit_uint32_of_Safe_bit_uint64
+
+  use enum.Uint64 
+  
+  use enum.Uint32 
+  
+  use Bit_uint32_of_Bit_uint64 
+  
+  use enum.Bit_uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint64.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Bit_uint32.normalize (Uint64.to_int n)))
+     /\ ((=) result (Bit_uint32_of_Bit_uint64.cast_modulo n))) }
+  
+  val cast
+  (n : Uint64.t) : Uint32.t
+   requires {
+     ((Bit_uint32.in_bounds (Uint64.to_int n)) \/
+     (Bit_uint32_of_Bit_uint64.is_safe n)) }
+   ensures {
+     (((=) (Uint32.to_int result) (Uint64.to_int n)) /\
+     ((=) result (Bit_uint32_of_Bit_uint64.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint32_of_Unsafe_bit_uint64
+
+  use enum.Uint64 
+  
+  use enum.Uint32 
+  
+  use Bit_uint32_of_Bit_uint64 
+  
+  use enum.Bit_uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint64.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Bit_uint32.normalize (Uint64.to_int n)))
+     /\ ((=) result (Bit_uint32_of_Bit_uint64.cast_modulo n))) }
+  
+  val cast
+  (n : Uint64.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Uint64.to_int n)) /\
+     ((=) result (Bit_uint32_of_Bit_uint64.cast_modulo n))) }
+  
+end
+
+module Safe_uint32_of_Safe_uint64
+
+  use enum.Uint64 
+  
+  use enum.Uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint64.t) : Uint32.t
+   requires { (Uint32.in_bounds (Uint64.to_int n)) }
+   ensures { ((=) (Uint32.to_int result) (Uint64.to_int n)) }
+  
+end
+
+module Unsafe_uint32_of_Unsafe_uint64
+
+  use enum.Uint64 
+  
+  use enum.Uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint64.t) : Uint32.t
+   requires { true }
+   ensures { ((=) (Uint32.to_int result) (Uint64.to_int n)) }
+  
+end
+
+module Safe_bit_uint16_of_Safe_bit_uint64
+
+  use enum.Uint64 
+  
+  use enum.Uint16 
+  
+  use Bit_uint16_of_Bit_uint64 
+  
+  use enum.Bit_uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint64.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Bit_uint16.normalize (Uint64.to_int n)))
+     /\ ((=) result (Bit_uint16_of_Bit_uint64.cast_modulo n))) }
+  
+  val cast
+  (n : Uint64.t) : Uint16.t
+   requires {
+     ((Bit_uint16.in_bounds (Uint64.to_int n)) \/
+     (Bit_uint16_of_Bit_uint64.is_safe n)) }
+   ensures {
+     (((=) (Uint16.to_int result) (Uint64.to_int n)) /\
+     ((=) result (Bit_uint16_of_Bit_uint64.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint16_of_Unsafe_bit_uint64
+
+  use enum.Uint64 
+  
+  use enum.Uint16 
+  
+  use Bit_uint16_of_Bit_uint64 
+  
+  use enum.Bit_uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint64.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Bit_uint16.normalize (Uint64.to_int n)))
+     /\ ((=) result (Bit_uint16_of_Bit_uint64.cast_modulo n))) }
+  
+  val cast
+  (n : Uint64.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Uint64.to_int n)) /\
+     ((=) result (Bit_uint16_of_Bit_uint64.cast_modulo n))) }
+  
+end
+
+module Safe_uint16_of_Safe_uint64
+
+  use enum.Uint64 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint64.t) : Uint16.t
+   requires { (Uint16.in_bounds (Uint64.to_int n)) }
+   ensures { ((=) (Uint16.to_int result) (Uint64.to_int n)) }
+  
+end
+
+module Unsafe_uint16_of_Unsafe_uint64
+
+  use enum.Uint64 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint64.t) : Uint16.t
+   requires { true }
+   ensures { ((=) (Uint16.to_int result) (Uint64.to_int n)) }
+  
+end
+
+module Safe_bit_int8_of_Safe_bit_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int8 
+  
+  use Bit_int8_of_Bit_uint64 
+  
+  use enum.Bit_int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint64.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Bit_int8.normalize (Uint64.to_int n))) /\
+     ((=) result (Bit_int8_of_Bit_uint64.cast_modulo n))) }
+  
+  val cast
+  (n : Uint64.t) : Int8.t
+   requires {
+     ((Bit_int8.in_bounds (Uint64.to_int n)) \/
+     (Bit_int8_of_Bit_uint64.is_safe n)) }
+   ensures {
+     (((=) (Int8.to_int result) (Uint64.to_int n)) /\
+     ((=) result (Bit_int8_of_Bit_uint64.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int8_of_Unsafe_bit_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int8 
+  
+  use Bit_int8_of_Bit_uint64 
+  
+  use enum.Bit_int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint64.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Bit_int8.normalize (Uint64.to_int n))) /\
+     ((=) result (Bit_int8_of_Bit_uint64.cast_modulo n))) }
+  
+  val cast
+  (n : Uint64.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Uint64.to_int n)) /\
+     ((=) result (Bit_int8_of_Bit_uint64.cast_modulo n))) }
+  
+end
+
+module Safe_int8_of_Safe_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint64.t) : Int8.t
+   requires { (Int8.in_bounds (Uint64.to_int n)) }
+   ensures { ((=) (Int8.to_int result) (Uint64.to_int n)) }
+  
+end
+
+module Unsafe_int8_of_Unsafe_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint64.t) : Int8.t
+   requires { true } ensures { ((=) (Int8.to_int result) (Uint64.to_int n)) }
+  
+end
+
+module Safe_bit_int64_of_Safe_bit_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int64 
+  
+  use Bit_int64_of_Bit_uint64 
+  
+  use enum.Bit_int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint64.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Bit_int64.normalize (Uint64.to_int n))) /\
+     ((=) result (Bit_int64_of_Bit_uint64.cast_modulo n))) }
+  
+  val cast
+  (n : Uint64.t) : Int64.t
+   requires {
+     ((Bit_int64.in_bounds (Uint64.to_int n)) \/
+     (Bit_int64_of_Bit_uint64.is_safe n)) }
+   ensures {
+     (((=) (Int64.to_int result) (Uint64.to_int n)) /\
+     ((=) result (Bit_int64_of_Bit_uint64.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int64_of_Unsafe_bit_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int64 
+  
+  use Bit_int64_of_Bit_uint64 
+  
+  use enum.Bit_int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint64.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Bit_int64.normalize (Uint64.to_int n))) /\
+     ((=) result (Bit_int64_of_Bit_uint64.cast_modulo n))) }
+  
+  val cast
+  (n : Uint64.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Uint64.to_int n)) /\
+     ((=) result (Bit_int64_of_Bit_uint64.cast_modulo n))) }
+  
+end
+
+module Safe_int64_of_Safe_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint64.t) : Int64.t
+   requires { (Int64.in_bounds (Uint64.to_int n)) }
+   ensures { ((=) (Int64.to_int result) (Uint64.to_int n)) }
+  
+end
+
+module Unsafe_int64_of_Unsafe_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint64.t) : Int64.t
+   requires { true }
+   ensures { ((=) (Int64.to_int result) (Uint64.to_int n)) }
+  
+end
+
+module Safe_bit_int32_of_Safe_bit_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int32 
+  
+  use Bit_int32_of_Bit_uint64 
+  
+  use enum.Bit_int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint64.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Bit_int32.normalize (Uint64.to_int n))) /\
+     ((=) result (Bit_int32_of_Bit_uint64.cast_modulo n))) }
+  
+  val cast
+  (n : Uint64.t) : Int32.t
+   requires {
+     ((Bit_int32.in_bounds (Uint64.to_int n)) \/
+     (Bit_int32_of_Bit_uint64.is_safe n)) }
+   ensures {
+     (((=) (Int32.to_int result) (Uint64.to_int n)) /\
+     ((=) result (Bit_int32_of_Bit_uint64.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int32_of_Unsafe_bit_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int32 
+  
+  use Bit_int32_of_Bit_uint64 
+  
+  use enum.Bit_int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint64.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Bit_int32.normalize (Uint64.to_int n))) /\
+     ((=) result (Bit_int32_of_Bit_uint64.cast_modulo n))) }
+  
+  val cast
+  (n : Uint64.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Uint64.to_int n)) /\
+     ((=) result (Bit_int32_of_Bit_uint64.cast_modulo n))) }
+  
+end
+
+module Safe_int32_of_Safe_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint64.t) : Int32.t
+   requires { (Int32.in_bounds (Uint64.to_int n)) }
+   ensures { ((=) (Int32.to_int result) (Uint64.to_int n)) }
+  
+end
+
+module Unsafe_int32_of_Unsafe_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint64.t) : Int32.t
+   requires { true }
+   ensures { ((=) (Int32.to_int result) (Uint64.to_int n)) }
+  
+end
+
+module Safe_bit_int16_of_Safe_bit_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int16 
+  
+  use Bit_int16_of_Bit_uint64 
+  
+  use enum.Bit_int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint64.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Bit_int16.normalize (Uint64.to_int n))) /\
+     ((=) result (Bit_int16_of_Bit_uint64.cast_modulo n))) }
+  
+  val cast
+  (n : Uint64.t) : Int16.t
+   requires {
+     ((Bit_int16.in_bounds (Uint64.to_int n)) \/
+     (Bit_int16_of_Bit_uint64.is_safe n)) }
+   ensures {
+     (((=) (Int16.to_int result) (Uint64.to_int n)) /\
+     ((=) result (Bit_int16_of_Bit_uint64.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int16_of_Unsafe_bit_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int16 
+  
+  use Bit_int16_of_Bit_uint64 
+  
+  use enum.Bit_int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint64.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Bit_int16.normalize (Uint64.to_int n))) /\
+     ((=) result (Bit_int16_of_Bit_uint64.cast_modulo n))) }
+  
+  val cast
+  (n : Uint64.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Uint64.to_int n)) /\
+     ((=) result (Bit_int16_of_Bit_uint64.cast_modulo n))) }
+  
+end
+
+module Safe_int16_of_Safe_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint64.t) : Int16.t
+   requires { (Int16.in_bounds (Uint64.to_int n)) }
+   ensures { ((=) (Int16.to_int result) (Uint64.to_int n)) }
+  
+end
+
+module Unsafe_int16_of_Unsafe_uint64
+
+  use enum.Uint64 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint64.t) : Int16.t
+   requires { true }
+   ensures { ((=) (Int16.to_int result) (Uint64.to_int n)) }
+  
+end
+
+module Safe_bit_uint16_of_Safe_bit_uint32
+
+  use enum.Uint32 
+  
+  use enum.Uint16 
+  
+  use Bit_uint16_of_Bit_uint32 
+  
+  use enum.Bit_uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint32.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Bit_uint16.normalize (Uint32.to_int n)))
+     /\ ((=) result (Bit_uint16_of_Bit_uint32.cast_modulo n))) }
+  
+  val cast
+  (n : Uint32.t) : Uint16.t
+   requires {
+     ((Bit_uint16.in_bounds (Uint32.to_int n)) \/
+     (Bit_uint16_of_Bit_uint32.is_safe n)) }
+   ensures {
+     (((=) (Uint16.to_int result) (Uint32.to_int n)) /\
+     ((=) result (Bit_uint16_of_Bit_uint32.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint16_of_Unsafe_bit_uint32
+
+  use enum.Uint32 
+  
+  use enum.Uint16 
+  
+  use Bit_uint16_of_Bit_uint32 
+  
+  use enum.Bit_uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint32.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Bit_uint16.normalize (Uint32.to_int n)))
+     /\ ((=) result (Bit_uint16_of_Bit_uint32.cast_modulo n))) }
+  
+  val cast
+  (n : Uint32.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Uint32.to_int n)) /\
+     ((=) result (Bit_uint16_of_Bit_uint32.cast_modulo n))) }
+  
+end
+
+module Safe_uint16_of_Safe_uint32
+
+  use enum.Uint32 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint32.t) : Uint16.t
+   requires { (Uint16.in_bounds (Uint32.to_int n)) }
+   ensures { ((=) (Uint16.to_int result) (Uint32.to_int n)) }
+  
+end
+
+module Unsafe_uint16_of_Unsafe_uint32
+
+  use enum.Uint32 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint32.t) : Uint16.t
+   requires { true }
+   ensures { ((=) (Uint16.to_int result) (Uint32.to_int n)) }
+  
+end
+
+module Safe_bit_int8_of_Safe_bit_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int8 
+  
+  use Bit_int8_of_Bit_uint32 
+  
+  use enum.Bit_int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint32.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Bit_int8.normalize (Uint32.to_int n))) /\
+     ((=) result (Bit_int8_of_Bit_uint32.cast_modulo n))) }
+  
+  val cast
+  (n : Uint32.t) : Int8.t
+   requires {
+     ((Bit_int8.in_bounds (Uint32.to_int n)) \/
+     (Bit_int8_of_Bit_uint32.is_safe n)) }
+   ensures {
+     (((=) (Int8.to_int result) (Uint32.to_int n)) /\
+     ((=) result (Bit_int8_of_Bit_uint32.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int8_of_Unsafe_bit_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int8 
+  
+  use Bit_int8_of_Bit_uint32 
+  
+  use enum.Bit_int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint32.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Bit_int8.normalize (Uint32.to_int n))) /\
+     ((=) result (Bit_int8_of_Bit_uint32.cast_modulo n))) }
+  
+  val cast
+  (n : Uint32.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Uint32.to_int n)) /\
+     ((=) result (Bit_int8_of_Bit_uint32.cast_modulo n))) }
+  
+end
+
+module Safe_int8_of_Safe_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint32.t) : Int8.t
+   requires { (Int8.in_bounds (Uint32.to_int n)) }
+   ensures { ((=) (Int8.to_int result) (Uint32.to_int n)) }
+  
+end
+
+module Unsafe_int8_of_Unsafe_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint32.t) : Int8.t
+   requires { true } ensures { ((=) (Int8.to_int result) (Uint32.to_int n)) }
+  
+end
+
+module Safe_bit_int64_of_Safe_bit_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int64 
+  
+  use Bit_int64_of_Bit_uint32 
+  
+  use enum.Bit_int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint32.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Bit_int64.normalize (Uint32.to_int n))) /\
+     ((=) result (Bit_int64_of_Bit_uint32.cast_modulo n))) }
+  
+  val cast
+  (n : Uint32.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Uint32.to_int n)) /\
+     ((=) result (Bit_int64_of_Bit_uint32.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int64_of_Unsafe_bit_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int64 
+  
+  use Bit_int64_of_Bit_uint32 
+  
+  use enum.Bit_int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint32.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Bit_int64.normalize (Uint32.to_int n))) /\
+     ((=) result (Bit_int64_of_Bit_uint32.cast_modulo n))) }
+  
+  val cast
+  (n : Uint32.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Uint32.to_int n)) /\
+     ((=) result (Bit_int64_of_Bit_uint32.cast_modulo n))) }
+  
+end
+
+module Safe_int64_of_Safe_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint32.t) : Int64.t
+   requires { true }
+   ensures { ((=) (Int64.to_int result) (Uint32.to_int n)) }
+  
+end
+
+module Unsafe_int64_of_Unsafe_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint32.t) : Int64.t
+   requires { true }
+   ensures { ((=) (Int64.to_int result) (Uint32.to_int n)) }
+  
+end
+
+module Safe_bit_int32_of_Safe_bit_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int32 
+  
+  use Bit_int32_of_Bit_uint32 
+  
+  use enum.Bit_int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint32.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Bit_int32.normalize (Uint32.to_int n))) /\
+     ((=) result (Bit_int32_of_Bit_uint32.cast_modulo n))) }
+  
+  val cast
+  (n : Uint32.t) : Int32.t
+   requires {
+     ((Bit_int32.in_bounds (Uint32.to_int n)) \/
+     (Bit_int32_of_Bit_uint32.is_safe n)) }
+   ensures {
+     (((=) (Int32.to_int result) (Uint32.to_int n)) /\
+     ((=) result (Bit_int32_of_Bit_uint32.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int32_of_Unsafe_bit_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int32 
+  
+  use Bit_int32_of_Bit_uint32 
+  
+  use enum.Bit_int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint32.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Bit_int32.normalize (Uint32.to_int n))) /\
+     ((=) result (Bit_int32_of_Bit_uint32.cast_modulo n))) }
+  
+  val cast
+  (n : Uint32.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Uint32.to_int n)) /\
+     ((=) result (Bit_int32_of_Bit_uint32.cast_modulo n))) }
+  
+end
+
+module Safe_int32_of_Safe_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint32.t) : Int32.t
+   requires { (Int32.in_bounds (Uint32.to_int n)) }
+   ensures { ((=) (Int32.to_int result) (Uint32.to_int n)) }
+  
+end
+
+module Unsafe_int32_of_Unsafe_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint32.t) : Int32.t
+   requires { true }
+   ensures { ((=) (Int32.to_int result) (Uint32.to_int n)) }
+  
+end
+
+module Safe_bit_int16_of_Safe_bit_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int16 
+  
+  use Bit_int16_of_Bit_uint32 
+  
+  use enum.Bit_int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint32.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Bit_int16.normalize (Uint32.to_int n))) /\
+     ((=) result (Bit_int16_of_Bit_uint32.cast_modulo n))) }
+  
+  val cast
+  (n : Uint32.t) : Int16.t
+   requires {
+     ((Bit_int16.in_bounds (Uint32.to_int n)) \/
+     (Bit_int16_of_Bit_uint32.is_safe n)) }
+   ensures {
+     (((=) (Int16.to_int result) (Uint32.to_int n)) /\
+     ((=) result (Bit_int16_of_Bit_uint32.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int16_of_Unsafe_bit_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int16 
+  
+  use Bit_int16_of_Bit_uint32 
+  
+  use enum.Bit_int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint32.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Bit_int16.normalize (Uint32.to_int n))) /\
+     ((=) result (Bit_int16_of_Bit_uint32.cast_modulo n))) }
+  
+  val cast
+  (n : Uint32.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Uint32.to_int n)) /\
+     ((=) result (Bit_int16_of_Bit_uint32.cast_modulo n))) }
+  
+end
+
+module Safe_int16_of_Safe_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint32.t) : Int16.t
+   requires { (Int16.in_bounds (Uint32.to_int n)) }
+   ensures { ((=) (Int16.to_int result) (Uint32.to_int n)) }
+  
+end
+
+module Unsafe_int16_of_Unsafe_uint32
+
+  use enum.Uint32 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint32.t) : Int16.t
+   requires { true }
+   ensures { ((=) (Int16.to_int result) (Uint32.to_int n)) }
+  
+end
+
+module Safe_bit_int8_of_Safe_bit_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int8 
+  
+  use Bit_int8_of_Bit_uint16 
+  
+  use enum.Bit_int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint16.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Bit_int8.normalize (Uint16.to_int n))) /\
+     ((=) result (Bit_int8_of_Bit_uint16.cast_modulo n))) }
+  
+  val cast
+  (n : Uint16.t) : Int8.t
+   requires {
+     ((Bit_int8.in_bounds (Uint16.to_int n)) \/
+     (Bit_int8_of_Bit_uint16.is_safe n)) }
+   ensures {
+     (((=) (Int8.to_int result) (Uint16.to_int n)) /\
+     ((=) result (Bit_int8_of_Bit_uint16.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int8_of_Unsafe_bit_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int8 
+  
+  use Bit_int8_of_Bit_uint16 
+  
+  use enum.Bit_int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint16.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Bit_int8.normalize (Uint16.to_int n))) /\
+     ((=) result (Bit_int8_of_Bit_uint16.cast_modulo n))) }
+  
+  val cast
+  (n : Uint16.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Uint16.to_int n)) /\
+     ((=) result (Bit_int8_of_Bit_uint16.cast_modulo n))) }
+  
+end
+
+module Safe_int8_of_Safe_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint16.t) : Int8.t
+   requires { (Int8.in_bounds (Uint16.to_int n)) }
+   ensures { ((=) (Int8.to_int result) (Uint16.to_int n)) }
+  
+end
+
+module Unsafe_int8_of_Unsafe_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint16.t) : Int8.t
+   requires { true } ensures { ((=) (Int8.to_int result) (Uint16.to_int n)) }
+  
+end
+
+module Safe_bit_int64_of_Safe_bit_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int64 
+  
+  use Bit_int64_of_Bit_uint16 
+  
+  use enum.Bit_int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint16.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Bit_int64.normalize (Uint16.to_int n))) /\
+     ((=) result (Bit_int64_of_Bit_uint16.cast_modulo n))) }
+  
+  val cast
+  (n : Uint16.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Uint16.to_int n)) /\
+     ((=) result (Bit_int64_of_Bit_uint16.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int64_of_Unsafe_bit_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int64 
+  
+  use Bit_int64_of_Bit_uint16 
+  
+  use enum.Bit_int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint16.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Bit_int64.normalize (Uint16.to_int n))) /\
+     ((=) result (Bit_int64_of_Bit_uint16.cast_modulo n))) }
+  
+  val cast
+  (n : Uint16.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Uint16.to_int n)) /\
+     ((=) result (Bit_int64_of_Bit_uint16.cast_modulo n))) }
+  
+end
+
+module Safe_int64_of_Safe_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint16.t) : Int64.t
+   requires { true }
+   ensures { ((=) (Int64.to_int result) (Uint16.to_int n)) }
+  
+end
+
+module Unsafe_int64_of_Unsafe_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint16.t) : Int64.t
+   requires { true }
+   ensures { ((=) (Int64.to_int result) (Uint16.to_int n)) }
+  
+end
+
+module Safe_bit_int32_of_Safe_bit_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int32 
+  
+  use Bit_int32_of_Bit_uint16 
+  
+  use enum.Bit_int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint16.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Bit_int32.normalize (Uint16.to_int n))) /\
+     ((=) result (Bit_int32_of_Bit_uint16.cast_modulo n))) }
+  
+  val cast
+  (n : Uint16.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Uint16.to_int n)) /\
+     ((=) result (Bit_int32_of_Bit_uint16.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int32_of_Unsafe_bit_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int32 
+  
+  use Bit_int32_of_Bit_uint16 
+  
+  use enum.Bit_int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint16.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Bit_int32.normalize (Uint16.to_int n))) /\
+     ((=) result (Bit_int32_of_Bit_uint16.cast_modulo n))) }
+  
+  val cast
+  (n : Uint16.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Uint16.to_int n)) /\
+     ((=) result (Bit_int32_of_Bit_uint16.cast_modulo n))) }
+  
+end
+
+module Safe_int32_of_Safe_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint16.t) : Int32.t
+   requires { true }
+   ensures { ((=) (Int32.to_int result) (Uint16.to_int n)) }
+  
+end
+
+module Unsafe_int32_of_Unsafe_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint16.t) : Int32.t
+   requires { true }
+   ensures { ((=) (Int32.to_int result) (Uint16.to_int n)) }
+  
+end
+
+module Safe_bit_int16_of_Safe_bit_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int16 
+  
+  use Bit_int16_of_Bit_uint16 
+  
+  use enum.Bit_int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint16.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Bit_int16.normalize (Uint16.to_int n))) /\
+     ((=) result (Bit_int16_of_Bit_uint16.cast_modulo n))) }
+  
+  val cast
+  (n : Uint16.t) : Int16.t
+   requires {
+     ((Bit_int16.in_bounds (Uint16.to_int n)) \/
+     (Bit_int16_of_Bit_uint16.is_safe n)) }
+   ensures {
+     (((=) (Int16.to_int result) (Uint16.to_int n)) /\
+     ((=) result (Bit_int16_of_Bit_uint16.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int16_of_Unsafe_bit_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int16 
+  
+  use Bit_int16_of_Bit_uint16 
+  
+  use enum.Bit_int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint16.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Bit_int16.normalize (Uint16.to_int n))) /\
+     ((=) result (Bit_int16_of_Bit_uint16.cast_modulo n))) }
+  
+  val cast
+  (n : Uint16.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Uint16.to_int n)) /\
+     ((=) result (Bit_int16_of_Bit_uint16.cast_modulo n))) }
+  
+end
+
+module Safe_int16_of_Safe_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint16.t) : Int16.t
+   requires { (Int16.in_bounds (Uint16.to_int n)) }
+   ensures { ((=) (Int16.to_int result) (Uint16.to_int n)) }
+  
+end
+
+module Unsafe_int16_of_Unsafe_uint16
+
+  use enum.Uint16 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint16.t) : Int16.t
+   requires { true }
+   ensures { ((=) (Int16.to_int result) (Uint16.to_int n)) }
+  
+end
+
+module Safe_bit_int64_of_Safe_bit_int8
+
+  use enum.Int8 
+  
+  use enum.Int64 
+  
+  use Bit_int64_of_Bit_int8 
+  
+  use enum.Bit_int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int8.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Bit_int64.normalize (Int8.to_int n))) /\
+     ((=) result (Bit_int64_of_Bit_int8.cast_modulo n))) }
+  
+  val cast
+  (n : Int8.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Int8.to_int n)) /\
+     ((=) result (Bit_int64_of_Bit_int8.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int64_of_Unsafe_bit_int8
+
+  use enum.Int8 
+  
+  use enum.Int64 
+  
+  use Bit_int64_of_Bit_int8 
+  
+  use enum.Bit_int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int8.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Bit_int64.normalize (Int8.to_int n))) /\
+     ((=) result (Bit_int64_of_Bit_int8.cast_modulo n))) }
+  
+  val cast
+  (n : Int8.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Int8.to_int n)) /\
+     ((=) result (Bit_int64_of_Bit_int8.cast_modulo n))) }
+  
+end
+
+module Safe_int64_of_Safe_int8
+
+  use enum.Int8 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int8.t) : Int64.t
+   requires { true } ensures { ((=) (Int64.to_int result) (Int8.to_int n)) }
+  
+end
+
+module Unsafe_int64_of_Unsafe_int8
+
+  use enum.Int8 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int8.t) : Int64.t
+   requires { true } ensures { ((=) (Int64.to_int result) (Int8.to_int n)) }
+  
+end
+
+module Safe_bit_int32_of_Safe_bit_int8
+
+  use enum.Int8 
+  
+  use enum.Int32 
+  
+  use Bit_int32_of_Bit_int8 
+  
+  use enum.Bit_int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int8.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Bit_int32.normalize (Int8.to_int n))) /\
+     ((=) result (Bit_int32_of_Bit_int8.cast_modulo n))) }
+  
+  val cast
+  (n : Int8.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Int8.to_int n)) /\
+     ((=) result (Bit_int32_of_Bit_int8.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int32_of_Unsafe_bit_int8
+
+  use enum.Int8 
+  
+  use enum.Int32 
+  
+  use Bit_int32_of_Bit_int8 
+  
+  use enum.Bit_int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int8.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Bit_int32.normalize (Int8.to_int n))) /\
+     ((=) result (Bit_int32_of_Bit_int8.cast_modulo n))) }
+  
+  val cast
+  (n : Int8.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Int8.to_int n)) /\
+     ((=) result (Bit_int32_of_Bit_int8.cast_modulo n))) }
+  
+end
+
+module Safe_int32_of_Safe_int8
+
+  use enum.Int8 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int8.t) : Int32.t
+   requires { true } ensures { ((=) (Int32.to_int result) (Int8.to_int n)) }
+  
+end
+
+module Unsafe_int32_of_Unsafe_int8
+
+  use enum.Int8 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int8.t) : Int32.t
+   requires { true } ensures { ((=) (Int32.to_int result) (Int8.to_int n)) }
+  
+end
+
+module Safe_bit_int16_of_Safe_bit_int8
+
+  use enum.Int8 
+  
+  use enum.Int16 
+  
+  use Bit_int16_of_Bit_int8 
+  
+  use enum.Bit_int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int8.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Bit_int16.normalize (Int8.to_int n))) /\
+     ((=) result (Bit_int16_of_Bit_int8.cast_modulo n))) }
+  
+  val cast
+  (n : Int8.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Int8.to_int n)) /\
+     ((=) result (Bit_int16_of_Bit_int8.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int16_of_Unsafe_bit_int8
+
+  use enum.Int8 
+  
+  use enum.Int16 
+  
+  use Bit_int16_of_Bit_int8 
+  
+  use enum.Bit_int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int8.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Bit_int16.normalize (Int8.to_int n))) /\
+     ((=) result (Bit_int16_of_Bit_int8.cast_modulo n))) }
+  
+  val cast
+  (n : Int8.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Int8.to_int n)) /\
+     ((=) result (Bit_int16_of_Bit_int8.cast_modulo n))) }
+  
+end
+
+module Safe_int16_of_Safe_int8
+
+  use enum.Int8 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int8.t) : Int16.t
+   requires { true } ensures { ((=) (Int16.to_int result) (Int8.to_int n)) }
+  
+end
+
+module Unsafe_int16_of_Unsafe_int8
+
+  use enum.Int8 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int8.t) : Int16.t
+   requires { true } ensures { ((=) (Int16.to_int result) (Int8.to_int n)) }
+  
+end
+
+module Safe_bit_int32_of_Safe_bit_int64
+
+  use enum.Int64 
+  
+  use enum.Int32 
+  
+  use Bit_int32_of_Bit_int64 
+  
+  use enum.Bit_int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int64.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Bit_int32.normalize (Int64.to_int n))) /\
+     ((=) result (Bit_int32_of_Bit_int64.cast_modulo n))) }
+  
+  val cast
+  (n : Int64.t) : Int32.t
+   requires {
+     ((Bit_int32.in_bounds (Int64.to_int n)) \/
+     (Bit_int32_of_Bit_int64.is_safe n)) }
+   ensures {
+     (((=) (Int32.to_int result) (Int64.to_int n)) /\
+     ((=) result (Bit_int32_of_Bit_int64.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int32_of_Unsafe_bit_int64
+
+  use enum.Int64 
+  
+  use enum.Int32 
+  
+  use Bit_int32_of_Bit_int64 
+  
+  use enum.Bit_int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int64.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Bit_int32.normalize (Int64.to_int n))) /\
+     ((=) result (Bit_int32_of_Bit_int64.cast_modulo n))) }
+  
+  val cast
+  (n : Int64.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Int64.to_int n)) /\
+     ((=) result (Bit_int32_of_Bit_int64.cast_modulo n))) }
+  
+end
+
+module Safe_int32_of_Safe_int64
+
+  use enum.Int64 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int64.t) : Int32.t
+   requires { (Int32.in_bounds (Int64.to_int n)) }
+   ensures { ((=) (Int32.to_int result) (Int64.to_int n)) }
+  
+end
+
+module Unsafe_int32_of_Unsafe_int64
+
+  use enum.Int64 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int64.t) : Int32.t
+   requires { true } ensures { ((=) (Int32.to_int result) (Int64.to_int n)) }
+  
+end
+
+module Safe_bit_int16_of_Safe_bit_int64
+
+  use enum.Int64 
+  
+  use enum.Int16 
+  
+  use Bit_int16_of_Bit_int64 
+  
+  use enum.Bit_int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int64.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Bit_int16.normalize (Int64.to_int n))) /\
+     ((=) result (Bit_int16_of_Bit_int64.cast_modulo n))) }
+  
+  val cast
+  (n : Int64.t) : Int16.t
+   requires {
+     ((Bit_int16.in_bounds (Int64.to_int n)) \/
+     (Bit_int16_of_Bit_int64.is_safe n)) }
+   ensures {
+     (((=) (Int16.to_int result) (Int64.to_int n)) /\
+     ((=) result (Bit_int16_of_Bit_int64.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int16_of_Unsafe_bit_int64
+
+  use enum.Int64 
+  
+  use enum.Int16 
+  
+  use Bit_int16_of_Bit_int64 
+  
+  use enum.Bit_int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int64.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Bit_int16.normalize (Int64.to_int n))) /\
+     ((=) result (Bit_int16_of_Bit_int64.cast_modulo n))) }
+  
+  val cast
+  (n : Int64.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Int64.to_int n)) /\
+     ((=) result (Bit_int16_of_Bit_int64.cast_modulo n))) }
+  
+end
+
+module Safe_int16_of_Safe_int64
+
+  use enum.Int64 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int64.t) : Int16.t
+   requires { (Int16.in_bounds (Int64.to_int n)) }
+   ensures { ((=) (Int16.to_int result) (Int64.to_int n)) }
+  
+end
+
+module Unsafe_int16_of_Unsafe_int64
+
+  use enum.Int64 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int64.t) : Int16.t
+   requires { true } ensures { ((=) (Int16.to_int result) (Int64.to_int n)) }
+  
+end
+
+module Safe_bit_int16_of_Safe_bit_int32
+
+  use enum.Int32 
+  
+  use enum.Int16 
+  
+  use Bit_int16_of_Bit_int32 
+  
+  use enum.Bit_int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int32.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Bit_int16.normalize (Int32.to_int n))) /\
+     ((=) result (Bit_int16_of_Bit_int32.cast_modulo n))) }
+  
+  val cast
+  (n : Int32.t) : Int16.t
+   requires {
+     ((Bit_int16.in_bounds (Int32.to_int n)) \/
+     (Bit_int16_of_Bit_int32.is_safe n)) }
+   ensures {
+     (((=) (Int16.to_int result) (Int32.to_int n)) /\
+     ((=) result (Bit_int16_of_Bit_int32.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int16_of_Unsafe_bit_int32
+
+  use enum.Int32 
+  
+  use enum.Int16 
+  
+  use Bit_int16_of_Bit_int32 
+  
+  use enum.Bit_int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int32.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Bit_int16.normalize (Int32.to_int n))) /\
+     ((=) result (Bit_int16_of_Bit_int32.cast_modulo n))) }
+  
+  val cast
+  (n : Int32.t) : Int16.t
+   requires { true }
+   ensures {
+     (((=) (Int16.to_int result) (Int32.to_int n)) /\
+     ((=) result (Bit_int16_of_Bit_int32.cast_modulo n))) }
+  
+end
+
+module Safe_int16_of_Safe_int32
+
+  use enum.Int32 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int32.t) : Int16.t
+   requires { (Int16.in_bounds (Int32.to_int n)) }
+   ensures { ((=) (Int16.to_int result) (Int32.to_int n)) }
+  
+end
+
+module Unsafe_int16_of_Unsafe_int32
+
+  use enum.Int32 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int32.t) : Int16.t
+   requires { true } ensures { ((=) (Int16.to_int result) (Int32.to_int n)) }
+  
+end
+
+module Safe_bit_uint8_of_Safe_bit_uint64
+
+  use enum.Uint8 
+  
+  use enum.Uint64 
+  
+  use Bit_uint8_of_Bit_uint64 
+  
+  use enum.Bit_uint8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint64.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Bit_uint8.normalize (Uint64.to_int n))) /\
+     ((=) result (Bit_uint8_of_Bit_uint64.cast_modulo n))) }
+  
+  val cast
+  (n : Uint64.t) : Uint8.t
+   requires {
+     ((Bit_uint8.in_bounds (Uint64.to_int n)) \/
+     (Bit_uint8_of_Bit_uint64.is_safe n)) }
+   ensures {
+     (((=) (Uint8.to_int result) (Uint64.to_int n)) /\
+     ((=) result (Bit_uint8_of_Bit_uint64.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint8_of_Unsafe_bit_uint64
+
+  use enum.Uint8 
+  
+  use enum.Uint64 
+  
+  use Bit_uint8_of_Bit_uint64 
+  
+  use enum.Bit_uint8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint64.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Bit_uint8.normalize (Uint64.to_int n))) /\
+     ((=) result (Bit_uint8_of_Bit_uint64.cast_modulo n))) }
+  
+  val cast
+  (n : Uint64.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Uint64.to_int n)) /\
+     ((=) result (Bit_uint8_of_Bit_uint64.cast_modulo n))) }
+  
+end
+
+module Safe_uint8_of_Safe_uint64
+
+  use enum.Uint8 
+  
+  use enum.Uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint64.t) : Uint8.t
+   requires { (Uint8.in_bounds (Uint64.to_int n)) }
+   ensures { ((=) (Uint8.to_int result) (Uint64.to_int n)) }
+  
+end
+
+module Unsafe_uint8_of_Unsafe_uint64
+
+  use enum.Uint8 
+  
+  use enum.Uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint64.t) : Uint8.t
+   requires { true }
+   ensures { ((=) (Uint8.to_int result) (Uint64.to_int n)) }
+  
+end
+
+module Safe_bit_uint8_of_Safe_bit_uint32
+
+  use enum.Uint8 
+  
+  use enum.Uint32 
+  
+  use Bit_uint8_of_Bit_uint32 
+  
+  use enum.Bit_uint8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint32.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Bit_uint8.normalize (Uint32.to_int n))) /\
+     ((=) result (Bit_uint8_of_Bit_uint32.cast_modulo n))) }
+  
+  val cast
+  (n : Uint32.t) : Uint8.t
+   requires {
+     ((Bit_uint8.in_bounds (Uint32.to_int n)) \/
+     (Bit_uint8_of_Bit_uint32.is_safe n)) }
+   ensures {
+     (((=) (Uint8.to_int result) (Uint32.to_int n)) /\
+     ((=) result (Bit_uint8_of_Bit_uint32.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint8_of_Unsafe_bit_uint32
+
+  use enum.Uint8 
+  
+  use enum.Uint32 
+  
+  use Bit_uint8_of_Bit_uint32 
+  
+  use enum.Bit_uint8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint32.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Bit_uint8.normalize (Uint32.to_int n))) /\
+     ((=) result (Bit_uint8_of_Bit_uint32.cast_modulo n))) }
+  
+  val cast
+  (n : Uint32.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Uint32.to_int n)) /\
+     ((=) result (Bit_uint8_of_Bit_uint32.cast_modulo n))) }
+  
+end
+
+module Safe_uint8_of_Safe_uint32
+
+  use enum.Uint8 
+  
+  use enum.Uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint32.t) : Uint8.t
+   requires { (Uint8.in_bounds (Uint32.to_int n)) }
+   ensures { ((=) (Uint8.to_int result) (Uint32.to_int n)) }
+  
+end
+
+module Unsafe_uint8_of_Unsafe_uint32
+
+  use enum.Uint8 
+  
+  use enum.Uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint32.t) : Uint8.t
+   requires { true }
+   ensures { ((=) (Uint8.to_int result) (Uint32.to_int n)) }
+  
+end
+
+module Safe_bit_uint8_of_Safe_bit_uint16
+
+  use enum.Uint8 
+  
+  use enum.Uint16 
+  
+  use Bit_uint8_of_Bit_uint16 
+  
+  use enum.Bit_uint8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint16.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Bit_uint8.normalize (Uint16.to_int n))) /\
+     ((=) result (Bit_uint8_of_Bit_uint16.cast_modulo n))) }
+  
+  val cast
+  (n : Uint16.t) : Uint8.t
+   requires {
+     ((Bit_uint8.in_bounds (Uint16.to_int n)) \/
+     (Bit_uint8_of_Bit_uint16.is_safe n)) }
+   ensures {
+     (((=) (Uint8.to_int result) (Uint16.to_int n)) /\
+     ((=) result (Bit_uint8_of_Bit_uint16.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint8_of_Unsafe_bit_uint16
+
+  use enum.Uint8 
+  
+  use enum.Uint16 
+  
+  use Bit_uint8_of_Bit_uint16 
+  
+  use enum.Bit_uint8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint16.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Bit_uint8.normalize (Uint16.to_int n))) /\
+     ((=) result (Bit_uint8_of_Bit_uint16.cast_modulo n))) }
+  
+  val cast
+  (n : Uint16.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Uint16.to_int n)) /\
+     ((=) result (Bit_uint8_of_Bit_uint16.cast_modulo n))) }
+  
+end
+
+module Safe_uint8_of_Safe_uint16
+
+  use enum.Uint8 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint16.t) : Uint8.t
+   requires { (Uint8.in_bounds (Uint16.to_int n)) }
+   ensures { ((=) (Uint8.to_int result) (Uint16.to_int n)) }
+  
+end
+
+module Unsafe_uint8_of_Unsafe_uint16
+
+  use enum.Uint8 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint16.t) : Uint8.t
+   requires { true }
+   ensures { ((=) (Uint8.to_int result) (Uint16.to_int n)) }
+  
+end
+
+module Safe_bit_uint8_of_Safe_bit_int8
+
+  use enum.Uint8 
+  
+  use enum.Int8 
+  
+  use Bit_uint8_of_Bit_int8 
+  
+  use enum.Bit_uint8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int8.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Bit_uint8.normalize (Int8.to_int n))) /\
+     ((=) result (Bit_uint8_of_Bit_int8.cast_modulo n))) }
+  
+  val cast
+  (n : Int8.t) : Uint8.t
+   requires {
+     ((Bit_uint8.in_bounds (Int8.to_int n)) \/
+     (Bit_uint8_of_Bit_int8.is_safe n)) }
+   ensures {
+     (((=) (Uint8.to_int result) (Int8.to_int n)) /\
+     ((=) result (Bit_uint8_of_Bit_int8.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint8_of_Unsafe_bit_int8
+
+  use enum.Uint8 
+  
+  use enum.Int8 
+  
+  use Bit_uint8_of_Bit_int8 
+  
+  use enum.Bit_uint8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int8.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Bit_uint8.normalize (Int8.to_int n))) /\
+     ((=) result (Bit_uint8_of_Bit_int8.cast_modulo n))) }
+  
+  val cast
+  (n : Int8.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Int8.to_int n)) /\
+     ((=) result (Bit_uint8_of_Bit_int8.cast_modulo n))) }
+  
+end
+
+module Safe_uint8_of_Safe_int8
+
+  use enum.Uint8 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int8.t) : Uint8.t
+   requires { (Uint8.in_bounds (Int8.to_int n)) }
+   ensures { ((=) (Uint8.to_int result) (Int8.to_int n)) }
+  
+end
+
+module Unsafe_uint8_of_Unsafe_int8
+
+  use enum.Uint8 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int8.t) : Uint8.t
+   requires { true } ensures { ((=) (Uint8.to_int result) (Int8.to_int n)) }
+  
+end
+
+module Safe_bit_uint8_of_Safe_bit_int64
+
+  use enum.Uint8 
+  
+  use enum.Int64 
+  
+  use Bit_uint8_of_Bit_int64 
+  
+  use enum.Bit_uint8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int64.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Bit_uint8.normalize (Int64.to_int n))) /\
+     ((=) result (Bit_uint8_of_Bit_int64.cast_modulo n))) }
+  
+  val cast
+  (n : Int64.t) : Uint8.t
+   requires {
+     ((Bit_uint8.in_bounds (Int64.to_int n)) \/
+     (Bit_uint8_of_Bit_int64.is_safe n)) }
+   ensures {
+     (((=) (Uint8.to_int result) (Int64.to_int n)) /\
+     ((=) result (Bit_uint8_of_Bit_int64.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint8_of_Unsafe_bit_int64
+
+  use enum.Uint8 
+  
+  use enum.Int64 
+  
+  use Bit_uint8_of_Bit_int64 
+  
+  use enum.Bit_uint8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int64.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Bit_uint8.normalize (Int64.to_int n))) /\
+     ((=) result (Bit_uint8_of_Bit_int64.cast_modulo n))) }
+  
+  val cast
+  (n : Int64.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Int64.to_int n)) /\
+     ((=) result (Bit_uint8_of_Bit_int64.cast_modulo n))) }
+  
+end
+
+module Safe_uint8_of_Safe_int64
+
+  use enum.Uint8 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int64.t) : Uint8.t
+   requires { (Uint8.in_bounds (Int64.to_int n)) }
+   ensures { ((=) (Uint8.to_int result) (Int64.to_int n)) }
+  
+end
+
+module Unsafe_uint8_of_Unsafe_int64
+
+  use enum.Uint8 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int64.t) : Uint8.t
+   requires { true } ensures { ((=) (Uint8.to_int result) (Int64.to_int n)) }
+  
+end
+
+module Safe_bit_uint8_of_Safe_bit_int32
+
+  use enum.Uint8 
+  
+  use enum.Int32 
+  
+  use Bit_uint8_of_Bit_int32 
+  
+  use enum.Bit_uint8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int32.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Bit_uint8.normalize (Int32.to_int n))) /\
+     ((=) result (Bit_uint8_of_Bit_int32.cast_modulo n))) }
+  
+  val cast
+  (n : Int32.t) : Uint8.t
+   requires {
+     ((Bit_uint8.in_bounds (Int32.to_int n)) \/
+     (Bit_uint8_of_Bit_int32.is_safe n)) }
+   ensures {
+     (((=) (Uint8.to_int result) (Int32.to_int n)) /\
+     ((=) result (Bit_uint8_of_Bit_int32.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint8_of_Unsafe_bit_int32
+
+  use enum.Uint8 
+  
+  use enum.Int32 
+  
+  use Bit_uint8_of_Bit_int32 
+  
+  use enum.Bit_uint8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int32.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Bit_uint8.normalize (Int32.to_int n))) /\
+     ((=) result (Bit_uint8_of_Bit_int32.cast_modulo n))) }
+  
+  val cast
+  (n : Int32.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Int32.to_int n)) /\
+     ((=) result (Bit_uint8_of_Bit_int32.cast_modulo n))) }
+  
+end
+
+module Safe_uint8_of_Safe_int32
+
+  use enum.Uint8 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int32.t) : Uint8.t
+   requires { (Uint8.in_bounds (Int32.to_int n)) }
+   ensures { ((=) (Uint8.to_int result) (Int32.to_int n)) }
+  
+end
+
+module Unsafe_uint8_of_Unsafe_int32
+
+  use enum.Uint8 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int32.t) : Uint8.t
+   requires { true } ensures { ((=) (Uint8.to_int result) (Int32.to_int n)) }
+  
+end
+
+module Safe_bit_uint8_of_Safe_bit_int16
+
+  use enum.Uint8 
+  
+  use enum.Int16 
+  
+  use Bit_uint8_of_Bit_int16 
+  
+  use enum.Bit_uint8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int16.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Bit_uint8.normalize (Int16.to_int n))) /\
+     ((=) result (Bit_uint8_of_Bit_int16.cast_modulo n))) }
+  
+  val cast
+  (n : Int16.t) : Uint8.t
+   requires {
+     ((Bit_uint8.in_bounds (Int16.to_int n)) \/
+     (Bit_uint8_of_Bit_int16.is_safe n)) }
+   ensures {
+     (((=) (Uint8.to_int result) (Int16.to_int n)) /\
+     ((=) result (Bit_uint8_of_Bit_int16.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint8_of_Unsafe_bit_int16
+
+  use enum.Uint8 
+  
+  use enum.Int16 
+  
+  use Bit_uint8_of_Bit_int16 
+  
+  use enum.Bit_uint8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int16.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Bit_uint8.normalize (Int16.to_int n))) /\
+     ((=) result (Bit_uint8_of_Bit_int16.cast_modulo n))) }
+  
+  val cast
+  (n : Int16.t) : Uint8.t
+   requires { true }
+   ensures {
+     (((=) (Uint8.to_int result) (Int16.to_int n)) /\
+     ((=) result (Bit_uint8_of_Bit_int16.cast_modulo n))) }
+  
+end
+
+module Safe_uint8_of_Safe_int16
+
+  use enum.Uint8 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int16.t) : Uint8.t
+   requires { (Uint8.in_bounds (Int16.to_int n)) }
+   ensures { ((=) (Uint8.to_int result) (Int16.to_int n)) }
+  
+end
+
+module Unsafe_uint8_of_Unsafe_int16
+
+  use enum.Uint8 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int16.t) : Uint8.t
+   requires { true } ensures { ((=) (Uint8.to_int result) (Int16.to_int n)) }
+  
+end
+
+module Safe_bit_uint64_of_Safe_bit_uint32
+
+  use enum.Uint64 
+  
+  use enum.Uint32 
+  
+  use Bit_uint64_of_Bit_uint32 
+  
+  use enum.Bit_uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint32.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Bit_uint64.normalize (Uint32.to_int n)))
+     /\ ((=) result (Bit_uint64_of_Bit_uint32.cast_modulo n))) }
+  
+  val cast
+  (n : Uint32.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Uint32.to_int n)) /\
+     ((=) result (Bit_uint64_of_Bit_uint32.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint64_of_Unsafe_bit_uint32
+
+  use enum.Uint64 
+  
+  use enum.Uint32 
+  
+  use Bit_uint64_of_Bit_uint32 
+  
+  use enum.Bit_uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint32.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Bit_uint64.normalize (Uint32.to_int n)))
+     /\ ((=) result (Bit_uint64_of_Bit_uint32.cast_modulo n))) }
+  
+  val cast
+  (n : Uint32.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Uint32.to_int n)) /\
+     ((=) result (Bit_uint64_of_Bit_uint32.cast_modulo n))) }
+  
+end
+
+module Safe_uint64_of_Safe_uint32
+
+  use enum.Uint64 
+  
+  use enum.Uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint32.t) : Uint64.t
+   requires { true }
+   ensures { ((=) (Uint64.to_int result) (Uint32.to_int n)) }
+  
+end
+
+module Unsafe_uint64_of_Unsafe_uint32
+
+  use enum.Uint64 
+  
+  use enum.Uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint32.t) : Uint64.t
+   requires { true }
+   ensures { ((=) (Uint64.to_int result) (Uint32.to_int n)) }
+  
+end
+
+module Safe_bit_uint64_of_Safe_bit_uint16
+
+  use enum.Uint64 
+  
+  use enum.Uint16 
+  
+  use Bit_uint64_of_Bit_uint16 
+  
+  use enum.Bit_uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint16.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Bit_uint64.normalize (Uint16.to_int n)))
+     /\ ((=) result (Bit_uint64_of_Bit_uint16.cast_modulo n))) }
+  
+  val cast
+  (n : Uint16.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Uint16.to_int n)) /\
+     ((=) result (Bit_uint64_of_Bit_uint16.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint64_of_Unsafe_bit_uint16
+
+  use enum.Uint64 
+  
+  use enum.Uint16 
+  
+  use Bit_uint64_of_Bit_uint16 
+  
+  use enum.Bit_uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint16.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Bit_uint64.normalize (Uint16.to_int n)))
+     /\ ((=) result (Bit_uint64_of_Bit_uint16.cast_modulo n))) }
+  
+  val cast
+  (n : Uint16.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Uint16.to_int n)) /\
+     ((=) result (Bit_uint64_of_Bit_uint16.cast_modulo n))) }
+  
+end
+
+module Safe_uint64_of_Safe_uint16
+
+  use enum.Uint64 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint16.t) : Uint64.t
+   requires { true }
+   ensures { ((=) (Uint64.to_int result) (Uint16.to_int n)) }
+  
+end
+
+module Unsafe_uint64_of_Unsafe_uint16
+
+  use enum.Uint64 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint16.t) : Uint64.t
+   requires { true }
+   ensures { ((=) (Uint64.to_int result) (Uint16.to_int n)) }
+  
+end
+
+module Safe_bit_uint64_of_Safe_bit_int8
+
+  use enum.Uint64 
+  
+  use enum.Int8 
+  
+  use Bit_uint64_of_Bit_int8 
+  
+  use enum.Bit_uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int8.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Bit_uint64.normalize (Int8.to_int n))) /\
+     ((=) result (Bit_uint64_of_Bit_int8.cast_modulo n))) }
+  
+  val cast
+  (n : Int8.t) : Uint64.t
+   requires {
+     ((Bit_uint64.in_bounds (Int8.to_int n)) \/
+     (Bit_uint64_of_Bit_int8.is_safe n)) }
+   ensures {
+     (((=) (Uint64.to_int result) (Int8.to_int n)) /\
+     ((=) result (Bit_uint64_of_Bit_int8.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint64_of_Unsafe_bit_int8
+
+  use enum.Uint64 
+  
+  use enum.Int8 
+  
+  use Bit_uint64_of_Bit_int8 
+  
+  use enum.Bit_uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int8.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Bit_uint64.normalize (Int8.to_int n))) /\
+     ((=) result (Bit_uint64_of_Bit_int8.cast_modulo n))) }
+  
+  val cast
+  (n : Int8.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Int8.to_int n)) /\
+     ((=) result (Bit_uint64_of_Bit_int8.cast_modulo n))) }
+  
+end
+
+module Safe_uint64_of_Safe_int8
+
+  use enum.Uint64 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int8.t) : Uint64.t
+   requires { (Uint64.in_bounds (Int8.to_int n)) }
+   ensures { ((=) (Uint64.to_int result) (Int8.to_int n)) }
+  
+end
+
+module Unsafe_uint64_of_Unsafe_int8
+
+  use enum.Uint64 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int8.t) : Uint64.t
+   requires { true } ensures { ((=) (Uint64.to_int result) (Int8.to_int n)) }
+  
+end
+
+module Safe_bit_uint64_of_Safe_bit_int64
+
+  use enum.Uint64 
+  
+  use enum.Int64 
+  
+  use Bit_uint64_of_Bit_int64 
+  
+  use enum.Bit_uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int64.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Bit_uint64.normalize (Int64.to_int n))) /\
+     ((=) result (Bit_uint64_of_Bit_int64.cast_modulo n))) }
+  
+  val cast
+  (n : Int64.t) : Uint64.t
+   requires {
+     ((Bit_uint64.in_bounds (Int64.to_int n)) \/
+     (Bit_uint64_of_Bit_int64.is_safe n)) }
+   ensures {
+     (((=) (Uint64.to_int result) (Int64.to_int n)) /\
+     ((=) result (Bit_uint64_of_Bit_int64.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint64_of_Unsafe_bit_int64
+
+  use enum.Uint64 
+  
+  use enum.Int64 
+  
+  use Bit_uint64_of_Bit_int64 
+  
+  use enum.Bit_uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int64.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Bit_uint64.normalize (Int64.to_int n))) /\
+     ((=) result (Bit_uint64_of_Bit_int64.cast_modulo n))) }
+  
+  val cast
+  (n : Int64.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Int64.to_int n)) /\
+     ((=) result (Bit_uint64_of_Bit_int64.cast_modulo n))) }
+  
+end
+
+module Safe_uint64_of_Safe_int64
+
+  use enum.Uint64 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int64.t) : Uint64.t
+   requires { (Uint64.in_bounds (Int64.to_int n)) }
+   ensures { ((=) (Uint64.to_int result) (Int64.to_int n)) }
+  
+end
+
+module Unsafe_uint64_of_Unsafe_int64
+
+  use enum.Uint64 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int64.t) : Uint64.t
+   requires { true }
+   ensures { ((=) (Uint64.to_int result) (Int64.to_int n)) }
+  
+end
+
+module Safe_bit_uint64_of_Safe_bit_int32
+
+  use enum.Uint64 
+  
+  use enum.Int32 
+  
+  use Bit_uint64_of_Bit_int32 
+  
+  use enum.Bit_uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int32.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Bit_uint64.normalize (Int32.to_int n))) /\
+     ((=) result (Bit_uint64_of_Bit_int32.cast_modulo n))) }
+  
+  val cast
+  (n : Int32.t) : Uint64.t
+   requires {
+     ((Bit_uint64.in_bounds (Int32.to_int n)) \/
+     (Bit_uint64_of_Bit_int32.is_safe n)) }
+   ensures {
+     (((=) (Uint64.to_int result) (Int32.to_int n)) /\
+     ((=) result (Bit_uint64_of_Bit_int32.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint64_of_Unsafe_bit_int32
+
+  use enum.Uint64 
+  
+  use enum.Int32 
+  
+  use Bit_uint64_of_Bit_int32 
+  
+  use enum.Bit_uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int32.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Bit_uint64.normalize (Int32.to_int n))) /\
+     ((=) result (Bit_uint64_of_Bit_int32.cast_modulo n))) }
+  
+  val cast
+  (n : Int32.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Int32.to_int n)) /\
+     ((=) result (Bit_uint64_of_Bit_int32.cast_modulo n))) }
+  
+end
+
+module Safe_uint64_of_Safe_int32
+
+  use enum.Uint64 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int32.t) : Uint64.t
+   requires { (Uint64.in_bounds (Int32.to_int n)) }
+   ensures { ((=) (Uint64.to_int result) (Int32.to_int n)) }
+  
+end
+
+module Unsafe_uint64_of_Unsafe_int32
+
+  use enum.Uint64 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int32.t) : Uint64.t
+   requires { true }
+   ensures { ((=) (Uint64.to_int result) (Int32.to_int n)) }
+  
+end
+
+module Safe_bit_uint64_of_Safe_bit_int16
+
+  use enum.Uint64 
+  
+  use enum.Int16 
+  
+  use Bit_uint64_of_Bit_int16 
+  
+  use enum.Bit_uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int16.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Bit_uint64.normalize (Int16.to_int n))) /\
+     ((=) result (Bit_uint64_of_Bit_int16.cast_modulo n))) }
+  
+  val cast
+  (n : Int16.t) : Uint64.t
+   requires {
+     ((Bit_uint64.in_bounds (Int16.to_int n)) \/
+     (Bit_uint64_of_Bit_int16.is_safe n)) }
+   ensures {
+     (((=) (Uint64.to_int result) (Int16.to_int n)) /\
+     ((=) result (Bit_uint64_of_Bit_int16.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint64_of_Unsafe_bit_int16
+
+  use enum.Uint64 
+  
+  use enum.Int16 
+  
+  use Bit_uint64_of_Bit_int16 
+  
+  use enum.Bit_uint64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int16.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Bit_uint64.normalize (Int16.to_int n))) /\
+     ((=) result (Bit_uint64_of_Bit_int16.cast_modulo n))) }
+  
+  val cast
+  (n : Int16.t) : Uint64.t
+   requires { true }
+   ensures {
+     (((=) (Uint64.to_int result) (Int16.to_int n)) /\
+     ((=) result (Bit_uint64_of_Bit_int16.cast_modulo n))) }
+  
+end
+
+module Safe_uint64_of_Safe_int16
+
+  use enum.Uint64 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int16.t) : Uint64.t
+   requires { (Uint64.in_bounds (Int16.to_int n)) }
+   ensures { ((=) (Uint64.to_int result) (Int16.to_int n)) }
+  
+end
+
+module Unsafe_uint64_of_Unsafe_int16
+
+  use enum.Uint64 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int16.t) : Uint64.t
+   requires { true }
+   ensures { ((=) (Uint64.to_int result) (Int16.to_int n)) }
+  
+end
+
+module Safe_bit_uint32_of_Safe_bit_uint16
+
+  use enum.Uint32 
+  
+  use enum.Uint16 
+  
+  use Bit_uint32_of_Bit_uint16 
+  
+  use enum.Bit_uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint16.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Bit_uint32.normalize (Uint16.to_int n)))
+     /\ ((=) result (Bit_uint32_of_Bit_uint16.cast_modulo n))) }
+  
+  val cast
+  (n : Uint16.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Uint16.to_int n)) /\
+     ((=) result (Bit_uint32_of_Bit_uint16.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint32_of_Unsafe_bit_uint16
+
+  use enum.Uint32 
+  
+  use enum.Uint16 
+  
+  use Bit_uint32_of_Bit_uint16 
+  
+  use enum.Bit_uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Uint16.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Bit_uint32.normalize (Uint16.to_int n)))
+     /\ ((=) result (Bit_uint32_of_Bit_uint16.cast_modulo n))) }
+  
+  val cast
+  (n : Uint16.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Uint16.to_int n)) /\
+     ((=) result (Bit_uint32_of_Bit_uint16.cast_modulo n))) }
+  
+end
+
+module Safe_uint32_of_Safe_uint16
+
+  use enum.Uint32 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint16.t) : Uint32.t
+   requires { true }
+   ensures { ((=) (Uint32.to_int result) (Uint16.to_int n)) }
+  
+end
+
+module Unsafe_uint32_of_Unsafe_uint16
+
+  use enum.Uint32 
+  
+  use enum.Uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Uint16.t) : Uint32.t
+   requires { true }
+   ensures { ((=) (Uint32.to_int result) (Uint16.to_int n)) }
+  
+end
+
+module Safe_bit_uint32_of_Safe_bit_int8
+
+  use enum.Uint32 
+  
+  use enum.Int8 
+  
+  use Bit_uint32_of_Bit_int8 
+  
+  use enum.Bit_uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int8.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Bit_uint32.normalize (Int8.to_int n))) /\
+     ((=) result (Bit_uint32_of_Bit_int8.cast_modulo n))) }
+  
+  val cast
+  (n : Int8.t) : Uint32.t
+   requires {
+     ((Bit_uint32.in_bounds (Int8.to_int n)) \/
+     (Bit_uint32_of_Bit_int8.is_safe n)) }
+   ensures {
+     (((=) (Uint32.to_int result) (Int8.to_int n)) /\
+     ((=) result (Bit_uint32_of_Bit_int8.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint32_of_Unsafe_bit_int8
+
+  use enum.Uint32 
+  
+  use enum.Int8 
+  
+  use Bit_uint32_of_Bit_int8 
+  
+  use enum.Bit_uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int8.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Bit_uint32.normalize (Int8.to_int n))) /\
+     ((=) result (Bit_uint32_of_Bit_int8.cast_modulo n))) }
+  
+  val cast
+  (n : Int8.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Int8.to_int n)) /\
+     ((=) result (Bit_uint32_of_Bit_int8.cast_modulo n))) }
+  
+end
+
+module Safe_uint32_of_Safe_int8
+
+  use enum.Uint32 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int8.t) : Uint32.t
+   requires { (Uint32.in_bounds (Int8.to_int n)) }
+   ensures { ((=) (Uint32.to_int result) (Int8.to_int n)) }
+  
+end
+
+module Unsafe_uint32_of_Unsafe_int8
+
+  use enum.Uint32 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int8.t) : Uint32.t
+   requires { true } ensures { ((=) (Uint32.to_int result) (Int8.to_int n)) }
+  
+end
+
+module Safe_bit_uint32_of_Safe_bit_int64
+
+  use enum.Uint32 
+  
+  use enum.Int64 
+  
+  use Bit_uint32_of_Bit_int64 
+  
+  use enum.Bit_uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int64.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Bit_uint32.normalize (Int64.to_int n))) /\
+     ((=) result (Bit_uint32_of_Bit_int64.cast_modulo n))) }
+  
+  val cast
+  (n : Int64.t) : Uint32.t
+   requires {
+     ((Bit_uint32.in_bounds (Int64.to_int n)) \/
+     (Bit_uint32_of_Bit_int64.is_safe n)) }
+   ensures {
+     (((=) (Uint32.to_int result) (Int64.to_int n)) /\
+     ((=) result (Bit_uint32_of_Bit_int64.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint32_of_Unsafe_bit_int64
+
+  use enum.Uint32 
+  
+  use enum.Int64 
+  
+  use Bit_uint32_of_Bit_int64 
+  
+  use enum.Bit_uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int64.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Bit_uint32.normalize (Int64.to_int n))) /\
+     ((=) result (Bit_uint32_of_Bit_int64.cast_modulo n))) }
+  
+  val cast
+  (n : Int64.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Int64.to_int n)) /\
+     ((=) result (Bit_uint32_of_Bit_int64.cast_modulo n))) }
+  
+end
+
+module Safe_uint32_of_Safe_int64
+
+  use enum.Uint32 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int64.t) : Uint32.t
+   requires { (Uint32.in_bounds (Int64.to_int n)) }
+   ensures { ((=) (Uint32.to_int result) (Int64.to_int n)) }
+  
+end
+
+module Unsafe_uint32_of_Unsafe_int64
+
+  use enum.Uint32 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int64.t) : Uint32.t
+   requires { true }
+   ensures { ((=) (Uint32.to_int result) (Int64.to_int n)) }
+  
+end
+
+module Safe_bit_uint32_of_Safe_bit_int32
+
+  use enum.Uint32 
+  
+  use enum.Int32 
+  
+  use Bit_uint32_of_Bit_int32 
+  
+  use enum.Bit_uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int32.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Bit_uint32.normalize (Int32.to_int n))) /\
+     ((=) result (Bit_uint32_of_Bit_int32.cast_modulo n))) }
+  
+  val cast
+  (n : Int32.t) : Uint32.t
+   requires {
+     ((Bit_uint32.in_bounds (Int32.to_int n)) \/
+     (Bit_uint32_of_Bit_int32.is_safe n)) }
+   ensures {
+     (((=) (Uint32.to_int result) (Int32.to_int n)) /\
+     ((=) result (Bit_uint32_of_Bit_int32.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint32_of_Unsafe_bit_int32
+
+  use enum.Uint32 
+  
+  use enum.Int32 
+  
+  use Bit_uint32_of_Bit_int32 
+  
+  use enum.Bit_uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int32.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Bit_uint32.normalize (Int32.to_int n))) /\
+     ((=) result (Bit_uint32_of_Bit_int32.cast_modulo n))) }
+  
+  val cast
+  (n : Int32.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Int32.to_int n)) /\
+     ((=) result (Bit_uint32_of_Bit_int32.cast_modulo n))) }
+  
+end
+
+module Safe_uint32_of_Safe_int32
+
+  use enum.Uint32 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int32.t) : Uint32.t
+   requires { (Uint32.in_bounds (Int32.to_int n)) }
+   ensures { ((=) (Uint32.to_int result) (Int32.to_int n)) }
+  
+end
+
+module Unsafe_uint32_of_Unsafe_int32
+
+  use enum.Uint32 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int32.t) : Uint32.t
+   requires { true }
+   ensures { ((=) (Uint32.to_int result) (Int32.to_int n)) }
+  
+end
+
+module Safe_bit_uint32_of_Safe_bit_int16
+
+  use enum.Uint32 
+  
+  use enum.Int16 
+  
+  use Bit_uint32_of_Bit_int16 
+  
+  use enum.Bit_uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int16.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Bit_uint32.normalize (Int16.to_int n))) /\
+     ((=) result (Bit_uint32_of_Bit_int16.cast_modulo n))) }
+  
+  val cast
+  (n : Int16.t) : Uint32.t
+   requires {
+     ((Bit_uint32.in_bounds (Int16.to_int n)) \/
+     (Bit_uint32_of_Bit_int16.is_safe n)) }
+   ensures {
+     (((=) (Uint32.to_int result) (Int16.to_int n)) /\
+     ((=) result (Bit_uint32_of_Bit_int16.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint32_of_Unsafe_bit_int16
+
+  use enum.Uint32 
+  
+  use enum.Int16 
+  
+  use Bit_uint32_of_Bit_int16 
+  
+  use enum.Bit_uint32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int16.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Bit_uint32.normalize (Int16.to_int n))) /\
+     ((=) result (Bit_uint32_of_Bit_int16.cast_modulo n))) }
+  
+  val cast
+  (n : Int16.t) : Uint32.t
+   requires { true }
+   ensures {
+     (((=) (Uint32.to_int result) (Int16.to_int n)) /\
+     ((=) result (Bit_uint32_of_Bit_int16.cast_modulo n))) }
+  
+end
+
+module Safe_uint32_of_Safe_int16
+
+  use enum.Uint32 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int16.t) : Uint32.t
+   requires { (Uint32.in_bounds (Int16.to_int n)) }
+   ensures { ((=) (Uint32.to_int result) (Int16.to_int n)) }
+  
+end
+
+module Unsafe_uint32_of_Unsafe_int16
+
+  use enum.Uint32 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int16.t) : Uint32.t
+   requires { true }
+   ensures { ((=) (Uint32.to_int result) (Int16.to_int n)) }
+  
+end
+
+module Safe_bit_uint16_of_Safe_bit_int8
+
+  use enum.Uint16 
+  
+  use enum.Int8 
+  
+  use Bit_uint16_of_Bit_int8 
+  
+  use enum.Bit_uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int8.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Bit_uint16.normalize (Int8.to_int n))) /\
+     ((=) result (Bit_uint16_of_Bit_int8.cast_modulo n))) }
+  
+  val cast
+  (n : Int8.t) : Uint16.t
+   requires {
+     ((Bit_uint16.in_bounds (Int8.to_int n)) \/
+     (Bit_uint16_of_Bit_int8.is_safe n)) }
+   ensures {
+     (((=) (Uint16.to_int result) (Int8.to_int n)) /\
+     ((=) result (Bit_uint16_of_Bit_int8.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint16_of_Unsafe_bit_int8
+
+  use enum.Uint16 
+  
+  use enum.Int8 
+  
+  use Bit_uint16_of_Bit_int8 
+  
+  use enum.Bit_uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int8.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Bit_uint16.normalize (Int8.to_int n))) /\
+     ((=) result (Bit_uint16_of_Bit_int8.cast_modulo n))) }
+  
+  val cast
+  (n : Int8.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Int8.to_int n)) /\
+     ((=) result (Bit_uint16_of_Bit_int8.cast_modulo n))) }
+  
+end
+
+module Safe_uint16_of_Safe_int8
+
+  use enum.Uint16 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int8.t) : Uint16.t
+   requires { (Uint16.in_bounds (Int8.to_int n)) }
+   ensures { ((=) (Uint16.to_int result) (Int8.to_int n)) }
+  
+end
+
+module Unsafe_uint16_of_Unsafe_int8
+
+  use enum.Uint16 
+  
+  use enum.Int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int8.t) : Uint16.t
+   requires { true } ensures { ((=) (Uint16.to_int result) (Int8.to_int n)) }
+  
+end
+
+module Safe_bit_uint16_of_Safe_bit_int64
+
+  use enum.Uint16 
+  
+  use enum.Int64 
+  
+  use Bit_uint16_of_Bit_int64 
+  
+  use enum.Bit_uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int64.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Bit_uint16.normalize (Int64.to_int n))) /\
+     ((=) result (Bit_uint16_of_Bit_int64.cast_modulo n))) }
+  
+  val cast
+  (n : Int64.t) : Uint16.t
+   requires {
+     ((Bit_uint16.in_bounds (Int64.to_int n)) \/
+     (Bit_uint16_of_Bit_int64.is_safe n)) }
+   ensures {
+     (((=) (Uint16.to_int result) (Int64.to_int n)) /\
+     ((=) result (Bit_uint16_of_Bit_int64.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint16_of_Unsafe_bit_int64
+
+  use enum.Uint16 
+  
+  use enum.Int64 
+  
+  use Bit_uint16_of_Bit_int64 
+  
+  use enum.Bit_uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int64.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Bit_uint16.normalize (Int64.to_int n))) /\
+     ((=) result (Bit_uint16_of_Bit_int64.cast_modulo n))) }
+  
+  val cast
+  (n : Int64.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Int64.to_int n)) /\
+     ((=) result (Bit_uint16_of_Bit_int64.cast_modulo n))) }
+  
+end
+
+module Safe_uint16_of_Safe_int64
+
+  use enum.Uint16 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int64.t) : Uint16.t
+   requires { (Uint16.in_bounds (Int64.to_int n)) }
+   ensures { ((=) (Uint16.to_int result) (Int64.to_int n)) }
+  
+end
+
+module Unsafe_uint16_of_Unsafe_int64
+
+  use enum.Uint16 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int64.t) : Uint16.t
+   requires { true }
+   ensures { ((=) (Uint16.to_int result) (Int64.to_int n)) }
+  
+end
+
+module Safe_bit_uint16_of_Safe_bit_int32
+
+  use enum.Uint16 
+  
+  use enum.Int32 
+  
+  use Bit_uint16_of_Bit_int32 
+  
+  use enum.Bit_uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int32.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Bit_uint16.normalize (Int32.to_int n))) /\
+     ((=) result (Bit_uint16_of_Bit_int32.cast_modulo n))) }
+  
+  val cast
+  (n : Int32.t) : Uint16.t
+   requires {
+     ((Bit_uint16.in_bounds (Int32.to_int n)) \/
+     (Bit_uint16_of_Bit_int32.is_safe n)) }
+   ensures {
+     (((=) (Uint16.to_int result) (Int32.to_int n)) /\
+     ((=) result (Bit_uint16_of_Bit_int32.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint16_of_Unsafe_bit_int32
+
+  use enum.Uint16 
+  
+  use enum.Int32 
+  
+  use Bit_uint16_of_Bit_int32 
+  
+  use enum.Bit_uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int32.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Bit_uint16.normalize (Int32.to_int n))) /\
+     ((=) result (Bit_uint16_of_Bit_int32.cast_modulo n))) }
+  
+  val cast
+  (n : Int32.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Int32.to_int n)) /\
+     ((=) result (Bit_uint16_of_Bit_int32.cast_modulo n))) }
+  
+end
+
+module Safe_uint16_of_Safe_int32
+
+  use enum.Uint16 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int32.t) : Uint16.t
+   requires { (Uint16.in_bounds (Int32.to_int n)) }
+   ensures { ((=) (Uint16.to_int result) (Int32.to_int n)) }
+  
+end
+
+module Unsafe_uint16_of_Unsafe_int32
+
+  use enum.Uint16 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int32.t) : Uint16.t
+   requires { true }
+   ensures { ((=) (Uint16.to_int result) (Int32.to_int n)) }
+  
+end
+
+module Safe_bit_uint16_of_Safe_bit_int16
+
+  use enum.Uint16 
+  
+  use enum.Int16 
+  
+  use Bit_uint16_of_Bit_int16 
+  
+  use enum.Bit_uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int16.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Bit_uint16.normalize (Int16.to_int n))) /\
+     ((=) result (Bit_uint16_of_Bit_int16.cast_modulo n))) }
+  
+  val cast
+  (n : Int16.t) : Uint16.t
+   requires {
+     ((Bit_uint16.in_bounds (Int16.to_int n)) \/
+     (Bit_uint16_of_Bit_int16.is_safe n)) }
+   ensures {
+     (((=) (Uint16.to_int result) (Int16.to_int n)) /\
+     ((=) result (Bit_uint16_of_Bit_int16.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_uint16_of_Unsafe_bit_int16
+
+  use enum.Uint16 
+  
+  use enum.Int16 
+  
+  use Bit_uint16_of_Bit_int16 
+  
+  use enum.Bit_uint16 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int16.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Bit_uint16.normalize (Int16.to_int n))) /\
+     ((=) result (Bit_uint16_of_Bit_int16.cast_modulo n))) }
+  
+  val cast
+  (n : Int16.t) : Uint16.t
+   requires { true }
+   ensures {
+     (((=) (Uint16.to_int result) (Int16.to_int n)) /\
+     ((=) result (Bit_uint16_of_Bit_int16.cast_modulo n))) }
+  
+end
+
+module Safe_uint16_of_Safe_int16
+
+  use enum.Uint16 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int16.t) : Uint16.t
+   requires { (Uint16.in_bounds (Int16.to_int n)) }
+   ensures { ((=) (Uint16.to_int result) (Int16.to_int n)) }
+  
+end
+
+module Unsafe_uint16_of_Unsafe_int16
+
+  use enum.Uint16 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int16.t) : Uint16.t
+   requires { true }
+   ensures { ((=) (Uint16.to_int result) (Int16.to_int n)) }
+  
+end
+
+module Safe_bit_int8_of_Safe_bit_int64
+
+  use enum.Int8 
+  
+  use enum.Int64 
+  
+  use Bit_int8_of_Bit_int64 
+  
+  use enum.Bit_int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int64.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Bit_int8.normalize (Int64.to_int n))) /\
+     ((=) result (Bit_int8_of_Bit_int64.cast_modulo n))) }
+  
+  val cast
+  (n : Int64.t) : Int8.t
+   requires {
+     ((Bit_int8.in_bounds (Int64.to_int n)) \/
+     (Bit_int8_of_Bit_int64.is_safe n)) }
+   ensures {
+     (((=) (Int8.to_int result) (Int64.to_int n)) /\
+     ((=) result (Bit_int8_of_Bit_int64.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int8_of_Unsafe_bit_int64
+
+  use enum.Int8 
+  
+  use enum.Int64 
+  
+  use Bit_int8_of_Bit_int64 
+  
+  use enum.Bit_int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int64.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Bit_int8.normalize (Int64.to_int n))) /\
+     ((=) result (Bit_int8_of_Bit_int64.cast_modulo n))) }
+  
+  val cast
+  (n : Int64.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Int64.to_int n)) /\
+     ((=) result (Bit_int8_of_Bit_int64.cast_modulo n))) }
+  
+end
+
+module Safe_int8_of_Safe_int64
+
+  use enum.Int8 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int64.t) : Int8.t
+   requires { (Int8.in_bounds (Int64.to_int n)) }
+   ensures { ((=) (Int8.to_int result) (Int64.to_int n)) }
+  
+end
+
+module Unsafe_int8_of_Unsafe_int64
+
+  use enum.Int8 
+  
+  use enum.Int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int64.t) : Int8.t
+   requires { true } ensures { ((=) (Int8.to_int result) (Int64.to_int n)) }
+  
+end
+
+module Safe_bit_int8_of_Safe_bit_int32
+
+  use enum.Int8 
+  
+  use enum.Int32 
+  
+  use Bit_int8_of_Bit_int32 
+  
+  use enum.Bit_int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int32.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Bit_int8.normalize (Int32.to_int n))) /\
+     ((=) result (Bit_int8_of_Bit_int32.cast_modulo n))) }
+  
+  val cast
+  (n : Int32.t) : Int8.t
+   requires {
+     ((Bit_int8.in_bounds (Int32.to_int n)) \/
+     (Bit_int8_of_Bit_int32.is_safe n)) }
+   ensures {
+     (((=) (Int8.to_int result) (Int32.to_int n)) /\
+     ((=) result (Bit_int8_of_Bit_int32.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int8_of_Unsafe_bit_int32
+
+  use enum.Int8 
+  
+  use enum.Int32 
+  
+  use Bit_int8_of_Bit_int32 
+  
+  use enum.Bit_int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int32.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Bit_int8.normalize (Int32.to_int n))) /\
+     ((=) result (Bit_int8_of_Bit_int32.cast_modulo n))) }
+  
+  val cast
+  (n : Int32.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Int32.to_int n)) /\
+     ((=) result (Bit_int8_of_Bit_int32.cast_modulo n))) }
+  
+end
+
+module Safe_int8_of_Safe_int32
+
+  use enum.Int8 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int32.t) : Int8.t
+   requires { (Int8.in_bounds (Int32.to_int n)) }
+   ensures { ((=) (Int8.to_int result) (Int32.to_int n)) }
+  
+end
+
+module Unsafe_int8_of_Unsafe_int32
+
+  use enum.Int8 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int32.t) : Int8.t
+   requires { true } ensures { ((=) (Int8.to_int result) (Int32.to_int n)) }
+  
+end
+
+module Safe_bit_int8_of_Safe_bit_int16
+
+  use enum.Int8 
+  
+  use enum.Int16 
+  
+  use Bit_int8_of_Bit_int16 
+  
+  use enum.Bit_int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int16.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Bit_int8.normalize (Int16.to_int n))) /\
+     ((=) result (Bit_int8_of_Bit_int16.cast_modulo n))) }
+  
+  val cast
+  (n : Int16.t) : Int8.t
+   requires {
+     ((Bit_int8.in_bounds (Int16.to_int n)) \/
+     (Bit_int8_of_Bit_int16.is_safe n)) }
+   ensures {
+     (((=) (Int8.to_int result) (Int16.to_int n)) /\
+     ((=) result (Bit_int8_of_Bit_int16.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int8_of_Unsafe_bit_int16
+
+  use enum.Int8 
+  
+  use enum.Int16 
+  
+  use Bit_int8_of_Bit_int16 
+  
+  use enum.Bit_int8 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int16.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Bit_int8.normalize (Int16.to_int n))) /\
+     ((=) result (Bit_int8_of_Bit_int16.cast_modulo n))) }
+  
+  val cast
+  (n : Int16.t) : Int8.t
+   requires { true }
+   ensures {
+     (((=) (Int8.to_int result) (Int16.to_int n)) /\
+     ((=) result (Bit_int8_of_Bit_int16.cast_modulo n))) }
+  
+end
+
+module Safe_int8_of_Safe_int16
+
+  use enum.Int8 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int16.t) : Int8.t
+   requires { (Int8.in_bounds (Int16.to_int n)) }
+   ensures { ((=) (Int8.to_int result) (Int16.to_int n)) }
+  
+end
+
+module Unsafe_int8_of_Unsafe_int16
+
+  use enum.Int8 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int16.t) : Int8.t
+   requires { true } ensures { ((=) (Int8.to_int result) (Int16.to_int n)) }
+  
+end
+
+module Safe_bit_int64_of_Safe_bit_int32
+
+  use enum.Int64 
+  
+  use enum.Int32 
+  
+  use Bit_int64_of_Bit_int32 
+  
+  use enum.Bit_int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int32.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Bit_int64.normalize (Int32.to_int n))) /\
+     ((=) result (Bit_int64_of_Bit_int32.cast_modulo n))) }
+  
+  val cast
+  (n : Int32.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Int32.to_int n)) /\
+     ((=) result (Bit_int64_of_Bit_int32.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int64_of_Unsafe_bit_int32
+
+  use enum.Int64 
+  
+  use enum.Int32 
+  
+  use Bit_int64_of_Bit_int32 
+  
+  use enum.Bit_int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int32.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Bit_int64.normalize (Int32.to_int n))) /\
+     ((=) result (Bit_int64_of_Bit_int32.cast_modulo n))) }
+  
+  val cast
+  (n : Int32.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Int32.to_int n)) /\
+     ((=) result (Bit_int64_of_Bit_int32.cast_modulo n))) }
+  
+end
+
+module Safe_int64_of_Safe_int32
+
+  use enum.Int64 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int32.t) : Int64.t
+   requires { true } ensures { ((=) (Int64.to_int result) (Int32.to_int n)) }
+  
+end
+
+module Unsafe_int64_of_Unsafe_int32
+
+  use enum.Int64 
+  
+  use enum.Int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int32.t) : Int64.t
+   requires { true } ensures { ((=) (Int64.to_int result) (Int32.to_int n)) }
+  
+end
+
+module Safe_bit_int64_of_Safe_bit_int16
+
+  use enum.Int64 
+  
+  use enum.Int16 
+  
+  use Bit_int64_of_Bit_int16 
+  
+  use enum.Bit_int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int16.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Bit_int64.normalize (Int16.to_int n))) /\
+     ((=) result (Bit_int64_of_Bit_int16.cast_modulo n))) }
+  
+  val cast
+  (n : Int16.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Int16.to_int n)) /\
+     ((=) result (Bit_int64_of_Bit_int16.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int64_of_Unsafe_bit_int16
+
+  use enum.Int64 
+  
+  use enum.Int16 
+  
+  use Bit_int64_of_Bit_int16 
+  
+  use enum.Bit_int64 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int16.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Bit_int64.normalize (Int16.to_int n))) /\
+     ((=) result (Bit_int64_of_Bit_int16.cast_modulo n))) }
+  
+  val cast
+  (n : Int16.t) : Int64.t
+   requires { true }
+   ensures {
+     (((=) (Int64.to_int result) (Int16.to_int n)) /\
+     ((=) result (Bit_int64_of_Bit_int16.cast_modulo n))) }
+  
+end
+
+module Safe_int64_of_Safe_int16
+
+  use enum.Int64 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int16.t) : Int64.t
+   requires { true } ensures { ((=) (Int64.to_int result) (Int16.to_int n)) }
+  
+end
+
+module Unsafe_int64_of_Unsafe_int16
+
+  use enum.Int64 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int16.t) : Int64.t
+   requires { true } ensures { ((=) (Int64.to_int result) (Int16.to_int n)) }
+  
+end
+
+module Safe_bit_int32_of_Safe_bit_int16
+
+  use enum.Int32 
+  
+  use enum.Int16 
+  
+  use Bit_int32_of_Bit_int16 
+  
+  use enum.Bit_int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int16.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Bit_int32.normalize (Int16.to_int n))) /\
+     ((=) result (Bit_int32_of_Bit_int16.cast_modulo n))) }
+  
+  val cast
+  (n : Int16.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Int16.to_int n)) /\
+     ((=) result (Bit_int32_of_Bit_int16.cast_modulo n))) }
+  
+end
+
+module Unsafe_bit_int32_of_Unsafe_bit_int16
+
+  use enum.Int32 
+  
+  use enum.Int16 
+  
+  use Bit_int32_of_Bit_int16 
+  
+  use enum.Bit_int32 
+  
+  use why3.Bool.Bool 
+  
+  val cast_modulo
+  (n : Int16.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Bit_int32.normalize (Int16.to_int n))) /\
+     ((=) result (Bit_int32_of_Bit_int16.cast_modulo n))) }
+  
+  val cast
+  (n : Int16.t) : Int32.t
+   requires { true }
+   ensures {
+     (((=) (Int32.to_int result) (Int16.to_int n)) /\
+     ((=) result (Bit_int32_of_Bit_int16.cast_modulo n))) }
+  
+end
+
+module Safe_int32_of_Safe_int16
+
+  use enum.Int32 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int16.t) : Int32.t
+   requires { true } ensures { ((=) (Int32.to_int result) (Int16.to_int n)) }
+  
+end
+
+module Unsafe_int32_of_Unsafe_int16
+
+  use enum.Int32 
+  
+  use enum.Int16 
+  
+  use why3.Bool.Bool 
+  
+  val cast
+  (n : Int16.t) : Int32.t
+   requires { true } ensures { ((=) (Int32.to_int result) (Int16.to_int n)) }
+  
+end
+
+module Function_replace
+
+  use import core.Tag_table_type 
+  
+  use import core.Same_except 
+  
+  use import Root_intP 
+  
+  use import ref.Ref 
+  
+  use import core.Pset_range 
+  
+  use import core.Pset_all 
+  
+  use import core.Pset 
+  
+  use import core.Pointer 
+  
+  use import core.Memory 
+  
+  use enum.Int32 
+  
+  use import int.Int 
+  
+  use import core.Assigns 
+  
+  use import core.Alloc_table 
+  
+  use why3.Bool.Bool 
+  
+  val replace
+  (a : (pointer intP)) 
+   (size_1 : Int32.t) 
+    (x : Int32.t) 
+     (y : Int32.t) 
+      (intP_a_2_alloc_table : ref (alloc_table intP)) 
+       (intP_intM_a_2 : ref (memory intP Int32.t)) 
+        (intP_a_2_tag_table : (tag_table intP)) : Int32.t
+         requires { true } reads { intP_a_2_alloc_table, intP_intM_a_2 }
+         writes { intP_a_2_alloc_table, intP_intM_a_2 }
+         ensures {
+           ((#"p6_c.jc" 37 12 22# "expl:Allocates clause"
+            (#"p6_c.jc" 37 12 22# "expl:Allocates clause"
+            (alloc_same_except (old !intP_a_2_alloc_table)
+            !intP_a_2_alloc_table (pset_all (pset_singleton a)))))
+           /\
+           ((#"p6_c.jc" 36 10 51# "expl:Assigns clause"
+            (not_assigns (old !intP_a_2_alloc_table) !intP_a_2_alloc_table
+            (old !intP_intM_a_2) !intP_intM_a_2
+            (pset_range (pset_singleton a) (0)
+            (Int.(-) (Int32.to_int size_1) (1)))))
+           /\
+           (#"/home/zykinwases/projects/verification/hw/p6.c" 3 12 24#
+           "expl:Ensures clause"
+           (#"/home/zykinwases/projects/verification/hw/p6.c" 3 12 24#
+           "expl:Ensures clause"
+           ((#"/home/zykinwases/projects/verification/hw/p6.c" 3 12 24#
+            "expl:Ensures clause"
+            (Int32.(=) result (#"p6_c.jc" 38 41 53# "expl:Integer cast"
+            (Int32.of_int (0)))))
+           /\
+           (#"/home/zykinwases/projects/verification/hw/p6.c" 3 12 24#
+           "expl:Ensures clause"
+           ((#"/home/zykinwases/projects/verification/hw/p6.c" 4 12 77#
+            "expl:Ensures clause"
+            (forall i : int.
+             ((((<=) (0) i) /\
+              (((<) i (Int32.to_int size_1)) /\
+              (Int32.(=) (select (old !intP_intM_a_2) (shift a i)) x))) ->
+              (Int32.(=) (select !intP_intM_a_2 (shift a i)) y))))
+           /\
+           (#"/home/zykinwases/projects/verification/hw/p6.c" 5 12 86#
+           "expl:Ensures clause"
+           (forall i_0 : int.
+            ((((<=) (0) i_0) /\
+             (((<) i_0 (Int32.to_int size_1)) /\
+             (not (Int32.(=) (select (old !intP_intM_a_2) (shift a i_0)) x))))
+             ->
+             (Int32.(=) (select !intP_intM_a_2 (shift a i_0))
+             (select (old !intP_intM_a_2) (shift a i_0))))))))))))) }
+  
+end
+
+module Function_replace_safe
+
+  use import core.Tag_table_type 
+  
+  use import core.Same_except 
+  
+  use import Root_intP 
+  
+  use import ref.Ref 
+  
+  use import core.Pset_range 
+  
+  use import core.Pset_all 
+  
+  use import core.Pset 
+  
+  use import core.Pointer 
+  
+  use import core.Memory 
+  
+  use enum.Int32 
+  
+  use import int.Int 
+  
+  use import core.Assigns 
+  
+  use import core.Alloc_table 
+  
+  use why3.Bool.Bool 
+  
+  val replace
+  (a : (pointer intP)) 
+   (size_1 : Int32.t) 
+    (x : Int32.t) 
+     (y : Int32.t) 
+      (intP_a_2_alloc_table : ref (alloc_table intP)) 
+       (intP_intM_a_2 : ref (memory intP Int32.t)) 
+        (intP_a_2_tag_table : (tag_table intP)) : Int32.t
+         requires {
+           ("expl:Internal"
+           (#"p6_c.jc" 24 12 685# "expl:Requires clause"
+           ((#"/home/zykinwases/projects/verification/hw/p6.c" 1 13 22#
+            "expl:Requires clause"
+            (Int32.(>=) size_1 (#"p6_c.jc" 24 32 44# "expl:Integer cast"
+            (Int32.of_int (0)))))
+           /\
+           (#"/home/zykinwases/projects/verification/hw/p6.c" 2 13 36#
+           "expl:Requires clause"
+           (if ((<=) (0) (Int.(-) (Int32.to_int size_1) (1))) then
+            (((<=) (offset_min !intP_a_2_alloc_table a) (0)) /\
+            (((>=) (offset_max !intP_a_2_alloc_table a)
+             (Int.(-) (Int32.to_int size_1) (1)))
+            /\
+            (forall __framac_tmp1 : int.
+             ((((<=) (0) __framac_tmp1) /\
+              ((<=) __framac_tmp1 (Int.(-) (Int32.to_int size_1) (1)))) ->
+              ((=) true true))))) else ((=) true true)))))) }
+         reads { intP_a_2_alloc_table, intP_intM_a_2 } writes {
+         intP_a_2_alloc_table, intP_intM_a_2 }
+         ensures {
+           ((#"p6_c.jc" 37 12 22# "expl:Allocates clause"
+            (#"p6_c.jc" 37 12 22# "expl:Allocates clause"
+            (alloc_same_except (old !intP_a_2_alloc_table)
+            !intP_a_2_alloc_table (pset_all (pset_singleton a)))))
+           /\
+           ((#"p6_c.jc" 36 10 51# "expl:Assigns clause"
+            (not_assigns (old !intP_a_2_alloc_table) !intP_a_2_alloc_table
+            (old !intP_intM_a_2) !intP_intM_a_2
+            (pset_range (pset_singleton a) (0)
+            (Int.(-) (Int32.to_int size_1) (1)))))
+           /\
+           (#"/home/zykinwases/projects/verification/hw/p6.c" 3 12 24#
+           "expl:Ensures clause"
+           (#"/home/zykinwases/projects/verification/hw/p6.c" 3 12 24#
+           "expl:Ensures clause"
+           ((#"/home/zykinwases/projects/verification/hw/p6.c" 3 12 24#
+            "expl:Ensures clause"
+            (Int32.(=) result (#"p6_c.jc" 38 41 53# "expl:Integer cast"
+            (Int32.of_int (0)))))
+           /\
+           (#"/home/zykinwases/projects/verification/hw/p6.c" 3 12 24#
+           "expl:Ensures clause"
+           ((#"/home/zykinwases/projects/verification/hw/p6.c" 4 12 77#
+            "expl:Ensures clause"
+            (forall i : int.
+             ((((<=) (0) i) /\
+              (((<) i (Int32.to_int size_1)) /\
+              (Int32.(=) (select (old !intP_intM_a_2) (shift a i)) x))) ->
+              (Int32.(=) (select !intP_intM_a_2 (shift a i)) y))))
+           /\
+           (#"/home/zykinwases/projects/verification/hw/p6.c" 5 12 86#
+           "expl:Ensures clause"
+           (forall i_0 : int.
+            ((((<=) (0) i_0) /\
+             (((<) i_0 (Int32.to_int size_1)) /\
+             (not (Int32.(=) (select (old !intP_intM_a_2) (shift a i_0)) x))))
+             ->
+             (Int32.(=) (select !intP_intM_a_2 (shift a i_0))
+             (select (old !intP_intM_a_2) (shift a i_0))))))))))))) }
+  
+end

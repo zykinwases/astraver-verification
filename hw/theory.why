@@ -1,0 +1,36 @@
+theory Lesson5
+
+  use import int.Int
+  use import int.EuclideanDivision
+  use import real.FromInt
+  use import real.Square
+  use import real.Truncate
+
+  function int_square(x: int): int = x * x
+
+  function int_sqrt(x: int): int = floor(sqrt(from_int(x)))
+
+  predicate is_sqrt(x y: int) = int_square(y) <= x < int_square(y + 1)
+
+  predicate phi(x: int) = x >= 0
+
+  predicate psi(x z: int) = is_sqrt x z
+
+  predicate in_w(x: int) = x >= 0
+
+  function u(x y1 y2: int):int = y1
+
+
+  predicate p(x y1 y2: int) = (x = 0 -> y2 >= y1) /\ (y2 >= y1 -> is_sqrt x y1) /\ (y2 >= int_sqrt(x)) /\ (y1 >= 0)
+
+  goal SA: forall x. phi x -> p x x (div (x + 1) 2)
+
+  goal AFA: forall x y1 y2. phi x /\ y2 < y1 /\ p x y1 y2 -> p x y2 (div ((div x y2) + y2) 2)
+
+  goal AH: forall x y1 y2. phi x /\ y2 >= y1 /\ p x y1 y2 -> psi x y1
+
+  goal m_correct: forall x y1 y2. phi x /\ p x y1 y2 -> in_w (u x y1 y2) 
+
+  goal AFA_term: forall x y1 y2. phi x /\ y2 < y1 /\ p x y1 y2 -> (u x y2 y1) < (u x y1 y2)
+
+end

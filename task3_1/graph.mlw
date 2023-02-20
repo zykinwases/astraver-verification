@@ -1,0 +1,93 @@
+module Graph
+
+    use import int.Int
+    use import ref.Ref
+    use import astraver.core.Memory
+    use import astraver.core.Pointer
+    use import astraver.core.Alloc_table
+    use import astraver.core.Acc_safe
+    use import astraver.core.Shift_unsafe
+
+    type vertex = {
+        vertex_payload: int;
+        vertex_existent: int;
+    }
+
+    type edge = {
+        edge_from: int;
+        edge_to: int;
+        edge_existent: int;
+    }
+
+    type graph = {
+        graph_vertices: pointer vertex;
+        graph_vsize: int;
+        graph_edges: pointer edge;
+        graph_ecnt: int;
+        graph_esize: int;
+    }
+
+    predicate is_vertex (m_g: memory graph graph) (g: pointer graph) (v: int) =
+        exists gr: graph. gr = (select m_g g) /\ 0 <= v < gr.graph_vsize
+
+    predicate edge_valid (m_g: memory graph graph) (m_e: memory edge edge) (m_v: memory vertex vertex) (g: pointer graph) (k: int) =
+        exists gr: graph, e: edge, v_from v_to: vertex. gr = (select m_g g) /\ e = (select m_e (shift gr.graph_edges k)) /\ 
+        v_from = (select m_v (shift gr.graph_vertices e.edge_from)) /\ v_to = (select m_v (shift gr.graph_vertices e.edge_to)) /\
+        (e.edge_existent > 0) -> (is_vertex m_g g e.edge_from) /\ (is_vertex m_g g e.edge_to) /\
+        (v_from.vertex_existent > 0) /\ (v_to.vertex_existent > 0)
+
+    predicate edges_valid (m_g: memory graph graph) (m_e: memory edge edge) (m_v: memory vertex vertex) (g: pointer graph) (n: int) =
+        forall k: int. 0 <= k < n -> (edge_valid m_g m_e m_v g k)
+
+    predicate graph_valid (a_v: alloc_table vertex) (a_e: alloc_table edge) (m_g: memory graph graph) (m_e: memory edge edge) (m_v: memory vertex vertex) (g: pointer graph) =
+        exists gr: graph. gr = (select m_g g) /\
+        (gr.graph_vsize > 0) /\ (gr.graph_esize > 0) /\ (gr.graph_esize >= gr.graph_ecnt >= 0) /\
+        (forall k: int. 0 <= k < gr.graph_vsize -> valid a_v (shift gr.graph_vertices k)) /\
+        (forall k: int. 0 <= k < gr.graph_esize -> valid a_e (shift gr.graph_edges k)) /\
+        (edges_valid m_g m_e m_v g gr.graph_ecnt) /\ 
+        (forall k: int. gr.graph_ecnt <= k < gr.graph_esize -> (exists e: edge. (e = select m_e (shift gr.graph_edges k)) /\ (e.edge_existent = 0)))
+
+    predicate range_existent (m_g: memory graph graph) (m_e: memory edge edge) (g: pointer graph) (m n: int) = 
+        forall k: int. m <= k < n -> (exists gr: graph, e: edge. gr = (select m_g g) /\ e = (select m_e (shift gr.graph_edges k)) /\ (e.edge_existent > 0))
+    predicate full (m_g: memory graph graph) (m_e: memory edge edge) (g: pointer graph) = 
+        exists gr: graph. gr = (select m_g g) /\ range_existent m_g m_e g 0 gr.graph_esize
+
+    function count (m_g: memory graph graph) (m_e: memory edge edge) (m_v: memory vertex vertex) (g: pointer graph) (f t m n: int): int
+
+    axiom count_zero: forall m_g: memory graph graph, m_e: memory edge edge, m_v: memory vertex vertex, g: pointer graph, f t m n: int. 
+        m >= n -> (count m_g m_e m_v g f t m n) = 0
+
+	predicate count_one_p (m_g: memory graph graph) (m_e: memory edge edge) (m_v: memory vertex vertex) (g: pointer graph) (f t m: int) =
+        exists gr: graph, e: edge, v_from v_to: vertex. gr = (select m_g g) /\ e = (select m_e (shift gr.graph_edges m)) /\ 
+        v_from = (select m_v (shift gr.graph_vertices e.edge_from)) /\ v_to = (select m_v (shift gr.graph_vertices e.edge_to)) /\
+        (count m_g m_e m_v g f t m (m+1)) = (if ((e.edge_existent > 0) /\ (e.edge_from = f) /\ (e.edge_to = t)) then 1 else 0)
+
+    axiom count_one: forall m_g: memory graph graph, m_e: memory edge edge, m_v: memory vertex vertex, g: pointer graph, f t m: int. count_one_p m_g m_e m_v g f t m
+
+    predicate count_split_p (m_g: memory graph graph) (m_e: memory edge edge) (m_v: memory vertex vertex) (g: pointer graph) (f t m n k: int) =
+        (count m_g m_e m_v g f t m k) = (count m_g m_e m_v g f t m n) + (count m_g m_e m_v g f t n k)
+
+    axiom count_split: forall m_g: memory graph graph, m_e: memory edge edge, m_v: memory vertex vertex, g: pointer graph, f t m n k: int. 
+        m <= n <= k -> (count_split_p m_g m_e m_v g f t m n k)
+
+    function all_count (m_g: memory graph graph) (m_e: memory edge edge) (m_v: memory vertex vertex) (g: pointer graph) (f t: int): int =
+        count m_g m_e m_v g f t 0 (select m_g g).graph_esize
+
+    let count (a_g: alloc_table graph) (a_v: alloc_table vertex) (a_e: alloc_table edge) (m_g: memory graph graph) (m_e: memory edge edge) (m_v: memory vertex vertex) (g: pointer (graph)) (f t: int): int 
+        requires { valid a_g g && graph_valid a_v a_e m_g m_e m_v g }
+        requires { is_vertex m_g g f }
+        requires { is_vertex m_g g t }
+        requires { (select m_v (shift (select m_g g).graph_vertices f)).vertex_existent > 0 }
+        requires { (select m_v (shift (select m_g g).graph_vertices t)).vertex_existent > 0 }
+        ensures { result = all_count m_g m_e m_v g f t }
+    = 
+        let c = ref 0 in
+        for i = 0 to (acc a_g m_g g).graph_ecnt - 1 do
+            if ((acc a_e m_e (shift_ (acc a_g m_g g).graph_edges i)).edge_existent > 0) then
+                if ((acc a_e m_e (shift_ (acc a_g m_g g).graph_edges i)).edge_from = f) then
+                    if ((acc a_e m_e (shift_ (acc a_g m_g g).graph_edges i)).edge_to = t) then
+                        c := !c + 1;
+        done;
+        !c
+
+end
